@@ -44,12 +44,12 @@ export function Footer() {
           {footerNav.map((col) => (
             <nav key={col.titleKey} aria-label={t(col.titleKey)}>
               <h2 className="text-sm font-semibold uppercase tracking-wider text-dorado">{t(col.titleKey)}</h2>
-              <ul className="mt-4 space-y-2.5">
+              <ul className="mt-3 space-y-0.5">
                 {col.items.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm text-verde-claro/85 transition-colors hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                      className="inline-block py-1.5 text-sm text-verde-claro/85 transition-colors hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
                     >
                       {t(`links.${item.key}`)}
                     </Link>
@@ -66,7 +66,7 @@ export function Footer() {
                 <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-dorado" />
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                  className="inline-block py-1 hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
                 >
                   {siteConfig.contact.email}
                 </a>
@@ -75,7 +75,7 @@ export function Footer() {
                 <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-dorado" />
                 <a
                   href={`tel:${siteConfig.contact.phoneHref}`}
-                  className="hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                  className="inline-block py-1 hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
                 >
                   {siteConfig.contact.phone}
                 </a>
@@ -99,7 +99,7 @@ export function Footer() {
               <li key={p.slug}>
                 <Link
                   href={`/programas#${p.slug}`}
-                  className="text-xs font-medium uppercase tracking-wider text-verde-claro/70 transition-colors hover:text-dorado focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                  className="inline-block py-1 text-xs font-medium uppercase tracking-wider text-verde-claro/70 transition-colors hover:text-dorado focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
                 >
                   {tprog(p.slug)}
                 </Link>
@@ -114,12 +114,12 @@ export function Footer() {
           </p>
           <ul className="flex gap-4">
             <li>
-              <Link href="/privacidad" className="hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado">
+              <Link href="/privacidad" className="inline-block py-1 hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado">
                 {t("privacy")}
               </Link>
             </li>
             <li>
-              <Link href="/contacto" className="hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado">
+              <Link href="/contacto" className="inline-block py-1 hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado">
                 {tnav("contact")}
               </Link>
             </li>

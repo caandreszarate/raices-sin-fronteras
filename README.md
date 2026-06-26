@@ -130,14 +130,24 @@ headless. Para conectar un origen real, basta reemplazar las funciones de
   `Permissions-Policy` restrictiva y `Strict-Transport-Security` (HSTS).
 - **Validación server-side con Zod** en toda entrada (server actions y API). El
   cliente nunca es fuente de verdad.
-- **Anti-spam**: honeypot (`website`), rate limiting por IP y validación estricta.
-  El honeypot se trata como éxito silencioso para no informar a los bots.
+- **Anti-spam / anti-fuerza bruta**: honeypot (`website`), rate limiting por IP y
+  validación estricta. El honeypot se trata como éxito silencioso para no informar
+  a los bots. Límites: contacto 5/min, newsletter 4/min, donaciones 10/min.
+- **CSRF**: las server actions de Next validan el origen de forma nativa; la API
+  route de donaciones añade además una comprobación explícita de `Origin`/`Referer`
+  contra el `Host` (rechaza peticiones cross-origin, _fail-closed_).
 - **Sin XSS**: no se usa `dangerouslySetInnerHTML`; todo el contenido dinámico se
   renderiza como texto (los cuerpos de proyectos/noticias son arrays de párrafos).
 - **Caracteres de control bloqueados** en texto (mitiga inyección de cabeceras).
 - **Secretos solo en servidor**: ninguna clave de email/pago/BD llega al cliente;
   solo variables `NEXT_PUBLIC_*` se exponen. `poweredByHeader` desactivado.
 - **Enlaces externos** con `rel="noopener noreferrer"`.
+
+> **Producción multi-instancia (recomendado):** el rate limiter es en memoria
+> (efectivo por instancia). Para frenar fuerza bruta distribuida en Vercel,
+> sustituir por **Upstash Redis / Vercel KV** (misma firma en `src/lib/rate-limit.ts`)
+> y activar **Vercel Firewall (WAF) + BotID** desde el panel para bloqueo de bots
+> y reglas de rate limiting a nivel de plataforma.
 
 > Para producción multi-instancia, sustituye el rate limiter en memoria por
 > Upstash Redis / Vercel KV (misma firma en `src/lib/rate-limit.ts`).
@@ -183,6 +193,26 @@ npm run build && npm run start   # sirve en el puerto 3000 (configurable con POR
 ```
 
 > En Vercel funciona de forma nativa, sin configuración adicional.
+
+---
+
+## 🧪 Testing
+
+Tests unitarios con **Vitest** sobre la lógica crítica (`tests/`):
+
+```bash
+npm test          # ejecuta todos los tests una vez
+npm run test:watch
+```
+
+- `tests/validation.test.ts` — esquemas Zod (contacto/newsletter): válido, email
+  inválido, honeypot, caracteres de control, consentimiento, longitudes.
+- `tests/rate-limit.test.ts` — el limitador permite hasta el tope, bloquea, se
+  reinicia tras la ventana, y extracción de IP de cabeceras.
+- `tests/format.test.ts` — formato de fecha por idioma y `escapeHtml` (anti-XSS).
+
+> Próximos pasos sugeridos: tests de componentes con Testing Library y E2E con
+> Playwright (flujo de formularios y cambio de idioma).
 
 ---
 

@@ -6,8 +6,15 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing, localeNames, type Locale } from "@/i18n/routing";
 import { CheckIcon } from "@/components/icons";
 
-/** Selector de idioma accesible (es/en/fr/pt). */
-export function LanguageSelector({ variant = "dark" }: { variant?: "dark" | "light" }) {
+/** Selector de idioma accesible (es/en/fr/pt). `compact` muestra solo la
+ *  bandera (para cabeceras estrechas en móvil). */
+export function LanguageSelector({
+  variant = "dark",
+  compact = false,
+}: {
+  variant?: "dark" | "light";
+  compact?: boolean;
+}) {
   const t = useTranslations("langSelector");
   const locale = useLocale() as Locale;
   const pathname = usePathname();
@@ -49,10 +56,12 @@ export function LanguageSelector({ variant = "dark" }: { variant?: "dark" | "lig
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={t("choose")}
-        className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-semibold transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${triggerColor}`}
+        className={`inline-flex items-center gap-1.5 rounded-full border py-1.5 text-sm font-semibold transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
+          compact ? "px-2.5" : "px-3"
+        } ${triggerColor}`}
       >
         <span aria-hidden>{localeNames[locale].flag}</span>
-        <span className="uppercase">{locale}</span>
+        {!compact && <span className="uppercase">{locale}</span>}
         <svg className="h-3.5 w-3.5 opacity-70" viewBox="0 0 12 12" fill="none" aria-hidden>
           <path d="M3 5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

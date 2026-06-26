@@ -16,7 +16,33 @@ const schema = z.object({
   frequency: z.enum(["unica", "mensual"]),
 });
 
+/**
+ * Verifica que la petición provenga del propio sitio (defensa CSRF para un
+ * endpoint POST disparado por formulario). Compara el host de Origin/Referer
+ * con el host de la petición. Las server actions de Next ya hacen esto de
+ * forma nativa; aquí lo replicamos para la API route.
+ */
+function isSameOrigin(request: NextRequest): boolean {
+  const origin = request.headers.get("origin");
+  const referer = request.headers.get("referer");
+  const host = request.headers.get("host");
+  if (!host) return false;
+  const source = origin ?? referer;
+  if (!source) return false; // exige Origin o Referer en peticiones que mutan estado
+  try {
+    return new URL(source).host === host;
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(request: NextRequest) {
+  // 1) Defensa CSRF: rechaza peticiones cross-origin.
+  if (!isSameOrigin(request)) {
+    return NextResponse.json({ error: "Origen no permitido." }, { status: 403 });
+  }
+
+  // 2) Rate limiting por IP (anti-abuso / fuerza bruta).
   const ip = clientIpFromHeaders(request.headers);
   if (!rateLimit(`donar:${ip}`, 10, 60_000).success) {
     return NextResponse.json({ error: "Demasiadas solicitudes." }, { status: 429 });

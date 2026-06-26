@@ -42,7 +42,7 @@ export function Hero() {
             <span className="block text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
               {t("title2")}
             </span>
-            <span className="mt-2 block font-script text-4xl leading-tight text-naranja sm:text-5xl lg:text-6xl">
+            <span className="mt-3 block font-script text-3xl leading-tight text-naranja sm:text-5xl lg:text-6xl">
               {t("titleScript")}
             </span>
           </h1>

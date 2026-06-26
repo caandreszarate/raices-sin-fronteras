@@ -42,7 +42,7 @@ export function Logo({
         </span>
         {withTagline && (
           <span
-            className={`mt-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.16em] ${
+            className={`mt-1.5 hidden text-[0.6rem] font-semibold uppercase tracking-[0.16em] sm:block ${
               isLight ? "text-verde-claro/80" : "text-verde-600/85"
             }`}
           >

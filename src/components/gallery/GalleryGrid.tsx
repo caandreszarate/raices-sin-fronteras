@@ -40,11 +40,15 @@ export function GalleryGrid({
   };
 
   const selectClass =
-    "rounded-full border border-verde-profundo/15 bg-white/80 px-4 py-2 text-sm text-verde-900 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado";
+    "w-full rounded-full border border-verde-profundo/15 bg-white/80 px-4 py-2.5 text-sm text-verde-900 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado sm:w-auto sm:py-2";
 
   return (
     <div>
-      <div className="flex flex-wrap items-end gap-3" role="group" aria-label={t("filtersLabel")}>
+      <div
+        className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:items-end"
+        role="group"
+        aria-label={t("filtersLabel")}
+      >
         <Field label={t("program")}>
           <select value={program} onChange={(e) => setProgram(e.target.value)} className={selectClass}>
             <option value="todos">{t("allPrograms")}</option>
@@ -78,7 +82,7 @@ export function GalleryGrid({
         <button
           type="button"
           onClick={reset}
-          className="rounded-full px-4 py-2 text-sm font-medium text-verde-700 underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+          className="w-full rounded-full px-4 py-2.5 text-sm font-medium text-verde-700 underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado sm:w-auto sm:py-2"
         >
           {t("clear")}
         </button>
