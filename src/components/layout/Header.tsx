@@ -61,13 +61,13 @@ export function Header() {
       >
         <Logo withTagline />
 
-        <ul className="hidden items-center gap-0.5 lg:flex">
+        <ul className="hidden items-center gap-1 xl:flex">
           {mainNav.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`relative rounded-full px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
+                className={`relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
                   isActive(item.href)
                     ? "text-verde-profundo"
                     : "text-verde-900/70 hover:text-verde-profundo"
@@ -82,7 +82,7 @@ export function Header() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-2 xl:flex">
           <LanguageSelector />
           <ButtonLink href="/donar" variant="primary" size="sm">
             <HeartIcon className="h-4 w-4" />
@@ -90,7 +90,7 @@ export function Header() {
           </ButtonLink>
         </div>
 
-        <div className="flex items-center gap-1.5 lg:hidden">
+        <div className="flex items-center gap-1.5 xl:hidden">
           <LanguageSelector compact />
           <button
             type="button"
@@ -106,7 +106,7 @@ export function Header() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="lg:hidden">
+        <div id="mobile-menu" className="xl:hidden">
           <div className="border-t border-verde-profundo/10 bg-marfil px-4 pb-6 pt-2 sm:px-6">
             <ul className="flex flex-col gap-1">
               {mainNav.map((item) => (
