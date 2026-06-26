@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 280" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Raíces sin Fronteras</title>
+  <desc id="logo-desc">Logotipo institucional con ceiba, raíces, rutas transatlánticas y el nombre Raíces sin Fronteras.</desc>
+  <defs>
+    <linearGradient id="sun-gold" x1="74" y1="52" x2="198" y2="218" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#DAA520"/>
+      <stop offset="0.58" stop-color="#E67E22"/>
+      <stop offset="1" stop-color="#B23B2E"/>
+    </linearGradient>
+    <radialGradient id="ivory-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(135 126) rotate(90) scale(104)">
+      <stop offset="0" stop-color="#EDE6D6"/>
+      <stop offset="0.82" stop-color="#D4E5D7"/>
+      <stop offset="1" stop-color="#A8C5A1"/>
+    </radialGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#0B1D3A" flood-opacity="0.16"/>
+    </filter>
+    <pattern id="woven" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 10H20M10 0V20" stroke="#DAA520" stroke-width="1.4" opacity="0.34"/>
+      <path d="M0 0L20 20M20 0L0 20" stroke="#EDE6D6" stroke-width="0.8" opacity="0.28"/>
+    </pattern>
+  </defs>
+
+  <rect width="980" height="280" fill="none"/>
+
+  <g filter="url(#soft-shadow)">
+    <circle cx="138" cy="140" r="102" fill="url(#ivory-glow)"/>
+    <circle cx="138" cy="140" r="107" fill="none" stroke="url(#sun-gold)" stroke-width="8"/>
+    <circle cx="138" cy="140" r="92" fill="none" stroke="#0D3B2A" stroke-width="2.5" opacity="0.24"/>
+    <path d="M42 173C74 157 102 151 137 151C173 151 204 158 235 175" fill="none" stroke="#0B1D3A" stroke-width="9" stroke-linecap="round"/>
+    <path d="M50 175C88 167 111 171 135 184C165 168 191 166 226 176" fill="none" stroke="#EDE6D6" stroke-width="2.2" stroke-dasharray="7 8" stroke-linecap="round"/>
+
+    <path d="M138 55C130 83 124 107 126 136C128 160 130 177 119 203" fill="none" stroke="#7A4E2D" stroke-width="10" stroke-linecap="round"/>
+    <path d="M138 55C146 86 153 109 151 137C149 162 145 179 157 205" fill="none" stroke="#7A4E2D" stroke-width="10" stroke-linecap="round"/>
+    <path d="M128 136H151" stroke="#EDE6D6" stroke-width="4" stroke-linecap="round"/>
+    <path d="M127 158C137 151 147 151 157 158" fill="none" stroke="#DAA520" stroke-width="3" stroke-linecap="round"/>
+
+    <path d="M129 67C91 57 68 69 56 91C85 93 105 86 129 67Z" fill="#15693F"/>
+    <path d="M137 58C101 34 71 38 52 58C80 75 107 74 137 58Z" fill="#0D3B2A"/>
+    <path d="M145 58C177 34 207 38 228 59C199 75 173 75 145 58Z" fill="#15693F"/>
+    <path d="M151 68C189 57 211 69 224 92C196 94 174 87 151 68Z" fill="#0D3B2A"/>
+    <path d="M137 48C119 25 93 21 70 34C90 53 111 59 137 48Z" fill="#15693F"/>
+    <path d="M142 48C160 25 187 21 210 34C190 53 168 59 142 48Z" fill="#0D3B2A"/>
+    <circle cx="139" cy="57" r="6" fill="#DAA520"/>
+
+    <path d="M136 202C126 218 107 225 82 227" fill="none" stroke="#7A4E2D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M139 203C141 224 130 236 111 245" fill="none" stroke="#7A4E2D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M141 203C154 220 174 227 197 227" fill="none" stroke="#7A4E2D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M137 202C124 214 105 213 84 203" fill="none" stroke="#DAA520" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <path d="M142 202C157 215 177 213 197 203" fill="none" stroke="#DAA520" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+
+    <path d="M70 194C98 181 117 181 137 198C160 177 184 179 210 194" fill="none" stroke="#DAA520" stroke-width="3" stroke-dasharray="5 8" stroke-linecap="round"/>
+    <circle cx="70" cy="194" r="5" fill="#15693F" stroke="#EDE6D6" stroke-width="2"/>
+    <circle cx="210" cy="194" r="5" fill="#E67E22" stroke="#EDE6D6" stroke-width="2"/>
+    <circle cx="138" cy="198" r="4" fill="#DAA520"/>
+
+    <path d="M66 220H212" stroke="url(#woven)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M66 220H212" stroke="#0D3B2A" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+  </g>
+
+  <g transform="translate(300 58)">
+    <text x="0" y="83" fill="#0D3B2A" font-family="Cormorant Garamond, Georgia, serif" font-size="86" font-weight="700" letter-spacing="5">RAÍCES</text>
+    <path d="M26 98H286" stroke="#0D3B2A" stroke-width="3" opacity="0.68"/>
+    <text x="24" y="146" fill="#15693F" font-family="Pacifico, 'Brush Script MT', cursive" font-size="50" font-weight="400">sin</text>
+    <text x="107" y="146" fill="#B23B2E" font-family="Pacifico, 'Brush Script MT', cursive" font-size="58" font-weight="400">Fronteras</text>
+    <path d="M74 158C151 173 234 173 343 156" fill="none" stroke="#15693F" stroke-width="4" stroke-linecap="round"/>
+    <g transform="translate(0 184)">
+      <rect x="0" y="0" width="472" height="34" rx="17" fill="#0B1D3A"/>
+      <rect x="5" y="5" width="462" height="24" rx="12" fill="#0D3B2A" opacity="0.55"/>
+      <text x="236" y="23" text-anchor="middle" fill="#EDE6D6" font-family="Montserrat, Avenir, sans-serif" font-size="14" font-weight="700" letter-spacing="5">AMÉRICA LATINA &amp; GUINEA ECUATORIAL</text>
+    </g>
+  </g>
+
+  <g transform="translate(838 78)" opacity="0.95">
+    <circle cx="40" cy="40" r="33" fill="none" stroke="#DAA520" stroke-width="3"/>
+    <path d="M40 7V73M7 40H73M17 17L63 63M63 17L17 63" stroke="#E67E22" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="6" fill="#0D3B2A"/>
+    <path d="M40 13L49 40L40 67L31 40Z" fill="#DAA520" opacity="0.85"/>
+  </g>
+</svg>

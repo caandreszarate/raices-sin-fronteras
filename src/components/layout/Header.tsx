@@ -1,0 +1,142 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { mainNav } from "@/lib/site";
+import { Logo } from "@/components/ui/Logo";
+import { ButtonLink } from "@/components/ui/Button";
+import { MenuIcon, CloseIcon, HeartIcon } from "@/components/icons";
+
+export function Header() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Cierra el menú móvil al navegar (patrón "ajustar estado en render",
+  // recomendado por React en lugar de un efecto que llama a setState).
+  const [prevPath, setPrevPath] = useState(pathname);
+  if (pathname !== prevPath) {
+    setPrevPath(pathname);
+    setOpen(false);
+  }
+
+  // Bloquea scroll del body cuando el menú móvil está abierto.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  // Sombra/fondo al hacer scroll.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Cierra con Escape.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  return (
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-verde-profundo/10 bg-marfil/90 backdrop-blur-md"
+          : "bg-marfil/60 backdrop-blur-sm"
+      }`}
+    >
+      <nav
+        className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+        aria-label="Navegación principal"
+      >
+        <Logo withTagline />
+
+        {/* Navegación de escritorio */}
+        <ul className="hidden items-center gap-1 lg:flex">
+          {mainNav.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={`relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
+                  isActive(item.href)
+                    ? "text-verde-profundo"
+                    : "text-verde-900/70 hover:text-verde-profundo"
+                }`}
+              >
+                {item.label}
+                {isActive(item.href) && (
+                  <span className="absolute inset-x-3.5 -bottom-0.5 h-0.5 rounded-full bg-naranja" aria-hidden />
+                )}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="hidden items-center gap-2 lg:flex">
+          <ButtonLink href="/donar" variant="primary" size="sm">
+            <HeartIcon className="h-4 w-4" />
+            Dona ahora
+          </ButtonLink>
+        </div>
+
+        {/* Botón móvil */}
+        <button
+          type="button"
+          className="grid h-11 w-11 place-items-center rounded-full text-verde-profundo transition-colors hover:bg-verde-claro/60 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado lg:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+        </button>
+      </nav>
+
+      {/* Menú móvil */}
+      {open && (
+        <div
+          id="mobile-menu"
+          className="lg:hidden"
+          // Overlay accesible
+        >
+          <div className="border-t border-verde-profundo/10 bg-marfil px-4 pb-6 pt-2 sm:px-6">
+            <ul className="flex flex-col gap-1">
+              {mainNav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={isActive(item.href) ? "page" : undefined}
+                    className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
+                      isActive(item.href)
+                        ? "bg-verde-claro/70 text-verde-profundo"
+                        : "text-verde-900/80 hover:bg-verde-claro/50"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ButtonLink href="/donar" variant="primary" size="lg" className="mt-4 w-full">
+              <HeartIcon className="h-5 w-5" />
+              Dona ahora
+            </ButtonLink>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}

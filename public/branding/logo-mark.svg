@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 18 236 244" role="img" aria-labelledby="mark-title">
+  <title id="mark-title">Emblema de Raíces sin Fronteras</title>
+  <defs>
+    <linearGradient id="m-sun-gold" x1="74" y1="52" x2="198" y2="218" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#DAA520"/>
+      <stop offset="0.58" stop-color="#E67E22"/>
+      <stop offset="1" stop-color="#B23B2E"/>
+    </linearGradient>
+    <radialGradient id="m-ivory-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(135 126) rotate(90) scale(104)">
+      <stop offset="0" stop-color="#EDE6D6"/>
+      <stop offset="0.82" stop-color="#D4E5D7"/>
+      <stop offset="1" stop-color="#A8C5A1"/>
+    </radialGradient>
+    <pattern id="m-woven" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 10H20M10 0V20" stroke="#DAA520" stroke-width="1.4" opacity="0.34"/>
+      <path d="M0 0L20 20M20 0L0 20" stroke="#EDE6D6" stroke-width="0.8" opacity="0.28"/>
+    </pattern>
+  </defs>
+
+  <g>
+    <circle cx="138" cy="140" r="102" fill="url(#m-ivory-glow)"/>
+    <circle cx="138" cy="140" r="107" fill="none" stroke="url(#m-sun-gold)" stroke-width="8"/>
+    <circle cx="138" cy="140" r="92" fill="none" stroke="#0D3B2A" stroke-width="2.5" opacity="0.24"/>
+    <path d="M42 173C74 157 102 151 137 151C173 151 204 158 235 175" fill="none" stroke="#0B1D3A" stroke-width="9" stroke-linecap="round"/>
+    <path d="M50 175C88 167 111 171 135 184C165 168 191 166 226 176" fill="none" stroke="#EDE6D6" stroke-width="2.2" stroke-dasharray="7 8" stroke-linecap="round"/>
+
+    <path d="M138 55C130 83 124 107 126 136C128 160 130 177 119 203" fill="none" stroke="#7A4E2D" stroke-width="10" stroke-linecap="round"/>
+    <path d="M138 55C146 86 153 109 151 137C149 162 145 179 157 205" fill="none" stroke="#7A4E2D" stroke-width="10" stroke-linecap="round"/>
+    <path d="M128 136H151" stroke="#EDE6D6" stroke-width="4" stroke-linecap="round"/>
+    <path d="M127 158C137 151 147 151 157 158" fill="none" stroke="#DAA520" stroke-width="3" stroke-linecap="round"/>
+
+    <path d="M129 67C91 57 68 69 56 91C85 93 105 86 129 67Z" fill="#15693F"/>
+    <path d="M137 58C101 34 71 38 52 58C80 75 107 74 137 58Z" fill="#0D3B2A"/>
+    <path d="M145 58C177 34 207 38 228 59C199 75 173 75 145 58Z" fill="#15693F"/>
+    <path d="M151 68C189 57 211 69 224 92C196 94 174 87 151 68Z" fill="#0D3B2A"/>
+    <path d="M137 48C119 25 93 21 70 34C90 53 111 59 137 48Z" fill="#15693F"/>
+    <path d="M142 48C160 25 187 21 210 34C190 53 168 59 142 48Z" fill="#0D3B2A"/>
+    <circle cx="139" cy="57" r="6" fill="#DAA520"/>
+
+    <path d="M136 202C126 218 107 225 82 227" fill="none" stroke="#7A4E2D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M139 203C141 224 130 236 111 245" fill="none" stroke="#7A4E2D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M141 203C154 220 174 227 197 227" fill="none" stroke="#7A4E2D" stroke-width="4" stroke-linecap="round"/>
+    <path d="M137 202C124 214 105 213 84 203" fill="none" stroke="#DAA520" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <path d="M142 202C157 215 177 213 197 203" fill="none" stroke="#DAA520" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+
+    <path d="M70 194C98 181 117 181 137 198C160 177 184 179 210 194" fill="none" stroke="#DAA520" stroke-width="3" stroke-dasharray="5 8" stroke-linecap="round"/>
+    <circle cx="70" cy="194" r="5" fill="#15693F" stroke="#EDE6D6" stroke-width="2"/>
+    <circle cx="210" cy="194" r="5" fill="#E67E22" stroke="#EDE6D6" stroke-width="2"/>
+    <circle cx="138" cy="198" r="4" fill="#DAA520"/>
+
+    <path d="M66 220H212" stroke="url(#m-woven)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M66 220H212" stroke="#0D3B2A" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+  </g>
+</svg>

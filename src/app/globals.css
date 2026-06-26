@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   Raíces sin Fronteras — Sistema de diseño
+   Tokens extraídos directamente del branding (branding_raices_sin_fronteras.png):
+   ceiba, dos orillas, ruta transatlántica, textiles, paleta cultural.
+   ========================================================================== */
+
+@theme {
+  /* — Paleta de marca — */
+  --color-verde-profundo: #0d3b2a; /* base institucional, fondos oscuros */
+  --color-verde: #15693f; /* verde vivo, acentos naturaleza */
+  --color-dorado: #daa520; /* raíz/sol, detalle premium */
+  --color-naranja: #e67e22; /* CTA principal, "sin Fronteras" */
+  --color-rojo-tierra: #b23b2e; /* alertas cálidas, textil */
+  --color-azul-profundo: #0b1d3a; /* océano/ruta transatlántica */
+  --color-marron: #7a4e2d; /* tronco, tierra */
+  --color-marfil: #ede6d6; /* fondo cálido principal */
+  --color-salvia: #a8c5a1; /* verde suave, fondos sección */
+  --color-verde-claro: #d4e5d7; /* verde muy claro, superficies */
+
+  /* Escala derivada del verde para estados/jerarquía */
+  --color-verde-900: #0a2c20;
+  --color-verde-800: #0d3b2a;
+  --color-verde-700: #114f36;
+  --color-verde-600: #15693f;
+  --color-verde-500: #1f8550;
+  --color-naranja-600: #cf6f17;
+  --color-naranja-700: #b35f12;
+  --color-dorado-600: #c2901a;
+
+  /* — Tipografía — */
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-script: var(--font-pacifico), "Pacifico", cursive;
+
+  /* — Radios y sombras — */
+  --radius-card: 1rem;
+  --shadow-soft: 0 4px 24px -8px rgba(13, 59, 42, 0.18);
+  --shadow-lift: 0 18px 48px -20px rgba(13, 59, 42, 0.42);
+
+  /* — Animaciones — */
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   Base
+   ========================================================================== */
+@layer base {
+  :root {
+    --background: var(--color-marfil);
+    --foreground: var(--color-verde-900);
+    color-scheme: light;
+  }
+
+  * {
+    border-color: color-mix(in srgb, var(--color-verde-profundo) 12%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.08;
+    color: var(--color-verde-profundo);
+  }
+
+  /* Foco visible y elegante en todo el sitio (WCAG 2.2 AA) */
+  :focus-visible {
+    outline: 3px solid var(--color-dorado);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Selección de texto con color de marca */
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-dorado) 35%, transparent);
+    color: var(--color-verde-900);
+  }
+}
+
+/* ============================================================================
+   Utilidades de marca (texturas, patrones, gradientes inspirados en el branding)
+   ========================================================================== */
+@layer utilities {
+  /* Enlace "saltar al contenido" para accesibilidad por teclado */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    border-radius: 0.5rem;
+    background-color: var(--color-verde-profundo);
+    color: var(--color-marfil);
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  /* Acento manuscrito "sin Fronteras" del logo */
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  /* Patrón textil sutil (geometría latinoamericana / Kente) en fondos */
+  .textile-pattern {
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        color-mix(in srgb, var(--color-dorado) 7%, transparent) 0,
+        color-mix(in srgb, var(--color-dorado) 7%, transparent) 2px,
+        transparent 2px,
+        transparent 14px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        color-mix(in srgb, var(--color-verde) 6%, transparent) 0,
+        color-mix(in srgb, var(--color-verde) 6%, transparent) 2px,
+        transparent 2px,
+        transparent 14px
+      );
+  }
+
+  /* Ruta transatlántica punteada (líneas del mapa del branding) */
+  .route-line {
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-dorado) 55%, transparent) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 14px 14px;
+  }
+
+  /* Gradiente "dos orillas": océano profundo a tierra verde */
+  .gradient-orillas {
+    background: linear-gradient(
+      135deg,
+      var(--color-verde-900) 0%,
+      var(--color-verde-profundo) 45%,
+      var(--color-azul-profundo) 100%
+    );
+  }
+
+  .gradient-tierra {
+    background: linear-gradient(160deg, var(--color-marfil) 0%, var(--color-verde-claro) 100%);
+  }
+
+  /* Panel oscuro del hero: verde profundo → océano, con halo cálido */
+  .hero-panel {
+    background:
+      radial-gradient(130% 120% at 8% 0%, rgba(31, 133, 80, 0.45), transparent 52%),
+      radial-gradient(120% 120% at 100% 100%, rgba(11, 29, 58, 0.85), transparent 55%),
+      linear-gradient(150deg, var(--color-verde-900) 0%, var(--color-verde-profundo) 48%, var(--color-azul-profundo) 100%);
+  }
+
+  /* Velo sobre la imagen del hero para fundir con el panel y dar profundidad */
+  .hero-image-veil {
+    background:
+      linear-gradient(90deg, rgba(10, 44, 32, 0.92) 0%, rgba(10, 44, 32, 0.25) 26%, transparent 55%),
+      linear-gradient(0deg, rgba(10, 44, 32, 0.55) 0%, transparent 45%);
+  }
+
+  /* Cinta kente (textil real del branding) */
+  .kente-ribbon-v {
+    background-image: url("/branding/cuts/textile-kente.png");
+    background-size: auto 56px;
+    background-repeat: repeat-y;
+  }
+  .kente-ribbon-h {
+    background-image: url("/branding/cuts/textile-kente.png");
+    background-size: 56px auto;
+    background-repeat: repeat-x;
+  }
+
+  /* Ruta transatlántica animada (líneas punteadas que "viajan") */
+  @keyframes route-travel {
+    to {
+      stroke-dashoffset: -120;
+    }
+  }
+  .route-animate {
+    animation: route-travel 5s linear infinite;
+  }
+
+  /* Halo dorado pulsante muy sutil para el medallón */
+  @keyframes halo-pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.04);
+    }
+  }
+  .halo-pulse {
+    animation: halo-pulse 4.5s ease-in-out infinite;
+  }
+
+  /* Animación de entrada respetando reduced-motion (gestionado arriba) */
+  .animate-fade-up {
+    animation: var(--animate-fade-up);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

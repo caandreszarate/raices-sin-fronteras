@@ -1,0 +1,155 @@
+import type { Metadata } from "next";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { Section, Container } from "@/components/ui/Section";
+import { ContactForm } from "@/components/forms/ContactForm";
+import { MailIcon, PhoneIcon, MapPinIcon, ClockIcon } from "@/components/icons";
+import { siteConfig } from "@/lib/site";
+import { asuntoLabels } from "@/lib/validation";
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description:
+    "Escríbenos para colaborar, ser voluntario, proponer alianzas o resolver dudas. Estamos en Malabo y Bogotá.",
+};
+
+const validAsuntos = Object.keys(asuntoLabels);
+
+export default async function ContactoPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ asunto?: string }>;
+}) {
+  const { asunto } = await searchParams;
+  const defaultAsunto = (validAsuntos.includes(asunto ?? "") ? asunto : undefined) as
+    | keyof typeof asuntoLabels
+    | undefined;
+
+  return (
+    <>
+      <PageHeader
+        eyebrow="Hablemos"
+        title="Contáctanos"
+        description="Cada gran proyecto empieza con una conversación. Cuéntanos cómo te gustaría sumar raíces."
+        breadcrumbs={[{ label: "Contacto" }]}
+      />
+
+      <Section>
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr]">
+            {/* Datos de contacto */}
+            <div>
+              <h2 className="text-2xl">Datos de contacto</h2>
+              <p className="mt-3 text-pretty leading-relaxed text-verde-900/75">
+                Atendemos consultas de comunidades, organizaciones, prensa y personas que quieren
+                colaborar. Te responderemos lo antes posible.
+              </p>
+
+              <ul className="mt-8 space-y-5">
+                <ContactRow icon={<MailIcon className="h-5 w-5" />} label="Correo electrónico">
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="font-medium text-verde-profundo hover:text-verde-600 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                  >
+                    {siteConfig.contact.email}
+                  </a>
+                  <p className="text-sm text-verde-900/60">
+                    Prensa:{" "}
+                    <a
+                      href={`mailto:${siteConfig.contact.pressEmail}`}
+                      className="hover:text-verde-600 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                    >
+                      {siteConfig.contact.pressEmail}
+                    </a>
+                  </p>
+                </ContactRow>
+                <ContactRow icon={<PhoneIcon className="h-5 w-5" />} label="Teléfono">
+                  <a
+                    href={`tel:${siteConfig.contact.phoneHref}`}
+                    className="font-medium text-verde-profundo hover:text-verde-600 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                  >
+                    {siteConfig.contact.phone}
+                  </a>
+                </ContactRow>
+                <ContactRow icon={<MapPinIcon className="h-5 w-5" />} label="Dónde estamos">
+                  {siteConfig.contact.addressLines.map((line) => (
+                    <p key={line} className="text-verde-900/80">
+                      {line}
+                    </p>
+                  ))}
+                </ContactRow>
+                <ContactRow icon={<ClockIcon className="h-5 w-5" />} label="Horario de atención">
+                  <p className="text-verde-900/80">{siteConfig.contact.hours}</p>
+                </ContactRow>
+              </ul>
+
+              {/* Redes */}
+              <div className="mt-8">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-verde-700">
+                  Síguenos
+                </h3>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {siteConfig.social.map((s) => (
+                    <li key={s.name}>
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center rounded-full border border-verde-profundo/15 bg-white/70 px-4 py-2 text-sm font-medium text-verde-profundo transition-colors hover:border-verde/40 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                      >
+                        {s.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Mapa (OpenStreetMap, permitido en CSP) */}
+              <div className="mt-8 overflow-hidden rounded-2xl border border-verde-profundo/10 shadow-[var(--shadow-soft)]">
+                <iframe
+                  title="Mapa de ubicación de Raíces sin Fronteras en Malabo"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=8.74%2C3.73%2C8.82%2C3.78&layer=mapnik"
+                  className="h-64 w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+
+            {/* Formulario */}
+            <div className="rounded-3xl border border-verde-profundo/10 bg-white/70 p-6 shadow-[var(--shadow-soft)] sm:p-8">
+              <h2 className="text-2xl">Escríbenos</h2>
+              <p className="mt-2 text-sm text-verde-900/70">
+                Completa el formulario y nos pondremos en contacto contigo.
+              </p>
+              <div className="mt-6">
+                <ContactForm defaultAsunto={defaultAsunto} />
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </>
+  );
+}
+
+function ContactRow({
+  icon,
+  label,
+  children,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <li className="flex gap-4">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-verde-claro text-verde-700">
+        {icon}
+      </span>
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-wider text-verde-900/55">{label}</p>
+        <div className="mt-1">{children}</div>
+      </div>
+    </li>
+  );
+}
