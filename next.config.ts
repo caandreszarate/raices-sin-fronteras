@@ -1,11 +1,33 @@
 import type { NextConfig } from "next";
 
 /**
- * Cabeceras de seguridad estáticas (aplicadas a todas las rutas).
- * La Content-Security-Policy se genera por petición con nonce en `middleware.ts`
- * para permitir los scripts de Next sin `unsafe-inline`.
+ * Content-Security-Policy estática, compatible con páginas prerenderizadas
+ * (SSG) y dinámicas por igual.
+ *
+ * Nota: usamos `'unsafe-inline'` en `script-src` porque el App Router de Next
+ * emite scripts inline (payload RSC) en el HTML estático; un enfoque con nonce
+ * obliga a renderizar todo en servidor por petición y rompe el prerender
+ * estático. El resto de directivas se mantienen estrictas (object-src 'none',
+ * base-uri/form-action 'self', frame-ancestors 'none', etc.).
  */
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' blob: data: https:",
+  "font-src 'self' data:",
+  "connect-src 'self'",
+  "frame-src 'self' https://www.openstreetmap.org",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests",
+].join("; ");
+
+/** Cabeceras de seguridad (aplicadas a todas las rutas). */
 const securityHeaders = [
+  { key: "Content-Security-Policy", value: csp },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

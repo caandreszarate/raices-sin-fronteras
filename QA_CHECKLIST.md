@@ -58,7 +58,7 @@ Marca cada ítem (`[x]`) tras comprobarlo.
       `Content-Security-Policy`, `X-Frame-Options: DENY`,
       `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Permissions-Policy`,
       `Strict-Transport-Security`.
-- [ ] CSP sin violaciones en consola; los scripts de Next cargan con nonce.
+- [ ] CSP sin violaciones en consola; la página hidrata y es interactiva.
 - [ ] No aparece la cabecera `X-Powered-By`.
 - [ ] Ninguna clave secreta en el bundle del cliente (buscar en DevTools →
       Sources). Solo variables `NEXT_PUBLIC_*`.

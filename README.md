@@ -104,7 +104,7 @@ src/
 │  ├─ validation.ts           # Esquemas Zod compartidos
 │  ├─ rate-limit.ts           # Rate limiter (memoria; sustituible por Redis)
 │  └─ format.ts               # Formato de fechas, escape HTML
-└─ proxy.ts                   # CSP por petición con nonce + cabeceras (Next 16 "proxy")
+                             # (CSP y cabeceras de seguridad se definen en next.config.ts)
 ```
 
 ### Modelos de datos (`src/lib/types.ts`)
@@ -118,9 +118,13 @@ headless. Para conectar un origen real, basta reemplazar las funciones de
 
 ## 🔐 Seguridad implementada
 
-- **CSP con nonce por petición** (`src/proxy.ts`): `script-src` con `nonce` +
-  `strict-dynamic` (sin `unsafe-inline` para scripts). Next inyecta el nonce en
-  sus propios scripts automáticamente.
+- **Content-Security-Policy** (`next.config.ts`): CSP estática compatible con el
+  prerender estático (SSG). Directivas estrictas: `default-src 'self'`,
+  `object-src 'none'`, `base-uri`/`form-action 'self'`, `frame-ancestors 'none'`,
+  `img/font/connect/frame-src` acotadas y `upgrade-insecure-requests`. Se usa
+  `'unsafe-inline'` solo en `script-src`/`style-src` porque el App Router emite
+  scripts/estilos inline en el HTML estático (un enfoque con nonce obligaría a
+  renderizar todo por petición y rompe el SSG).
 - **Cabeceras de seguridad** (`next.config.ts`): `X-Content-Type-Options: nosniff`,
   `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`,
   `Permissions-Policy` restrictiva y `Strict-Transport-Security` (HSTS).
@@ -178,8 +182,7 @@ headless. Para conectar un origen real, basta reemplazar las funciones de
 npm run build && npm run start   # sirve en el puerto 3000 (configurable con PORT)
 ```
 
-> El CSP con nonce requiere renderizado en servidor (no `output: export`).
-> En Vercel funciona de forma nativa.
+> En Vercel funciona de forma nativa, sin configuración adicional.
 
 ---
 
