@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Logo oficial: emblema de la ceiba (public/branding/logo-mark.svg, extraído del

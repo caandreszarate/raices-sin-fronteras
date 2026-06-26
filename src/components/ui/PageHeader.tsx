@@ -1,5 +1,6 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Section";
 import { RouteLine, RootsDivider } from "@/components/decor";
 
@@ -17,6 +18,7 @@ export function PageHeader({
   description?: ReactNode;
   breadcrumbs?: Crumb[];
 }) {
+  const t = useTranslations("nav");
   return (
     <section className="relative isolate overflow-hidden gradient-orillas">
       <div className="textile-pattern absolute inset-0 opacity-25" aria-hidden />
@@ -30,7 +32,7 @@ export function PageHeader({
                   href="/"
                   className="hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
                 >
-                  Inicio
+                  {t("home")}
                 </Link>
               </li>
               {breadcrumbs.map((c) => (

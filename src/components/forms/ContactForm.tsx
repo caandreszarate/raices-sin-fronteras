@@ -2,11 +2,14 @@
 
 import { useActionState, useId } from "react";
 import { useFormStatus } from "react-dom";
+import { useTranslations } from "next-intl";
 import { submitContact, type ContactState } from "@/app/actions/contact";
-import { asuntoLabels } from "@/lib/validation";
+import type { ContactInput } from "@/lib/validation";
 import { CheckIcon, AlertIcon } from "@/components/icons";
 
 const initial: ContactState = { status: "idle" };
+
+const SUBJECTS: ContactInput["asunto"][] = ["general", "voluntariado", "alianzas", "prensa", "donaciones"];
 
 function fieldClasses(hasError?: boolean) {
   return `w-full rounded-xl border bg-white/80 px-4 py-3 text-sm text-verde-900 placeholder:text-verde-900/40 transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
@@ -16,6 +19,7 @@ function fieldClasses(hasError?: boolean) {
 
 function SubmitButton() {
   const { pending } = useFormStatus();
+  const t = useTranslations("contactForm");
   return (
     <button
       type="submit"
@@ -25,12 +29,13 @@ function SubmitButton() {
       {pending && (
         <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden />
       )}
-      {pending ? "Enviando…" : "Enviar mensaje"}
+      {pending ? t("sending") : t("submit")}
     </button>
   );
 }
 
-export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof asuntoLabels }) {
+export function ContactForm({ defaultAsunto }: { defaultAsunto?: ContactInput["asunto"] }) {
+  const t = useTranslations("contactForm");
   const [state, formAction] = useActionState(submitContact, initial);
   const ids = {
     nombre: useId(),
@@ -50,29 +55,30 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof as
         <span className="grid h-14 w-14 place-items-center rounded-full bg-verde-600 text-white">
           <CheckIcon className="h-7 w-7" />
         </span>
-        <h3 className="text-xl font-semibold text-verde-profundo">¡Mensaje enviado!</h3>
-        <p className="max-w-sm text-sm text-verde-900/75">{state.message}</p>
+        <h3 className="text-xl font-semibold text-verde-profundo">{t("successTitle")}</h3>
+        <p className="max-w-sm text-sm text-verde-900/75">{t("successText")}</p>
       </div>
     );
   }
 
+  const fieldError = () => t("checkField");
+
   return (
     <form action={formAction} className="space-y-5" noValidate>
-      {/* Resumen de error general (accesible) */}
-      {state.status === "error" && state.message && (
+      {state.status === "error" && (
         <div
           role="alert"
           className="flex items-start gap-2 rounded-xl border border-rojo-tierra/30 bg-rojo-tierra/10 p-4 text-sm text-rojo-tierra"
         >
           <AlertIcon className="mt-0.5 h-4 w-4 shrink-0" />
-          <span>{state.message}</span>
+          <span>{t("errorGeneral")}</span>
         </div>
       )}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor={ids.nombre} className="mb-1.5 block text-sm font-medium text-verde-profundo">
-            Nombre <span className="text-rojo-tierra">*</span>
+            {t("name")} <span className="text-rojo-tierra">*</span>
           </label>
           <input
             id={ids.nombre}
@@ -84,18 +90,18 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof as
             aria-invalid={!!state.fieldErrors?.nombre}
             aria-describedby={state.fieldErrors?.nombre ? `${ids.nombre}-err` : undefined}
             className={fieldClasses(!!state.fieldErrors?.nombre)}
-            placeholder="Tu nombre completo"
+            placeholder={t("namePlaceholder")}
           />
           {state.fieldErrors?.nombre && (
             <p id={`${ids.nombre}-err`} role="alert" className="mt-1 text-xs text-rojo-tierra">
-              {state.fieldErrors.nombre}
+              {fieldError()}
             </p>
           )}
         </div>
 
         <div>
           <label htmlFor={ids.email} className="mb-1.5 block text-sm font-medium text-verde-profundo">
-            Correo electrónico <span className="text-rojo-tierra">*</span>
+            {t("email")} <span className="text-rojo-tierra">*</span>
           </label>
           <input
             id={ids.email}
@@ -107,11 +113,11 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof as
             aria-invalid={!!state.fieldErrors?.email}
             aria-describedby={state.fieldErrors?.email ? `${ids.email}-err` : undefined}
             className={fieldClasses(!!state.fieldErrors?.email)}
-            placeholder="tu@correo.com"
+            placeholder={t("emailPlaceholder")}
           />
           {state.fieldErrors?.email && (
             <p id={`${ids.email}-err`} role="alert" className="mt-1 text-xs text-rojo-tierra">
-              {state.fieldErrors.email}
+              {fieldError()}
             </p>
           )}
         </div>
@@ -119,7 +125,7 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof as
 
       <div>
         <label htmlFor={ids.asunto} className="mb-1.5 block text-sm font-medium text-verde-profundo">
-          Asunto <span className="text-rojo-tierra">*</span>
+          {t("subject")} <span className="text-rojo-tierra">*</span>
         </label>
         <select
           id={ids.asunto}
@@ -131,24 +137,24 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof as
           className={fieldClasses(!!state.fieldErrors?.asunto)}
         >
           <option value="" disabled>
-            Selecciona un asunto
+            {t("subjectPlaceholder")}
           </option>
-          {Object.entries(asuntoLabels).map(([value, label]) => (
+          {SUBJECTS.map((value) => (
             <option key={value} value={value}>
-              {label}
+              {t(`subjects.${value}`)}
             </option>
           ))}
         </select>
         {state.fieldErrors?.asunto && (
           <p id={`${ids.asunto}-err`} role="alert" className="mt-1 text-xs text-rojo-tierra">
-            {state.fieldErrors.asunto}
+            {fieldError()}
           </p>
         )}
       </div>
 
       <div>
         <label htmlFor={ids.mensaje} className="mb-1.5 block text-sm font-medium text-verde-profundo">
-          Mensaje <span className="text-rojo-tierra">*</span>
+          {t("message")} <span className="text-rojo-tierra">*</span>
         </label>
         <textarea
           id={ids.mensaje}
@@ -159,18 +165,18 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof as
           aria-invalid={!!state.fieldErrors?.mensaje}
           aria-describedby={state.fieldErrors?.mensaje ? `${ids.mensaje}-err` : undefined}
           className={`${fieldClasses(!!state.fieldErrors?.mensaje)} resize-y`}
-          placeholder="Cuéntanos en qué te gustaría colaborar o qué necesitas…"
+          placeholder={t("messagePlaceholder")}
         />
         {state.fieldErrors?.mensaje && (
           <p id={`${ids.mensaje}-err`} role="alert" className="mt-1 text-xs text-rojo-tierra">
-            {state.fieldErrors.mensaje}
+            {fieldError()}
           </p>
         )}
       </div>
 
       {/* Honeypot anti-spam */}
       <div aria-hidden className="absolute h-0 w-0 overflow-hidden">
-        <label htmlFor={ids.website}>No rellenar este campo</label>
+        <label htmlFor={ids.website}>{t("noFill")}</label>
         <input id={ids.website} type="text" name="website" tabIndex={-1} autoComplete="off" />
       </div>
 
@@ -186,22 +192,18 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: keyof typeof as
         />
         <div>
           <label htmlFor={ids.consent} className="text-sm text-verde-900/80">
-            Acepto la política de privacidad y el tratamiento de mis datos para responder a esta
-            consulta. <span className="text-rojo-tierra">*</span>
+            {t("consent")} <span className="text-rojo-tierra">*</span>
           </label>
           {state.fieldErrors?.consentimiento && (
             <p id={`${ids.consent}-err`} role="alert" className="mt-1 text-xs text-rojo-tierra">
-              {state.fieldErrors.consentimiento}
+              {fieldError()}
             </p>
           )}
         </div>
       </div>
 
       <SubmitButton />
-      <p className="text-xs text-verde-900/55">
-        Los campos marcados con <span className="text-rojo-tierra">*</span> son obligatorios. Nunca
-        compartiremos tus datos con terceros.
-      </p>
+      <p className="text-xs text-verde-900/55">{t("requiredNote")}</p>
     </form>
   );
 }

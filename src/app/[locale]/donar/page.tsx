@@ -1,31 +1,45 @@
 import type { Metadata } from "next";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section, Container } from "@/components/ui/Section";
 import { DonationWidget } from "@/components/donate/DonationWidget";
 import { ProgramIcon, CheckIcon, HeartIcon } from "@/components/icons";
-import { programs } from "@/lib/data/programs";
+import { Link } from "@/i18n/navigation";
+import { getPrograms } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Dona ahora",
-  description:
-    "Apoya la cooperación afro-hispana entre América Latina y Guinea Ecuatorial. Tu donación sostiene cultura, educación, juventud y medio ambiente.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "donate" });
+  return {
+    title: t("headerTitle"),
+    description: t("headerText"),
+  };
+}
 
-const transparencia = [
-  "Cada donación se destina a programas con resultados verificables.",
-  "Publicamos informes periódicos de uso de fondos.",
-  "Priorizamos compras y contrataciones locales en las comunidades.",
-  "Puedes elegir un aporte único o mensual y cancelarlo cuando quieras.",
-];
+export default async function DonarPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("donate");
+  const programs = await getPrograms(locale);
+  const transparencia = t.raw("transparency") as string[];
+  const otherWays = t.raw("otherWays") as string[];
 
-export default function DonarPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Tu apoyo cuenta"
-        title="Sembremos futuro, juntos"
-        description="Donar a Raíces sin Fronteras es invertir en comunidades que crecen con identidad, educación y esperanza a ambos lados del Atlántico."
-        breadcrumbs={[{ label: "Donar" }]}
+        eyebrow={t("headerEyebrow")}
+        title={t("headerTitle")}
+        description={t("headerText")}
+        breadcrumbs={[{ label: t("breadcrumb") }]}
       />
 
       <Section>
@@ -33,15 +47,13 @@ export default function DonarPage() {
           <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
             {/* Explicación */}
             <div>
-              <h2 className="text-2xl sm:text-3xl">Por qué tu donación importa</h2>
+              <h2 className="text-2xl sm:text-3xl">{t("whyTitle")}</h2>
               <p className="mt-4 text-pretty text-lg leading-relaxed text-verde-900/80">
-                Trabajamos con recursos que se multiplican en el territorio: una pequeña aportación
-                se convierte en libros, árboles, talleres y oportunidades para jóvenes. Tu apoyo
-                sostiene programas que, de otra forma, no llegarían a quienes más los necesitan.
+                {t("whyText")}
               </p>
 
               <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-verde-700">
-                Tu aporte impulsa
+                {t("drives")}
               </h3>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {programs.map((p) => (
@@ -61,13 +73,13 @@ export default function DonarPage() {
               <div className="mt-8 rounded-3xl border border-verde-profundo/10 bg-verde-claro/40 p-6">
                 <h3 className="flex items-center gap-2 text-lg">
                   <HeartIcon className="h-5 w-5 text-naranja" />
-                  Transparencia y confianza
+                  {t("transparencyTitle")}
                 </h3>
                 <ul className="mt-4 space-y-2.5">
-                  {transparencia.map((t) => (
-                    <li key={t} className="flex items-start gap-3 text-sm text-verde-900/80">
+                  {transparencia.map((tx) => (
+                    <li key={tx} className="flex items-start gap-3 text-sm text-verde-900/80">
                       <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-verde-600" />
-                      <span>{t}</span>
+                      <span>{tx}</span>
                     </li>
                   ))}
                 </ul>
@@ -80,18 +92,18 @@ export default function DonarPage() {
 
               {/* Otras formas de apoyar */}
               <div className="mt-6 rounded-3xl border border-verde-profundo/10 bg-white/70 p-6 shadow-[var(--shadow-soft)]">
-                <h3 className="text-lg">Otras formas de apoyar</h3>
+                <h3 className="text-lg">{t("otherWaysTitle")}</h3>
                 <ul className="mt-3 space-y-2 text-sm text-verde-900/75">
-                  <li>· Donaciones de empresas y patrocinios.</li>
-                  <li>· Voluntariado profesional y mentorías.</li>
-                  <li>· Alianzas institucionales y cooperación.</li>
+                  {otherWays.map((w) => (
+                    <li key={w}>· {w}</li>
+                  ))}
                 </ul>
-                <a
+                <Link
                   href="/contacto?asunto=donaciones"
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-naranja hover:gap-2.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
                 >
-                  Habla con nuestro equipo →
-                </a>
+                  {t("talkToTeam")}
+                </Link>
               </div>
             </div>
           </div>

@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section, Container } from "@/components/ui/Section";
 import { CTASection } from "@/components/ui/CTASection";
 import { ProgramIcon, ArrowRightIcon, CheckIcon } from "@/components/icons";
 import { ButtonLink } from "@/components/ui/Button";
-import { programs } from "@/lib/data/programs";
-import { projects } from "@/lib/data/projects";
+import { getPrograms, getProjects } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Programas",
-  description:
-    "Cultura, Juventud, Educación, Medio Ambiente, Cooperación y Turismo de Raíces: las seis líneas de trabajo de Raíces sin Fronteras.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "programs" });
+  return {
+    title: t("headerTitle"),
+    description: t("headerText"),
+  };
+}
 
 const accentText: Record<string, string> = {
   "rojo-tierra": "text-rojo-tierra",
@@ -23,14 +31,24 @@ const accentText: Record<string, string> = {
   "azul-profundo": "text-azul-profundo",
 };
 
-export default function ProgramasPage() {
+export default async function ProgramasPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("programs");
+  const programs = await getPrograms(locale);
+  const projects = await getProjects(locale);
+
   return (
     <>
       <PageHeader
-        eyebrow="Qué hacemos"
-        title="Seis programas, una misma raíz"
-        description="Cada línea de trabajo nace de las necesidades de las comunidades y se fortalece con el intercambio entre América Latina y Guinea Ecuatorial."
-        breadcrumbs={[{ label: "Programas" }]}
+        eyebrow={t("headerEyebrow")}
+        title={t("headerTitle")}
+        description={t("headerText")}
+        breadcrumbs={[{ label: t("breadcrumb") }]}
       />
 
       {/* Índice de programas */}
@@ -84,7 +102,7 @@ export default function ProgramasPage() {
                   </p>
 
                   <h3 className="mt-8 text-sm font-semibold uppercase tracking-wider text-verde-700">
-                    Objetivos
+                    {t("goals")}
                   </h3>
                   <ul className="mt-3 space-y-2.5">
                     {program.goals.map((goal) => (
@@ -116,7 +134,7 @@ export default function ProgramasPage() {
                   {related.length > 0 && (
                     <div className="rounded-3xl border border-verde-profundo/10 bg-white/70 p-6 shadow-[var(--shadow-soft)]">
                       <h3 className="text-sm font-semibold uppercase tracking-wider text-verde-700">
-                        Proyectos relacionados
+                        {t("relatedProjects")}
                       </h3>
                       <ul className="mt-3 divide-y divide-verde-profundo/10">
                         {related.map((p) => (
@@ -137,7 +155,7 @@ export default function ProgramasPage() {
                         size="sm"
                         className="mt-2"
                       >
-                        Ver más proyectos
+                        {t("moreProjects")}
                         <ArrowRightIcon className="h-4 w-4" />
                       </ButtonLink>
                     </div>
@@ -150,10 +168,10 @@ export default function ProgramasPage() {
       })}
 
       <CTASection
-        title="¿Tu organización quiere sumar un programa?"
-        description="Diseñamos iniciativas conjuntas con comunidades, instituciones y aliados. Hablemos de cómo colaborar."
-        primary={{ href: "/contacto?asunto=alianzas", label: "Proponer una alianza" }}
-        secondary={{ href: "/proyectos", label: "Ver proyectos" }}
+        title={t("ctaTitle")}
+        description={t("ctaText")}
+        primary={{ href: "/contacto?asunto=alianzas", label: t("ctaPrimary") }}
+        secondary={{ href: "/proyectos", label: t("ctaSecondary") }}
       />
     </>
   );

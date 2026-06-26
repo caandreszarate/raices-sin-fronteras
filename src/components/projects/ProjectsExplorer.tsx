@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import type { Project } from "@/lib/types";
 import { programs } from "@/lib/data/programs";
-import { projectStatusLabels, regionLabels } from "@/lib/data/projects";
 import { ProjectCard } from "@/components/cards/ProjectCard";
 
 const allStatuses: Project["status"][] = ["activo", "en-curso", "finalizado", "proximamente"];
@@ -16,6 +16,9 @@ export function ProjectsExplorer({
   projects: Project[];
   initialProgram?: string;
 }) {
+  const t = useTranslations("projects");
+  const tprog = useTranslations("programTitles");
+  const treg = useTranslations("common.region");
   const [program, setProgram] = useState(initialProgram);
   const [region, setRegion] = useState("todos");
   const [status, setStatus] = useState("todos");
@@ -50,46 +53,46 @@ export function ProjectsExplorer({
       <div
         className="flex flex-wrap items-end gap-3 rounded-2xl border border-verde-profundo/10 bg-verde-claro/40 p-4"
         role="group"
-        aria-label="Filtros de proyectos"
+        aria-label={t("filtersLabel")}
       >
-        <Field label="Programa">
+        <Field label={t("program")}>
           <select value={program} onChange={(e) => setProgram(e.target.value)} className={selectClass}>
-            <option value="todos">Todos</option>
+            <option value="todos">{t("all")}</option>
             {programs.map((p) => (
               <option key={p.slug} value={p.slug}>
-                {p.title}
+                {tprog(p.slug)}
               </option>
             ))}
           </select>
         </Field>
-        <Field label="Región">
+        <Field label={t("regionFilter")}>
           <select value={region} onChange={(e) => setRegion(e.target.value)} className={selectClass}>
-            <option value="todos">Todas</option>
+            <option value="todos">{t("allF")}</option>
             {allRegions.map((r) => (
               <option key={r} value={r}>
-                {regionLabels[r]}
+                {treg(r)}
               </option>
             ))}
           </select>
         </Field>
-        <Field label="Estado">
+        <Field label={t("statusFilter")}>
           <select value={status} onChange={(e) => setStatus(e.target.value)} className={selectClass}>
-            <option value="todos">Todos</option>
+            <option value="todos">{t("all")}</option>
             {allStatuses.map((s) => (
               <option key={s} value={s}>
-                {projectStatusLabels[s]}
+                {t(`status.${s}`)}
               </option>
             ))}
           </select>
         </Field>
-        <Field label="Orden">
+        <Field label={t("sort")}>
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value as "reciente" | "antiguo")}
             className={selectClass}
           >
-            <option value="reciente">Más recientes</option>
-            <option value="antiguo">Más antiguos</option>
+            <option value="reciente">{t("sortRecent")}</option>
+            <option value="antiguo">{t("sortOldest")}</option>
           </select>
         </Field>
         <button
@@ -97,12 +100,12 @@ export function ProjectsExplorer({
           onClick={reset}
           className="ml-auto rounded-full px-4 py-2 text-sm font-medium text-verde-700 underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
         >
-          Limpiar
+          {t("clear")}
         </button>
       </div>
 
       <p className="mt-5 text-sm text-verde-900/60" aria-live="polite">
-        {filtered.length} {filtered.length === 1 ? "proyecto" : "proyectos"}
+        {filtered.length === 1 ? t("countOne", { count: 1 }) : t("countOther", { count: filtered.length })}
       </p>
 
       {filtered.length > 0 ? (
@@ -113,13 +116,13 @@ export function ProjectsExplorer({
         </div>
       ) : (
         <div className="mt-6 rounded-2xl border border-dashed border-verde-profundo/20 bg-white/50 p-10 text-center">
-          <p className="font-medium text-verde-profundo">No encontramos proyectos con estos filtros</p>
+          <p className="font-medium text-verde-profundo">{t("emptyTitle")}</p>
           <button
             type="button"
             onClick={reset}
             className="mt-4 rounded-full bg-verde-profundo px-5 py-2 text-sm font-semibold text-marfil hover:bg-verde-700 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
           >
-            Ver todos los proyectos
+            {t("emptyCta")}
           </button>
         </div>
       )}

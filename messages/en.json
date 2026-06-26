@@ -1,0 +1,761 @@
+{
+  "meta": {
+    "tagline": "Connecting origins, building futures",
+    "description": "Afro-Hispanic cooperation platform connecting Latin America and Equatorial Guinea to strengthen cultural roots, education, youth, the environment, cooperation and roots tourism."
+  },
+  "common": {
+    "skipToContent": "Skip to main content",
+    "knowUs": "Get to know us",
+    "donateNow": "Donate now",
+    "contactUs": "Contact us",
+    "ourPrograms": "Our programs",
+    "viewAll": "View all",
+    "knowProgram": "Explore program",
+    "loading": "Loading…",
+    "regions": "Latin America and Equatorial Guinea",
+    "region": {
+      "America Latina": "Latin America",
+      "Guinea Ecuatorial": "Equatorial Guinea",
+      "Transatlantico": "Transatlantic"
+    }
+  },
+  "programTitles": {
+    "cultura": "Culture",
+    "juventud": "Youth",
+    "educacion": "Education",
+    "medio-ambiente": "Environment",
+    "cooperacion": "Cooperation",
+    "turismo-de-raices": "Roots Tourism"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "programs": "Programs",
+    "projects": "Projects",
+    "news": "News",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "primaryNav": "Primary navigation"
+  },
+  "langSelector": {
+    "label": "Language",
+    "choose": "Choose language"
+  },
+  "hero": {
+    "eyebrow": "Latin America · Equatorial Guinea",
+    "title1": "Connecting",
+    "title2": "origins,",
+    "titleScript": "building futures",
+    "subtitle": "A living bridge of Afro-Hispanic cooperation linking two shores of the Atlantic to strengthen the culture, education and land we share.",
+    "twoShores": "Two shores",
+    "shoreLatam": "Latin America",
+    "shoreGuinea": "Equatorial Guinea"
+  },
+  "home": {
+    "missionEyebrow": "A living route between two shores",
+    "missionTitle": "Culture, education and cooperation for communities with shared roots",
+    "missionText": "Raíces sin Fronteras is born from the conviction that the history uniting Latin America and Equatorial Guinea is also a map for the future. We work alongside communities so that these roots translate into real opportunities: classrooms, forests, young leaders and cultural gatherings.",
+    "ourHistory": "Our history",
+    "shoresCaption": "One same root, two shores of the Atlantic.",
+    "shoreLatamNote": "Cathedrals, the Andes and memory",
+    "shoreGuineaNote": "Coast, palm trees and heritage",
+    "ceibaTitle": "The ceiba, our symbol",
+    "ceibaText": "A sacred tree on both sides of the Atlantic, the ceiba sinks deep roots and opens a sheltering canopy. Like it, we believe in bonds that sustain and in a future that gives shade to every generation.",
+    "ceibaLink": "Why we chose it",
+    "programsEyebrow": "Six lines of work",
+    "programsTitle": "Our programs",
+    "programsText": "Each program responds to a specific need of the communities and is nourished by the exchange between the two regions.",
+    "projectsEyebrow": "On the ground",
+    "projectsTitle": "Featured projects",
+    "projectsText": "Initiatives under way that show how shared roots become concrete results.",
+    "allProjects": "All projects",
+    "newsEyebrow": "Latest updates",
+    "newsTitle": "News and voices",
+    "newsText": "Stories, calls and progress from our transatlantic community.",
+    "allNews": "All news",
+    "galleryEyebrow": "Living memory",
+    "galleryTitle": "Gallery",
+    "galleryText": "Moments of encounter, planting, learning and celebration.",
+    "allGallery": "View full gallery",
+    "stats": { "countries": "Countries", "programs": "Programs", "reached": "People reached" }
+  },
+  "cta": {
+    "title": "Let's join roots and multiply futures",
+    "description": "Your support sustains culture, education, youth and environment programs between Latin America and Equatorial Guinea. Every contribution becomes a real opportunity."
+  },
+  "footer": {
+    "colOrg": "Organization",
+    "colParticipate": "Get involved",
+    "stayClose": "Stay close",
+    "newsletterTitle": "Roots newsletter",
+    "follow": "Follow us",
+    "email": "Email",
+    "press": "Press",
+    "phone": "Phone",
+    "where": "Where we are",
+    "rights": "Made with roots shared between {regions}.",
+    "privacy": "Privacy",
+    "links": {
+      "about": "Who we are",
+      "programs": "Programs",
+      "projects": "Projects",
+      "news": "News",
+      "donate": "Donate now",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "volunteer": "Volunteering"
+    }
+  },
+  "newsletter": {
+    "label": "Email for the newsletter",
+    "placeholder": "you@email.com",
+    "submit": "Subscribe to the newsletter",
+    "noFill": "Do not fill in",
+    "success": "Done! We'll let you know about every update.",
+    "error": "Please enter a valid email."
+  },
+  "contactForm": {
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "message": "Message",
+    "messagePlaceholder": "Tell us how you'd like to collaborate or what you need…",
+    "consent": "I accept the privacy policy and the processing of my data to respond to this enquiry.",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "errorGeneral": "Please review the highlighted fields and try again.",
+    "errorRate": "You've sent several messages in quick succession. Please try again in a minute.",
+    "checkField": "Please check this field.",
+    "successTitle": "Message sent!",
+    "successText": "Thank you for writing to us! We'll get back to you as soon as possible.",
+    "requiredNote": "Fields marked with * are required. We will never share your data with third parties.",
+    "noFill": "Do not fill in this field",
+    "subjects": {
+      "general": "General enquiry",
+      "voluntariado": "Volunteering",
+      "alianzas": "Partnerships and cooperation",
+      "prensa": "Press and media",
+      "donaciones": "Donations"
+    }
+  },
+  "about": {
+    "headerEyebrow": "Who we are",
+    "headerTitle": "An organization with roots on both sides of the Atlantic",
+    "headerText": "We work so that the shared history between Latin America and Equatorial Guinea becomes living cooperation, opportunities and a common future.",
+    "breadcrumb": "About us",
+    "mission": "Mission",
+    "missionTitle": "Connecting to strengthen roots",
+    "missionText": "We promote cultural, educational and social cooperation between communities in Latin America and Equatorial Guinea, strengthening Afro-Hispanic identity and generating dignified opportunities through sustainable programs led by the communities themselves.",
+    "vision": "Vision",
+    "visionTitle": "A shared and just future",
+    "visionText": "We aspire to a transatlantic network where culture, education and nature are bridges of dignity: communities that recognize themselves in their common origin and build the next generations together, with equity and hope.",
+    "historyEyebrow": "Our history",
+    "historyTitle": "From an idea with roots to a transatlantic network",
+    "historyText": "A journey built step by step, alongside communities and partner organizations.",
+    "ceibaEyebrow": "The meaning of the ceiba",
+    "ceibaTitle": "The tree that gives us roots and gives us shade",
+    "ceibaP1": "In many cultures across Africa and the Americas, the ceiba is a sacred tree: a meeting place, a symbol of protection and community memory. That is why it lies at the heart of our identity and our emblem.",
+    "ceibaP2": "Its roots, visible above the ground, represent the ties that unite those who share a common origin even though an ocean separates them. Its wide canopy reminds us that the future must give shade and shelter to everyone.",
+    "ceibaP3": "To embrace the ceiba is to recognize that our histories are intertwined and that caring for the root is also sowing the future.",
+    "valuesEyebrow": "What guides us",
+    "valuesTitle": "Our values",
+    "valuesText": "Principles that guide every decision, program and partnership.",
+    "teamEyebrow": "People with purpose",
+    "teamTitle": "Our team",
+    "teamText": "Professionals from both regions who sustain the platform's daily work.",
+    "ctaTitle": "Let's build the next chapter together",
+    "ctaText": "Join us as a partner, volunteer or donor. Every bond strengthens the network that unites our communities.",
+    "ctaPrimary": "I want to collaborate",
+    "ctaSecondary": "View programs"
+  },
+  "programs": {
+    "headerEyebrow": "What we do",
+    "headerTitle": "Six programs, one same root",
+    "headerText": "Each line of work is born from the needs of the communities and grows stronger through the exchange between Latin America and Equatorial Guinea.",
+    "breadcrumb": "Programs",
+    "goals": "Goals",
+    "relatedProjects": "Related projects",
+    "moreProjects": "View more projects",
+    "ctaTitle": "Does your organization want to add a program?",
+    "ctaText": "We design joint initiatives with communities, institutions and partners. Let's talk about how to collaborate.",
+    "ctaPrimary": "Propose a partnership",
+    "ctaSecondary": "View projects"
+  },
+  "projects": {
+    "headerEyebrow": "On the ground",
+    "headerTitle": "Projects that put down roots",
+    "headerText": "Real initiatives, led by communities from both regions. Filter by program, region or status to find what interests you.",
+    "breadcrumb": "Projects",
+    "filtersLabel": "Project filters",
+    "program": "Program",
+    "regionFilter": "Region",
+    "statusFilter": "Status",
+    "sort": "Sort",
+    "all": "All",
+    "allF": "All",
+    "sortRecent": "Most recent",
+    "sortOldest": "Oldest first",
+    "clear": "Clear",
+    "countOne": "{count} project",
+    "countOther": "{count} projects",
+    "emptyTitle": "We found no projects with these filters",
+    "emptyCta": "View all projects",
+    "viewProject": "View project: {title}",
+    "coverAlt": "Cover of the {title} project",
+    "imageAlt": "Image of the {title} project",
+    "card": "Project card",
+    "country": "Country",
+    "regionLabel": "Region",
+    "start": "Start",
+    "statusLabel": "Status",
+    "impact": "Impact",
+    "partners": "Partners",
+    "moreIn": "More in {program}",
+    "status": {
+      "activo": "Active",
+      "en-curso": "Ongoing",
+      "finalizado": "Completed",
+      "proximamente": "Coming soon"
+    }
+  },
+  "news": {
+    "headerEyebrow": "Press room",
+    "headerTitle": "News and voices from the network",
+    "headerText": "What's happening in our communities: calls, gatherings, learnings and results.",
+    "breadcrumb": "News",
+    "search": "Search news",
+    "searchPlaceholder": "Search news…",
+    "filterByCategory": "Filter by category",
+    "allCategories": "All",
+    "minutes": "{min} min",
+    "readingTime": "{min} min read",
+    "countOne": "{count} article",
+    "countOther": "{count} articles",
+    "emptyTitle": "No results",
+    "emptyText": "We found no news for «{query}». Try other words.",
+    "readNews": "Read article: {title}",
+    "imageAlt": "Image of the article {title}",
+    "keepReading": "Keep reading",
+    "allNews": "All news",
+    "ctaTitle": "Get the latest news in your inbox",
+    "ctaText": "Subscribe to the roots newsletter and be the first to hear about calls, events and results.",
+    "ctaPrimary": "Write to us",
+    "ctaSecondary": "Support us",
+    "categories": {
+      "Institucional": "Institutional",
+      "Cultura": "Culture",
+      "Educación": "Education",
+      "Juventud": "Youth",
+      "Medio Ambiente": "Environment",
+      "Cooperación": "Cooperation"
+    }
+  },
+  "gallery": {
+    "headerEyebrow": "Living memory",
+    "headerTitle": "Gallery of gatherings and roots",
+    "headerText": "Images that tell the everyday work of our communities on both sides of the Atlantic.",
+    "breadcrumb": "Gallery",
+    "filtersLabel": "Gallery filters",
+    "program": "Program",
+    "allPrograms": "All programs",
+    "country": "Country",
+    "allCountries": "All countries",
+    "year": "Year",
+    "allYears": "All years",
+    "clear": "Clear filters",
+    "countOne": "{count} image",
+    "countOther": "{count} images",
+    "emptyTitle": "No images with these filters",
+    "emptyText": "Try another combination or clear the filters.",
+    "emptyCta": "View the full gallery",
+    "ctaTitle": "Would you like to be part of this story?",
+    "ctaText": "Join us as a volunteer, partner or donor and be part of the upcoming gatherings.",
+    "ctaPrimary": "Donate now",
+    "ctaSecondary": "Become a volunteer"
+  },
+  "contact": {
+    "headerEyebrow": "Let's talk",
+    "headerTitle": "Contact us",
+    "headerText": "Every great project starts with a conversation. Tell us how you'd like to join roots.",
+    "breadcrumb": "Contact",
+    "dataTitle": "Contact details",
+    "dataText": "We handle enquiries from communities, organizations, press and people who want to collaborate. We'll respond as soon as possible.",
+    "hours": "Opening hours",
+    "follow": "Follow us",
+    "mapTitle": "Location map of Raíces sin Fronteras in Malabo",
+    "writeTitle": "Write to us",
+    "writeText": "Fill out the form and we'll get in touch with you."
+  },
+  "donate": {
+    "headerEyebrow": "Your support matters",
+    "headerTitle": "Let's sow the future, together",
+    "headerText": "Donating to Raíces sin Fronteras means investing in communities that grow with identity, education and hope on both sides of the Atlantic.",
+    "breadcrumb": "Donate",
+    "whyTitle": "Why your donation matters",
+    "whyText": "We work with resources that multiply on the ground: a small contribution becomes books, trees, workshops and opportunities for young people. Your support sustains programs that would otherwise not reach those who need them most.",
+    "drives": "Your contribution drives",
+    "transparencyTitle": "Transparency and trust",
+    "transparency": [
+      "Every donation goes to programs with verifiable results.",
+      "We publish regular reports on the use of funds.",
+      "We prioritize local purchasing and hiring within the communities.",
+      "You can choose a one-time or monthly contribution and cancel whenever you like."
+    ],
+    "otherWaysTitle": "Other ways to support",
+    "otherWays": [
+      "Corporate donations and sponsorships.",
+      "Professional volunteering and mentoring.",
+      "Institutional partnerships and cooperation."
+    ],
+    "talkToTeam": "Talk to our team →",
+    "widget": {
+      "title": "Choose your contribution",
+      "text": "Every contribution translates into concrete programs. You decide how and how much to support.",
+      "frequencyLabel": "Donation frequency",
+      "monthly": "Monthly",
+      "oneTime": "One-time",
+      "amountLabel": "Donation amount in euros",
+      "otherAmount": "Other amount",
+      "perMonth": "/month",
+      "once": "one-time",
+      "monthlySuffix": "per month",
+      "donateAmount": "Donate {amount}€",
+      "donateAmountMonthly": "Donate {amount}€ per month",
+      "secureNote": "Secure payment. The gateway (Stripe, Redsys or other) is configured through server environment variables; no key is exposed in the browser.",
+      "impact": {
+        "high": "Supports the monthly training of a group of young ambassadors.",
+        "mid": "Stocks a community library with new intercultural books.",
+        "low": "Plants and cares for several native trees alongside host families.",
+        "base": "Contributes to educational materials for students in the network.",
+        "perMonthPrefix": "{amount}€ per month: ",
+        "oncePrefix": "{amount}€: "
+      }
+    }
+  },
+  "privacy": {
+    "headerEyebrow": "Your trust",
+    "headerTitle": "Privacy policy",
+    "headerText": "We handle your data with respect, transparency and the least possible collection.",
+    "breadcrumb": "Privacy",
+    "disclaimer": "This text is a guiding template and must be reviewed with legal advice before its final publication, adapting it to the applicable regulations (e.g. GDPR).",
+    "sections": [
+      {
+        "h": "Data controller",
+        "p": "Raíces sin Fronteras is responsible for the data you provide to us through this site. For any enquiry, write to us at hola@raicessinfronteras.org."
+      },
+      {
+        "h": "What data we collect",
+        "p": "Only the data you voluntarily provide in the contact form (name, email, subject and message) and in the newsletter subscription (email address)."
+      },
+      {
+        "h": "For what purpose",
+        "p": "We use your data exclusively to respond to your enquiry, manage your collaboration or send you the newsletter if you request it. We do not use it for profiling or automated decisions."
+      },
+      {
+        "h": "Legal basis",
+        "p": "The processing is based on your explicit consent, which you give by ticking the corresponding box and submitting the form."
+      },
+      {
+        "h": "Retention",
+        "p": "We keep your data for as long as necessary to handle your request or until you withdraw your consent or request to unsubscribe from the newsletter."
+      },
+      {
+        "h": "We do not share your data",
+        "p": "We do not transfer or sell your data to third parties. Only the technology providers strictly necessary to operate the site will access it, under confidentiality agreements."
+      },
+      {
+        "h": "Your rights",
+        "p": "You can exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to hola@raicessinfronteras.org."
+      },
+      {
+        "h": "Security",
+        "p": "We apply technical and organizational measures (server-side validation, encryption in transit, security headers and access control) to protect your information."
+      }
+    ]
+  },
+  "notFound": {
+    "title": "This root lost its way",
+    "text": "The page you're looking for doesn't exist or has moved. Let's get back to solid ground.",
+    "home": "Go to home",
+    "contact": "Contact us"
+  },
+  "content": {
+    "programs": {
+      "cultura": {
+        "title": "Culture",
+        "summary": "We preserve and share the traditions, languages, music and memories that unite both shores of the Atlantic.",
+        "description": "We document intangible heritage, foster artist residencies and produce gatherings where African and Latin American heritage come into dialogue: percussion, oral tradition, dance, gastronomy and textiles. Culture is the visible root that identifies us as a single community spread across two continents.",
+        "goals": [
+          "Record and digitize oral and musical traditions at risk.",
+          "Create exchange residencies between artists from Equatorial Guinea and Latin America.",
+          "Produce festivals and travelling exhibitions of shared heritage."
+        ],
+        "highlights": [
+          "Traditions documented",
+          "Artists involved",
+          "Countries"
+        ]
+      },
+      "juventud": {
+        "title": "Youth",
+        "summary": "We accompany young leaders so they can transform their communities with identity, voice and real opportunities.",
+        "description": "We build youth leadership with an intercultural perspective through mentoring, scholarships, social innovation labs and exchange networks. We believe that Afro-Hispanic youth are the bridge that will sustain the shared future of both regions.",
+        "goals": [
+          "Mentoring and scholarships for emerging young leaders.",
+          "Social innovation and cultural entrepreneurship labs.",
+          "A transatlantic network of young roots ambassadors."
+        ],
+        "highlights": [
+          "Young people trained",
+          "Active scholarships",
+          "Mentors"
+        ]
+      },
+      "educacion": {
+        "title": "Education",
+        "summary": "We bring quality, bilingual and intercultural education to communities with shared roots.",
+        "description": "We support schools, community libraries and digital literacy programs. We design materials that recognize Afro-descendant and Equatoguinean history, strengthening cultural self-esteem and access to knowledge as a right.",
+        "goals": [
+          "Equip community libraries and classrooms with intercultural materials.",
+          "Train teachers in culturally relevant pedagogies.",
+          "Expand digital literacy in rural areas."
+        ],
+        "highlights": [
+          "Students benefited",
+          "Libraries supported",
+          "Teachers trained"
+        ]
+      },
+      "medio-ambiente": {
+        "title": "Environment",
+        "summary": "We protect tropical nature and the ancestral knowledge that cares for the land and water.",
+        "description": "We promote reforestation with native species —such as the ceiba, the tree that symbolizes our identity—, regenerative agriculture and community water management. We bring together science and ancestral knowledge to sustain ecosystems and livelihoods.",
+        "goals": [
+          "Reforest with native species and protect the ceiba as a living symbol.",
+          "Promote community-led regenerative agriculture.",
+          "Strengthen community management of water and forests."
+        ],
+        "highlights": [
+          "Trees planted",
+          "Hectares under management",
+          "Communities"
+        ]
+      },
+      "cooperacion": {
+        "title": "Cooperation",
+        "summary": "We weave alliances between institutions, local governments and organizations to multiply impact.",
+        "description": "We articulate South-South cooperation between actors in Latin America and Equatorial Guinea: knowledge transfer, joint projects and institutional strengthening. Cooperation turns shared roots into concrete and sustainable results.",
+        "goals": [
+          "Facilitate South-South cooperation and knowledge transfer.",
+          "Strengthen the capacities of local organizations.",
+          "Mobilize resources towards high-impact community projects."
+        ],
+        "highlights": [
+          "Active partnerships",
+          "Partner organizations",
+          "Joint projects"
+        ]
+      },
+      "turismo-de-raices": {
+        "title": "Roots Tourism",
+        "summary": "We design reunion routes that allow people to reconnect with their origin and their history.",
+        "description": "We create community and memorial tourism experiences that honour the transatlantic route: encounters with communities, historical heritage and nature. A form of tourism that generates local income, dignifies history and rebuilds family and cultural ties.",
+        "goals": [
+          "Design community and memory tourism routes.",
+          "Train host communities in sustainable hospitality.",
+          "Connect the diaspora with their territories of origin."
+        ],
+        "highlights": [
+          "Routes designed",
+          "Travellers welcomed",
+          "Host families"
+        ]
+      }
+    },
+    "projects": {
+      "ceibas-de-la-memoria": {
+        "title": "Ceibas of Memory",
+        "summary": "Reforestation of ceibas and native species alongside communities in Bioko, uniting ecological restoration and cultural memory.",
+        "country": "Equatorial Guinea",
+        "body": [
+          "Ceibas of Memory was created to restore ecological corridors on the island of Bioko while reclaiming the symbolic value of the ceiba, the tree that in our identity represents the encounter between African and American roots.",
+          "Each tree is planted with a host family that documents a community story tied to the territory, creating a living archive of environmental and cultural memory.",
+          "The project combines community nurseries, training in agroforestry and school environmental education days, generating local jobs and a sense of belonging."
+        ],
+        "impact": [
+          "Ceibas planted",
+          "Participating families",
+          "Schools involved"
+        ]
+      },
+      "tambores-que-cruzan-el-atlantico": {
+        "title": "Drums That Cross the Atlantic",
+        "summary": "A music residency that documents and blends Afro-Colombian percussion with Bubi and Fang rhythms into a shared repertoire.",
+        "country": "Colombia · Equatorial Guinea",
+        "body": [
+          "The project brings together percussionists from the Colombian Pacific with traditional masters from Equatorial Guinea to research the shared roots of their rhythms.",
+          "Over six months, in-person and virtual residencies take place, culminating in a collaborative album and a tour of educational concerts.",
+          "All sound and audiovisual material is published under an open license for music schools in both regions."
+        ],
+        "impact": [
+          "Artists",
+          "Pieces recorded",
+          "Concerts"
+        ]
+      },
+      "aulas-sin-fronteras": {
+        "title": "Classrooms Without Borders",
+        "summary": "Community libraries and digital literacy in Afro-Ecuadorian territories of the Chota Valley.",
+        "country": "Ecuador",
+        "body": [
+          "Classrooms Without Borders provides books, connectivity and teacher training to Afro-descendant communities, integrating content on history and culture shared with Equatorial Guinea.",
+          "The program trains teachers in culturally relevant pedagogies and opens intergenerational reading clubs.",
+          "It prioritizes access for girls and adolescents to digital skills with an equity perspective."
+        ],
+        "impact": [
+          "Students",
+          "Libraries",
+          "Teachers trained"
+        ]
+      },
+      "jovenes-embajadores": {
+        "title": "Young Roots Ambassadors",
+        "summary": "A youth leadership network with mentoring, scholarships and exchanges between nine countries of the two regions.",
+        "country": "Regional",
+        "body": [
+          "An annual cohort of young people receives training in leadership, project management and cultural identity.",
+          "Each participant designs and implements a community initiative with the support of mentors.",
+          "The network sustains monthly virtual exchanges and an annual in-person gathering that rotates between locations."
+        ],
+        "impact": [
+          "Ambassadors",
+          "Local initiatives",
+          "Countries"
+        ]
+      },
+      "ruta-del-reencuentro": {
+        "title": "Route of Reunion",
+        "summary": "A community and memory tourism itinerary connecting the diaspora with territories of origin.",
+        "country": "Equatorial Guinea",
+        "body": [
+          "The Route of Reunion designs responsible experiences that combine historical heritage, nature and shared time with host communities.",
+          "Local families receive training in sustainable hospitality and community income management.",
+          "The itinerary incorporates spaces of memory about transatlantic history with a focus on dignity."
+        ],
+        "impact": [
+          "Pilot routes",
+          "Host families",
+          "Guides trained"
+        ]
+      },
+      "mesa-de-cooperacion-sur-sur": {
+        "title": "South-South Cooperation Roundtable",
+        "summary": "A coordination space that produced seven cooperation agreements between organizations from both regions.",
+        "country": "Regional",
+        "body": [
+          "The Roundtable brought together organizations, local governments and academia to identify common priorities and cooperation opportunities.",
+          "The process led to knowledge transfer agreements in education, culture and the environment.",
+          "An open-access South-South cooperation roadmap for 2025–2027 was published."
+        ],
+        "impact": [
+          "Agreements signed",
+          "Organizations",
+          "Countries"
+        ]
+      }
+    },
+    "news": {
+      "encuentro-transatlantico-malabo-2026": {
+        "title": "Malabo to host the 2026 Transatlantic Roots Gathering",
+        "excerpt": "More than 200 representatives of culture, education and cooperation from nine countries will meet to weave the common Afro-Hispanic agenda.",
+        "body": [
+          "Raíces sin Fronteras announced that the city of Malabo will host the 2026 Transatlantic Roots Gathering, a space that will bring together organizations, artists, teachers and young leaders from Latin America and Equatorial Guinea.",
+          "Over three days, the delegations will work in thematic roundtables on culture, education, youth, the environment, cooperation and roots tourism, with the aim of consolidating a shared roadmap for the next three years.",
+          "The gathering will include a cultural showcase open to the public with music, gastronomy and heritage exhibitions, reaffirming that shared roots are also a living celebration."
+        ]
+      },
+      "ceiba-simbolo-de-identidad": {
+        "title": "The ceiba: why we chose this tree as a symbol of identity",
+        "excerpt": "Its deep roots and wide canopy tell the story of communities that grow together on both sides of the Atlantic.",
+        "body": [
+          "In many cultures across Africa and the Americas, the ceiba is a sacred tree: a meeting point, a refuge and the memory of communities. That is why it lies at the heart of our visual identity.",
+          "Its roots, which spread visibly across the ground, represent the bonds that sustain those who share a common origin even though an ocean separates them.",
+          "To embrace the ceiba is to recognize that our histories are intertwined and that the future is also built by caring for what gives us roots."
+        ]
+      },
+      "becas-juventud-2026-abiertas": {
+        "title": "Youth leadership scholarships for 2026 now open",
+        "excerpt": "Young people aged 18 to 28 from both regions can apply to the new cohort of Roots Ambassadors.",
+        "body": [
+          "The 2026 call for the Young Roots Ambassadors program is now open. We are looking for leaders committed to culture, education and sustainability.",
+          "Those selected receive training, mentoring and financial support to implement a community initiative in their territory.",
+          "Applications are accepted until the places per region are filled; we recommend applying early."
+        ]
+      },
+      "biblioteca-comunitaria-chota": {
+        "title": "A new community library blossoms in the Chota Valley",
+        "excerpt": "The Classrooms Without Borders project inaugurates its sixth reading space with connectivity and intercultural content.",
+        "body": [
+          "The Afro-Ecuadorian community of the Chota Valley now has a new library equipped with books, computers and internet access.",
+          "The space offers intergenerational reading clubs and digital literacy workshops with a gender equity focus.",
+          "With this opening, the Classrooms Without Borders project now has six active community libraries."
+        ]
+      },
+      "cooperacion-sur-sur-hoja-de-ruta": {
+        "title": "We publish the South-South cooperation roadmap for 2025–2027",
+        "excerpt": "An open-access document that guides the alliances between organizations in Latin America and Equatorial Guinea.",
+        "body": [
+          "After months of joint work, the South-South Cooperation Roundtable published its roadmap for the 2025–2027 period.",
+          "The document prioritizes knowledge transfer in education, culture and the environment, as well as the institutional strengthening of local organizations.",
+          "The material is openly available so that any organization can join the proposed initiatives."
+        ]
+      },
+      "reforestacion-bioko-supera-meta": {
+        "title": "Reforestation in Bioko surpasses the annual planting target",
+        "excerpt": "The Ceibas of Memory project reached 4,500 trees planted alongside 120 host families.",
+        "body": [
+          "The Ceibas of Memory project celebrated surpassing its annual planting target with 4,500 native trees planted on the island of Bioko.",
+          "Each tree was planted alongside a family that documented a community story tied to the territory.",
+          "The team plans to expand the community nurseries for the next planting season."
+        ]
+      }
+    },
+    "gallery": {
+      "g1": {
+        "title": "Drum gathering in Bata",
+        "event": "Drums That Cross the Atlantic",
+        "alt": "Percussionists playing traditional drums during a music residency in Bata."
+      },
+      "g2": {
+        "title": "Planting ceibas with families from Bioko",
+        "event": "Ceibas of Memory",
+        "alt": "Families planting young ceiba trees in a community nursery in Bioko."
+      },
+      "g3": {
+        "title": "Reading club in the Chota Valley",
+        "event": "Classrooms Without Borders",
+        "alt": "Children reading in a community library in the Chota Valley."
+      },
+      "g4": {
+        "title": "Youth leadership workshop",
+        "event": "Young Roots Ambassadors",
+        "alt": "Young people taking part in a leadership workshop around a worktable."
+      },
+      "g5": {
+        "title": "Tour along the Route of Reunion",
+        "event": "Route of Reunion",
+        "alt": "A group of travellers walking a coastal trail alongside community guides."
+      },
+      "g6": {
+        "title": "South-South cooperation roundtable",
+        "event": "South-South Cooperation Roundtable",
+        "alt": "Representatives of several organizations in dialogue at a cooperation table."
+      },
+      "g7": {
+        "title": "Showcase of shared textiles",
+        "event": "Heritage Festival",
+        "alt": "Exhibition of Latin American and Equatoguinean textiles hung in a courtyard."
+      },
+      "g8": {
+        "title": "School nursery of native species",
+        "event": "Ceibas of Memory",
+        "alt": "Students caring for seedlings in a school nursery of native species."
+      },
+      "g9": {
+        "title": "Closing educational concert",
+        "event": "Drums That Cross the Atlantic",
+        "alt": "Musicians giving an educational concert before an audience of students."
+      },
+      "g10": {
+        "title": "Digital literacy for girls",
+        "event": "Classrooms Without Borders",
+        "alt": "Girls learning to use computers in a digital literacy workshop."
+      },
+      "g11": {
+        "title": "Annual ambassadors gathering",
+        "event": "Young Roots Ambassadors",
+        "alt": "A large group of young ambassadors gathered at their annual meeting."
+      },
+      "g12": {
+        "title": "Host family welcoming travellers",
+        "event": "Route of Reunion",
+        "alt": "A host family welcoming travellers in front of their home."
+      }
+    },
+    "team": {
+      "AN": {
+        "role": "General Director",
+        "bio": "Cultural manager with 15 years of experience in international cooperation and heritage."
+      },
+      "MQ": {
+        "role": "Programs Coordinator",
+        "bio": "Specialist in community development and intercultural education in the Colombian Pacific."
+      },
+      "SO": {
+        "role": "Culture and Heritage",
+        "bio": "Ethnomusicologist dedicated to documenting oral and musical traditions."
+      },
+      "DA": {
+        "role": "Youth and Leadership",
+        "bio": "Popular educator and mentor of transatlantic youth networks."
+      },
+      "IE": {
+        "role": "Environment",
+        "bio": "Forestry engineer focused on restoration with native species and agroforestry."
+      },
+      "CM": {
+        "role": "Cooperation and Partnerships",
+        "bio": "Professional in institutional relations and South-South cooperation."
+      }
+    },
+    "values": [
+      {
+        "title": "Identity",
+        "description": "We recognize and celebrate Afro-Hispanic roots as a source of dignity, memory and belonging."
+      },
+      {
+        "title": "Cooperation",
+        "description": "We build in partnership: no community advances alone and every bond multiplies the impact."
+      },
+      {
+        "title": "Equity",
+        "description": "We prioritize those who have historically had less access to opportunities and to a voice."
+      },
+      {
+        "title": "Sustainability",
+        "description": "We care for the land and the knowledge that protects it, thinking of the next generations."
+      },
+      {
+        "title": "Transparency",
+        "description": "We account for our work with clarity: every contribution translates into verifiable results."
+      },
+      {
+        "title": "Hope",
+        "description": "We work from the conviction that a shared and just future is possible and is built today."
+      }
+    ],
+    "milestones": [
+      {
+        "title": "An idea with roots",
+        "description": "A group of cultural managers and educators from both shores imagine a platform for Afro-Hispanic encounter."
+      },
+      {
+        "title": "First projects",
+        "description": "The pilot culture and education initiatives begin in Equatorial Guinea, Colombia and Ecuador."
+      },
+      {
+        "title": "Transatlantic network",
+        "description": "The network of partner organizations consolidates and the Young Ambassadors program is born."
+      },
+      {
+        "title": "Six active programs",
+        "description": "The platform runs its six lines of work in nine countries, with thousands of people benefited."
+      }
+    ]
+  }
+}

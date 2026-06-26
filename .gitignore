@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Permitir la plantilla de variables (sin secretos)
 !.env.example
+
+# Claude Code local
+.claude/

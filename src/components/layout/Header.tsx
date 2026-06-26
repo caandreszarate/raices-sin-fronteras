@@ -1,27 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { mainNav } from "@/lib/site";
 import { Logo } from "@/components/ui/Logo";
 import { ButtonLink } from "@/components/ui/Button";
+import { LanguageSelector } from "@/components/layout/LanguageSelector";
 import { MenuIcon, CloseIcon, HeartIcon } from "@/components/icons";
 
 export function Header() {
+  const t = useTranslations("nav");
+  const tc = useTranslations("common");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Cierra el menú móvil al navegar (patrón "ajustar estado en render",
-  // recomendado por React en lugar de un efecto que llama a setState).
+  // Cierra el menú móvil al navegar (ajuste de estado en render).
   const [prevPath, setPrevPath] = useState(pathname);
   if (pathname !== prevPath) {
     setPrevPath(pathname);
     setOpen(false);
   }
 
-  // Bloquea scroll del body cuando el menú móvil está abierto.
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -29,7 +30,6 @@ export function Header() {
     };
   }, [open]);
 
-  // Sombra/fondo al hacer scroll.
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -37,7 +37,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Cierra con Escape.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
@@ -46,8 +45,7 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
     <header
@@ -59,12 +57,11 @@ export function Header() {
     >
       <nav
         className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
-        aria-label="Navegación principal"
+        aria-label={t("primaryNav")}
       >
         <Logo withTagline />
 
-        {/* Navegación de escritorio */}
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-1 xl:flex">
           {mainNav.map((item) => (
             <li key={item.href}>
               <Link
@@ -76,7 +73,7 @@ export function Header() {
                     : "text-verde-900/70 hover:text-verde-profundo"
                 }`}
               >
-                {item.label}
+                {t(item.key)}
                 {isActive(item.href) && (
                   <span className="absolute inset-x-3.5 -bottom-0.5 h-0.5 rounded-full bg-naranja" aria-hidden />
                 )}
@@ -85,33 +82,31 @@ export function Header() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-2 xl:flex">
+          <LanguageSelector />
           <ButtonLink href="/donar" variant="primary" size="sm">
             <HeartIcon className="h-4 w-4" />
-            Dona ahora
+            {tc("donateNow")}
           </ButtonLink>
         </div>
 
-        {/* Botón móvil */}
-        <button
-          type="button"
-          className="grid h-11 w-11 place-items-center rounded-full text-verde-profundo transition-colors hover:bg-verde-claro/60 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-2 xl:hidden">
+          <LanguageSelector />
+          <button
+            type="button"
+            className="grid h-11 w-11 place-items-center rounded-full text-verde-profundo transition-colors hover:bg-verde-claro/60 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? t("closeMenu") : t("openMenu")}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
-      {/* Menú móvil */}
       {open && (
-        <div
-          id="mobile-menu"
-          className="lg:hidden"
-          // Overlay accesible
-        >
+        <div id="mobile-menu" className="xl:hidden">
           <div className="border-t border-verde-profundo/10 bg-marfil px-4 pb-6 pt-2 sm:px-6">
             <ul className="flex flex-col gap-1">
               {mainNav.map((item) => (
@@ -125,14 +120,14 @@ export function Header() {
                         : "text-verde-900/80 hover:bg-verde-claro/50"
                     }`}
                   >
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 </li>
               ))}
             </ul>
             <ButtonLink href="/donar" variant="primary" size="lg" className="mt-4 w-full">
               <HeartIcon className="h-5 w-5" />
-              Dona ahora
+              {tc("donateNow")}
             </ButtonLink>
           </div>
         </div>

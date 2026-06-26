@@ -1,5 +1,6 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import type { Program } from "@/lib/types";
+import { Link } from "@/i18n/navigation";
 import { ArrowRightIcon } from "@/components/icons";
 import { CoverArt } from "@/components/ui/CoverArt";
 import { programImage } from "@/lib/images";
@@ -14,6 +15,7 @@ const accentText: Record<string, string> = {
 };
 
 export function ProgramCard({ program }: { program: Program }) {
+  const t = useTranslations("common");
   return (
     <Link
       href={`/programas#${program.slug}`}
@@ -39,7 +41,7 @@ export function ProgramCard({ program }: { program: Program }) {
             accentText[program.accent] ?? "text-verde-600"
           }`}
         >
-          Conocer programa
+          {t("knowProgram")}
           <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </span>
       </div>

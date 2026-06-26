@@ -1,28 +1,48 @@
 import type { Metadata } from "next";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section, Container } from "@/components/ui/Section";
 import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/ui/CTASection";
 import { ProgramIcon } from "@/components/icons";
-import { values, team, milestones } from "@/lib/data/org";
-import { regionLabels } from "@/lib/data/projects";
+import { getValues, getTeam, getMilestones } from "@/lib/content";
 import { cut } from "@/lib/images";
 
-export const metadata: Metadata = {
-  title: "Nosotros",
-  description:
-    "Historia, misión, visión y valores de Raíces sin Fronteras: una plataforma de cooperación afro-hispana entre América Latina y Guinea Ecuatorial.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about" });
+  return {
+    title: t("headerTitle"),
+    description: t("headerText"),
+  };
+}
 
-export default function NosotrosPage() {
+export default async function NosotrosPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations("about");
+  const tc = await getTranslations("common");
+  const values = await getValues(locale);
+  const team = await getTeam(locale);
+  const milestones = await getMilestones(locale);
+
   return (
     <>
       <PageHeader
-        eyebrow="Quiénes somos"
-        title="Una organización con raíces a ambos lados del Atlántico"
-        description="Trabajamos para que la historia compartida entre América Latina y Guinea Ecuatorial se convierta en cooperación viva, oportunidades y futuro común."
-        breadcrumbs={[{ label: "Nosotros" }]}
+        eyebrow={t("headerEyebrow")}
+        title={t("headerTitle")}
+        description={t("headerText")}
+        breadcrumbs={[{ label: t("breadcrumb") }]}
       />
 
       {/* Misión / Visión */}
@@ -30,22 +50,17 @@ export default function NosotrosPage() {
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             <article className="rounded-3xl border border-verde-profundo/10 bg-white/70 p-8 shadow-[var(--shadow-soft)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-naranja">Misión</p>
-              <h2 className="mt-3 text-2xl">Conectar para fortalecer raíces</h2>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-naranja">{t("mission")}</p>
+              <h2 className="mt-3 text-2xl">{t("missionTitle")}</h2>
               <p className="mt-3 text-pretty leading-relaxed text-verde-900/75">
-                Promovemos la cooperación cultural, educativa y social entre comunidades de América
-                Latina y Guinea Ecuatorial, fortaleciendo la identidad afro-hispana y generando
-                oportunidades dignas a través de programas sostenibles y liderados por las propias
-                comunidades.
+                {t("missionText")}
               </p>
             </article>
             <article className="rounded-3xl border border-verde-profundo/10 bg-white/70 p-8 shadow-[var(--shadow-soft)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-naranja">Visión</p>
-              <h2 className="mt-3 text-2xl">Un futuro compartido y justo</h2>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-naranja">{t("vision")}</p>
+              <h2 className="mt-3 text-2xl">{t("visionTitle")}</h2>
               <p className="mt-3 text-pretty leading-relaxed text-verde-900/75">
-                Aspiramos a una red transatlántica donde la cultura, la educación y la naturaleza
-                sean puentes de dignidad: comunidades que se reconocen en su origen común y construyen
-                juntas, con equidad y esperanza, las próximas generaciones.
+                {t("visionText")}
               </p>
             </article>
           </div>
@@ -57,9 +72,9 @@ export default function NosotrosPage() {
         <Container>
           <SectionHeading
             as="h2"
-            eyebrow="Nuestra historia"
-            title={<span id="historia-title">De una idea con raíces a una red transatlántica</span>}
-            description="Un recorrido construido paso a paso, junto a comunidades y organizaciones aliadas."
+            eyebrow={t("historyEyebrow")}
+            title={<span id="historia-title">{t("historyTitle")}</span>}
+            description={t("historyText")}
           />
           <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {milestones.map((m, i) => (
@@ -99,24 +114,13 @@ export default function NosotrosPage() {
             <div>
               <SectionHeading
                 as="h2"
-                eyebrow="El significado de la ceiba"
-                title={<span id="ceiba-title">El árbol que nos da raíz y nos da sombra</span>}
+                eyebrow={t("ceibaEyebrow")}
+                title={<span id="ceiba-title">{t("ceibaTitle")}</span>}
               />
               <div className="mt-5 space-y-4 text-pretty leading-relaxed text-verde-900/75">
-                <p>
-                  En numerosas culturas de África y América, la ceiba es un árbol sagrado: lugar de
-                  encuentro, símbolo de protección y memoria comunitaria. Por eso ocupa el corazón de
-                  nuestra identidad y de nuestro emblema.
-                </p>
-                <p>
-                  Sus raíces, visibles sobre la tierra, representan los lazos que unen a quienes
-                  comparten un mismo origen aunque los separe un océano. Su copa amplia recuerda que
-                  el futuro debe dar sombra y refugio a todas las personas.
-                </p>
-                <p>
-                  Reivindicar la ceiba es reconocer que nuestras historias están entrelazadas y que
-                  cuidar la raíz es también sembrar futuro.
-                </p>
+                <p>{t("ceibaP1")}</p>
+                <p>{t("ceibaP2")}</p>
+                <p>{t("ceibaP3")}</p>
               </div>
             </div>
           </div>
@@ -128,9 +132,9 @@ export default function NosotrosPage() {
         <Container>
           <SectionHeading
             as="h2"
-            eyebrow="Lo que nos guía"
-            title={<span id="valores-title">Nuestros valores</span>}
-            description="Principios que orientan cada decisión, programa y alianza."
+            eyebrow={t("valuesEyebrow")}
+            title={<span id="valores-title">{t("valuesTitle")}</span>}
+            description={t("valuesText")}
             align="center"
           />
           <ul className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -155,9 +159,9 @@ export default function NosotrosPage() {
         <Container>
           <SectionHeading
             as="h2"
-            eyebrow="Personas con propósito"
-            title={<span id="equipo-title">Nuestro equipo</span>}
-            description="Profesionales de ambas regiones que sostienen el trabajo cotidiano de la plataforma."
+            eyebrow={t("teamEyebrow")}
+            title={<span id="equipo-title">{t("teamTitle")}</span>}
+            description={t("teamText")}
           />
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((member) => (
@@ -174,7 +178,7 @@ export default function NosotrosPage() {
                 <div>
                   <h3 className="text-lg leading-tight">{member.name}</h3>
                   <p className="text-sm font-medium text-naranja">{member.role}</p>
-                  <p className="mt-0.5 text-xs text-verde-900/55">{regionLabels[member.region]}</p>
+                  <p className="mt-0.5 text-xs text-verde-900/55">{tc(`region.${member.region}`)}</p>
                   <p className="mt-2 text-sm leading-relaxed text-verde-900/70">{member.bio}</p>
                 </div>
               </li>
@@ -184,10 +188,10 @@ export default function NosotrosPage() {
       </Section>
 
       <CTASection
-        title="Construyamos juntos el siguiente capítulo"
-        description="Súmate como aliado, voluntario o donante. Cada vínculo fortalece la red que une a nuestras comunidades."
-        primary={{ href: "/contacto", label: "Quiero colaborar" }}
-        secondary={{ href: "/programas", label: "Ver programas" }}
+        title={t("ctaTitle")}
+        description={t("ctaText")}
+        primary={{ href: "/contacto", label: t("ctaPrimary") }}
+        secondary={{ href: "/programas", label: t("ctaSecondary") }}
       />
     </>
   );

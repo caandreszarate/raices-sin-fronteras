@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { HeartIcon, CheckIcon } from "@/components/icons";
 
 type Frequency = "unica" | "mensual";
@@ -10,19 +11,20 @@ const amounts: Record<Frequency, number[]> = {
   mensual: [10, 20, 40, 80],
 };
 
-const impactByAmount = (amount: number): string => {
-  if (amount >= 80) return "Apoya la formación mensual de un grupo de jóvenes embajadores.";
-  if (amount >= 40) return "Dota a una biblioteca comunitaria con nuevos libros interculturales.";
-  if (amount >= 20) return "Siembra y cuida varios árboles nativos junto a familias anfitrionas.";
-  return "Contribuye a materiales educativos para estudiantes de la red.";
-};
-
 export function DonationWidget() {
+  const t = useTranslations("donate.widget");
   const [frequency, setFrequency] = useState<Frequency>("mensual");
   const [amount, setAmount] = useState<number>(amounts.mensual[1]);
   const [custom, setCustom] = useState<string>("");
 
   const effectiveAmount = custom ? Math.max(0, Math.floor(Number(custom) || 0)) : amount;
+
+  const impactText = (a: number) => {
+    if (a >= 80) return t("impact.high");
+    if (a >= 40) return t("impact.mid");
+    if (a >= 20) return t("impact.low");
+    return t("impact.base");
+  };
 
   const handleFrequency = (f: Frequency) => {
     setFrequency(f);
@@ -32,16 +34,13 @@ export function DonationWidget() {
 
   return (
     <div className="rounded-3xl border border-verde-profundo/10 bg-white/80 p-6 shadow-[var(--shadow-soft)] sm:p-8">
-      <h2 className="text-2xl">Elige tu aporte</h2>
-      <p className="mt-2 text-sm text-verde-900/70">
-        Cada contribución se traduce en programas concretos. Tú decides cómo y cuánto apoyar.
-      </p>
+      <h2 className="text-2xl">{t("title")}</h2>
+      <p className="mt-2 text-sm text-verde-900/70">{t("text")}</p>
 
-      {/* Frecuencia */}
       <div
         className="mt-6 grid grid-cols-2 gap-2 rounded-full bg-verde-claro/60 p-1"
         role="group"
-        aria-label="Frecuencia de la donación"
+        aria-label={t("frequencyLabel")}
       >
         {(["mensual", "unica"] as Frequency[]).map((f) => (
           <button
@@ -53,14 +52,13 @@ export function DonationWidget() {
               frequency === f ? "bg-verde-profundo text-marfil shadow-sm" : "text-verde-900/70"
             }`}
           >
-            {f === "mensual" ? "Mensual" : "Única"}
+            {f === "mensual" ? t("monthly") : t("oneTime")}
           </button>
         ))}
       </div>
 
-      {/* Montos */}
       <fieldset className="mt-5">
-        <legend className="sr-only">Importe de la donación en euros</legend>
+        <legend className="sr-only">{t("amountLabel")}</legend>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {amounts[frequency].map((a) => {
             const active = !custom && amount === a;
@@ -86,7 +84,7 @@ export function DonationWidget() {
         </div>
 
         <label className="mt-3 block">
-          <span className="sr-only">Otro importe en euros</span>
+          <span className="sr-only">{t("otherAmount")}</span>
           <div className="flex items-center gap-2 rounded-xl border border-verde-profundo/15 bg-white px-4 py-2.5 focus-within:border-verde/50">
             <span className="text-verde-900/60">€</span>
             <input
@@ -95,27 +93,22 @@ export function DonationWidget() {
               inputMode="numeric"
               value={custom}
               onChange={(e) => setCustom(e.target.value)}
-              placeholder="Otro importe"
+              placeholder={t("otherAmount")}
               className="w-full bg-transparent text-verde-900 placeholder:text-verde-900/40 focus:outline-none"
             />
-            <span className="text-sm text-verde-900/50">
-              {frequency === "mensual" ? "/mes" : "única"}
-            </span>
+            <span className="text-sm text-verde-900/50">{frequency === "mensual" ? t("perMonth") : t("once")}</span>
           </div>
         </label>
       </fieldset>
 
-      {/* Impacto dinámico */}
       <p className="mt-5 flex items-start gap-2 rounded-xl bg-verde-claro/50 p-4 text-sm text-verde-900/80">
         <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-verde-600" />
         <span>
-          <strong className="font-semibold text-verde-profundo">{effectiveAmount}€ </strong>
-          {frequency === "mensual" ? "al mes: " : ": "}
-          {impactByAmount(effectiveAmount)}
+          <strong className="font-semibold text-verde-profundo">{effectiveAmount}€</strong>
+          {frequency === "mensual" ? ` ${t("monthlySuffix")}` : ""}: {impactText(effectiveAmount)}
         </span>
       </p>
 
-      {/* CTA — preparado para integrar pasarela de pago */}
       <form action="/api/donaciones/checkout" method="post" className="mt-6">
         <input type="hidden" name="amount" value={effectiveAmount} />
         <input type="hidden" name="frequency" value={frequency} />
@@ -125,13 +118,12 @@ export function DonationWidget() {
           className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-naranja px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-naranja-600 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-dorado disabled:cursor-not-allowed disabled:opacity-60"
         >
           <HeartIcon className="h-5 w-5" />
-          Donar {effectiveAmount}€ {frequency === "mensual" ? "al mes" : ""}
+          {frequency === "mensual"
+            ? t("donateAmountMonthly", { amount: effectiveAmount })
+            : t("donateAmount", { amount: effectiveAmount })}
         </button>
       </form>
-      <p className="mt-3 text-center text-xs text-verde-900/55">
-        Pago seguro. La pasarela (Stripe, Redsys u otra) se configura mediante variables de entorno
-        del servidor; ninguna clave se expone en el navegador.
-      </p>
+      <p className="mt-3 text-center text-xs text-verde-900/55">{t("secureNote")}</p>
     </div>
   );
 }

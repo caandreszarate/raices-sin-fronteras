@@ -2,13 +2,18 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 import { projects } from "@/lib/data/projects";
 import { news } from "@/lib/data/news";
+import { routing } from "@/i18n/routing";
+
+/** URL con prefijo de idioma (es sin prefijo, resto con prefijo). */
+function localized(path: string, locale: string): string {
+  const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+  return `${siteConfig.url}${prefix}${path === "/" ? "" : path}` || siteConfig.url;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = siteConfig.url;
   const now = new Date();
-
-  const staticRoutes = [
-    "",
+  const staticPaths = [
+    "/",
     "/nosotros",
     "/programas",
     "/proyectos",
@@ -17,26 +22,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contacto",
     "/donar",
     "/privacidad",
-  ].map((path) => ({
-    url: `${base}${path}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: path === "" ? 1 : 0.8,
-  }));
+  ];
 
-  const projectRoutes = projects.map((p) => ({
-    url: `${base}/proyectos/${p.slug}`,
-    lastModified: new Date(p.startDate),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  const entries: MetadataRoute.Sitemap = [];
 
-  const newsRoutes = news.map((n) => ({
-    url: `${base}/noticias/${n.slug}`,
-    lastModified: new Date(n.publishedAt),
-    changeFrequency: "weekly" as const,
-    priority: 0.6,
-  }));
+  for (const locale of routing.locales) {
+    for (const path of staticPaths) {
+      entries.push({
+        url: localized(path, locale),
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: path === "/" ? 1 : 0.8,
+      });
+    }
+    for (const p of projects) {
+      entries.push({
+        url: localized(`/proyectos/${p.slug}`, locale),
+        lastModified: new Date(p.startDate),
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+    for (const n of news) {
+      entries.push({
+        url: localized(`/noticias/${n.slug}`, locale),
+        lastModified: new Date(n.publishedAt),
+        changeFrequency: "weekly",
+        priority: 0.6,
+      });
+    }
+  }
 
-  return [...staticRoutes, ...projectRoutes, ...newsRoutes];
+  return entries;
 }

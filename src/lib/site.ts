@@ -29,39 +29,36 @@ export const siteConfig = {
   ],
 } as const;
 
-export type NavItem = {
-  label: string;
-  href: string;
-  description?: string;
-};
+/** Elementos de navegación: `key` resuelve la etiqueta vía i18n (namespace nav). */
+export type NavItem = { key: string; href: string };
 
 export const mainNav: NavItem[] = [
-  { label: "Inicio", href: "/" },
-  { label: "Nosotros", href: "/nosotros" },
-  { label: "Programas", href: "/programas" },
-  { label: "Proyectos", href: "/proyectos" },
-  { label: "Noticias", href: "/noticias" },
-  { label: "Galería", href: "/galeria" },
-  { label: "Contacto", href: "/contacto" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/nosotros" },
+  { key: "programs", href: "/programas" },
+  { key: "projects", href: "/proyectos" },
+  { key: "news", href: "/noticias" },
+  { key: "gallery", href: "/galeria" },
+  { key: "contact", href: "/contacto" },
 ];
 
-export const footerNav: { title: string; items: NavItem[] }[] = [
+export const footerNav: { titleKey: "colOrg" | "colParticipate"; items: NavItem[] }[] = [
   {
-    title: "Organización",
+    titleKey: "colOrg",
     items: [
-      { label: "Quiénes somos", href: "/nosotros" },
-      { label: "Programas", href: "/programas" },
-      { label: "Proyectos", href: "/proyectos" },
-      { label: "Noticias", href: "/noticias" },
+      { key: "about", href: "/nosotros" },
+      { key: "programs", href: "/programas" },
+      { key: "projects", href: "/proyectos" },
+      { key: "news", href: "/noticias" },
     ],
   },
   {
-    title: "Participa",
+    titleKey: "colParticipate",
     items: [
-      { label: "Dona ahora", href: "/donar" },
-      { label: "Galería", href: "/galeria" },
-      { label: "Contacto", href: "/contacto" },
-      { label: "Voluntariado", href: "/contacto?asunto=voluntariado" },
+      { key: "donate", href: "/donar" },
+      { key: "gallery", href: "/galeria" },
+      { key: "contact", href: "/contacto" },
+      { key: "volunteer", href: "/contacto?asunto=voluntariado" },
     ],
   },
 ];

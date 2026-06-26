@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { ButtonLink } from "@/components/ui/Button";
 import { ArrowRightIcon, HeartIcon } from "@/components/icons";
 import { cut } from "@/lib/images";
@@ -10,6 +11,8 @@ import { cut } from "@/lib/images";
  * (las dos orillas que se encuentran), arco dorado, ruta animada y cinta kente.
  */
 export function Hero() {
+  const t = useTranslations("hero");
+  const tc = useTranslations("common");
   return (
     <section className="relative isolate grid overflow-hidden lg:grid-cols-[1.05fr_0.95fr] lg:min-h-[clamp(620px,90vh,860px)]">
       {/* ───────── Panel de texto (oscuro) ───────── */}
@@ -29,29 +32,28 @@ export function Hero() {
         <div className="relative z-10 mx-auto w-full max-w-xl animate-fade-up lg:mx-0">
           <span className="inline-flex items-center gap-2.5 rounded-full border border-dorado/40 bg-verde-900/40 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-dorado">
             <span className="h-1.5 w-1.5 rounded-full bg-naranja" aria-hidden />
-            América Latina · Guinea Ecuatorial
+            {t("eyebrow")}
           </span>
 
           <h1 className="mt-6 font-serif text-marfil">
             <span className="block text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
-              Conectamos
+              {t("title1")}
             </span>
             <span className="block text-5xl font-semibold leading-[0.95] sm:text-6xl lg:text-7xl">
-              orígenes,
+              {t("title2")}
             </span>
             <span className="mt-2 block font-script text-4xl leading-tight text-naranja sm:text-5xl lg:text-6xl">
-              construimos futuros
+              {t("titleScript")}
             </span>
           </h1>
 
           <p className="mt-7 max-w-md text-pretty text-lg leading-relaxed text-verde-claro/90">
-            Un puente vivo de cooperación afro-hispana que une dos orillas del Atlántico para
-            fortalecer la cultura, la educación y la tierra que compartimos.
+            {t("subtitle")}
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/nosotros" variant="primary" size="lg">
-              Conócenos
+              {tc("knowUs")}
               <ArrowRightIcon className="h-5 w-5" />
             </ButtonLink>
             <ButtonLink
@@ -61,7 +63,7 @@ export function Hero() {
               className="border-marfil/40 text-marfil hover:border-marfil hover:bg-marfil/10"
             >
               <HeartIcon className="h-5 w-5" />
-              Dona ahora
+              {tc("donateNow")}
             </ButtonLink>
           </div>
 
@@ -69,7 +71,7 @@ export function Hero() {
           <div className="mt-10 flex items-center gap-3 border-t border-marfil/15 pt-6 text-xs font-semibold uppercase tracking-wider text-verde-claro/80">
             <span className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-naranja" aria-hidden />
-              América Latina
+              {t("shoreLatam")}
             </span>
             <svg className="h-3 w-16 shrink-0" viewBox="0 0 80 12" fill="none" aria-hidden>
               <path
@@ -82,7 +84,7 @@ export function Hero() {
               />
             </svg>
             <span className="flex items-center gap-2">
-              Guinea Ecuatorial
+              {t("shoreGuinea")}
               <span className="h-2 w-2 rounded-full bg-verde-500" aria-hidden />
             </span>
           </div>
@@ -125,7 +127,7 @@ export function Hero() {
           </div>
           {/* sello dorado */}
           <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 rounded-full border border-dorado/60 bg-verde-profundo px-3 py-0.5 text-[0.6rem] font-bold uppercase tracking-[0.15em] text-dorado">
-            Dos orillas
+            {t("twoShores")}
           </span>
         </div>
       </div>

@@ -1,0 +1,387 @@
+{
+  "meta": {
+    "tagline": "Conectamos orígenes, construimos futuros",
+    "description": "Plataforma de cooperación afro-hispana que conecta América Latina y Guinea Ecuatorial para fortalecer raíces culturales, educación, juventud, medio ambiente, cooperación y turismo de raíces."
+  },
+  "common": {
+    "skipToContent": "Saltar al contenido principal",
+    "knowUs": "Conócenos",
+    "donateNow": "Dona ahora",
+    "contactUs": "Contáctanos",
+    "ourPrograms": "Nuestros programas",
+    "viewAll": "Ver todos",
+    "knowProgram": "Conocer programa",
+    "loading": "Cargando…",
+    "regions": "América Latina y Guinea Ecuatorial",
+    "region": {
+      "America Latina": "América Latina",
+      "Guinea Ecuatorial": "Guinea Ecuatorial",
+      "Transatlantico": "Transatlántico"
+    }
+  },
+  "programTitles": {
+    "cultura": "Cultura",
+    "juventud": "Juventud",
+    "educacion": "Educación",
+    "medio-ambiente": "Medio Ambiente",
+    "cooperacion": "Cooperación",
+    "turismo-de-raices": "Turismo de Raíces"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "programs": "Programas",
+    "projects": "Proyectos",
+    "news": "Noticias",
+    "gallery": "Galería",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "primaryNav": "Navegación principal"
+  },
+  "langSelector": {
+    "label": "Idioma",
+    "choose": "Elegir idioma"
+  },
+  "hero": {
+    "eyebrow": "América Latina · Guinea Ecuatorial",
+    "title1": "Conectamos",
+    "title2": "orígenes,",
+    "titleScript": "construimos futuros",
+    "subtitle": "Un puente vivo de cooperación afro-hispana que une dos orillas del Atlántico para fortalecer la cultura, la educación y la tierra que compartimos.",
+    "twoShores": "Dos orillas",
+    "shoreLatam": "América Latina",
+    "shoreGuinea": "Guinea Ecuatorial"
+  },
+  "home": {
+    "missionEyebrow": "Una ruta viva entre dos orillas",
+    "missionTitle": "Cultura, educación y cooperación para comunidades con raíces compartidas",
+    "missionText": "Raíces sin Fronteras nace del convencimiento de que la historia que une a América Latina y Guinea Ecuatorial es también un mapa de futuro. Trabajamos junto a comunidades para que esas raíces se traduzcan en oportunidades reales: aulas, bosques, liderazgos jóvenes y encuentros culturales.",
+    "ourHistory": "Nuestra historia",
+    "shoresCaption": "Una misma raíz, dos orillas del Atlántico.",
+    "shoreLatamNote": "Catedrales, Andes y memoria",
+    "shoreGuineaNote": "Costa, palmeras y herencia",
+    "ceibaTitle": "La ceiba, nuestro símbolo",
+    "ceibaText": "Árbol sagrado a ambos lados del Atlántico, la ceiba hunde raíces profundas y abre una copa que cobija. Como ella, creemos en vínculos que sostienen y en un futuro que da sombra a todas las generaciones.",
+    "ceibaLink": "Por qué la elegimos",
+    "programsEyebrow": "Seis líneas de trabajo",
+    "programsTitle": "Nuestros programas",
+    "programsText": "Cada programa responde a una necesidad concreta de las comunidades y se nutre del intercambio entre las dos regiones.",
+    "projectsEyebrow": "En el territorio",
+    "projectsTitle": "Proyectos destacados",
+    "projectsText": "Iniciativas en marcha que muestran cómo las raíces compartidas se convierten en resultados concretos.",
+    "allProjects": "Todos los proyectos",
+    "newsEyebrow": "Lo más reciente",
+    "newsTitle": "Noticias y voces",
+    "newsText": "Historias, convocatorias y avances de nuestra comunidad transatlántica.",
+    "allNews": "Todas las noticias",
+    "galleryEyebrow": "Memoria viva",
+    "galleryTitle": "Galería",
+    "galleryText": "Momentos de encuentro, siembra, aprendizaje y celebración.",
+    "allGallery": "Ver galería completa",
+    "stats": { "countries": "Países", "programs": "Programas", "reached": "Personas alcanzadas" }
+  },
+  "cta": {
+    "title": "Sumemos raíces, multipliquemos futuros",
+    "description": "Tu apoyo sostiene programas de cultura, educación, juventud y medio ambiente entre América Latina y Guinea Ecuatorial. Cada aporte se convierte en oportunidades reales."
+  },
+  "footer": {
+    "colOrg": "Organización",
+    "colParticipate": "Participa",
+    "stayClose": "Mantente cerca",
+    "newsletterTitle": "Boletín de raíces",
+    "follow": "Síguenos",
+    "email": "Correo electrónico",
+    "press": "Prensa",
+    "phone": "Teléfono",
+    "where": "Dónde estamos",
+    "rights": "Hecho con raíces compartidas entre {regions}.",
+    "privacy": "Privacidad",
+    "links": {
+      "about": "Quiénes somos",
+      "programs": "Programas",
+      "projects": "Proyectos",
+      "news": "Noticias",
+      "donate": "Dona ahora",
+      "gallery": "Galería",
+      "contact": "Contacto",
+      "volunteer": "Voluntariado"
+    }
+  },
+  "newsletter": {
+    "label": "Correo electrónico para el boletín",
+    "placeholder": "tu@correo.com",
+    "submit": "Suscribirme al boletín",
+    "noFill": "No rellenar",
+    "success": "¡Listo! Te avisaremos de cada novedad.",
+    "error": "Introduce un correo válido."
+  },
+  "contactForm": {
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@correo.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Selecciona un asunto",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntanos en qué te gustaría colaborar o qué necesitas…",
+    "consent": "Acepto la política de privacidad y el tratamiento de mis datos para responder a esta consulta.",
+    "submit": "Enviar mensaje",
+    "sending": "Enviando…",
+    "errorGeneral": "Revisa los campos marcados e inténtalo de nuevo.",
+    "errorRate": "Has enviado varios mensajes muy seguidos. Inténtalo de nuevo en un minuto.",
+    "checkField": "Revisa este campo.",
+    "successTitle": "¡Mensaje enviado!",
+    "successText": "¡Gracias por escribirnos! Te responderemos lo antes posible.",
+    "requiredNote": "Los campos marcados con * son obligatorios. Nunca compartiremos tus datos con terceros.",
+    "noFill": "No rellenar este campo",
+    "subjects": {
+      "general": "Consulta general",
+      "voluntariado": "Voluntariado",
+      "alianzas": "Alianzas y cooperación",
+      "prensa": "Prensa y medios",
+      "donaciones": "Donaciones"
+    }
+  },
+  "about": {
+    "headerEyebrow": "Quiénes somos",
+    "headerTitle": "Una organización con raíces a ambos lados del Atlántico",
+    "headerText": "Trabajamos para que la historia compartida entre América Latina y Guinea Ecuatorial se convierta en cooperación viva, oportunidades y futuro común.",
+    "breadcrumb": "Nosotros",
+    "mission": "Misión",
+    "missionTitle": "Conectar para fortalecer raíces",
+    "missionText": "Promovemos la cooperación cultural, educativa y social entre comunidades de América Latina y Guinea Ecuatorial, fortaleciendo la identidad afro-hispana y generando oportunidades dignas a través de programas sostenibles y liderados por las propias comunidades.",
+    "vision": "Visión",
+    "visionTitle": "Un futuro compartido y justo",
+    "visionText": "Aspiramos a una red transatlántica donde la cultura, la educación y la naturaleza sean puentes de dignidad: comunidades que se reconocen en su origen común y construyen juntas, con equidad y esperanza, las próximas generaciones.",
+    "historyEyebrow": "Nuestra historia",
+    "historyTitle": "De una idea con raíces a una red transatlántica",
+    "historyText": "Un recorrido construido paso a paso, junto a comunidades y organizaciones aliadas.",
+    "ceibaEyebrow": "El significado de la ceiba",
+    "ceibaTitle": "El árbol que nos da raíz y nos da sombra",
+    "ceibaP1": "En numerosas culturas de África y América, la ceiba es un árbol sagrado: lugar de encuentro, símbolo de protección y memoria comunitaria. Por eso ocupa el corazón de nuestra identidad y de nuestro emblema.",
+    "ceibaP2": "Sus raíces, visibles sobre la tierra, representan los lazos que unen a quienes comparten un mismo origen aunque los separe un océano. Su copa amplia recuerda que el futuro debe dar sombra y refugio a todas las personas.",
+    "ceibaP3": "Reivindicar la ceiba es reconocer que nuestras historias están entrelazadas y que cuidar la raíz es también sembrar futuro.",
+    "valuesEyebrow": "Lo que nos guía",
+    "valuesTitle": "Nuestros valores",
+    "valuesText": "Principios que orientan cada decisión, programa y alianza.",
+    "teamEyebrow": "Personas con propósito",
+    "teamTitle": "Nuestro equipo",
+    "teamText": "Profesionales de ambas regiones que sostienen el trabajo cotidiano de la plataforma.",
+    "ctaTitle": "Construyamos juntos el siguiente capítulo",
+    "ctaText": "Súmate como aliado, voluntario o donante. Cada vínculo fortalece la red que une a nuestras comunidades.",
+    "ctaPrimary": "Quiero colaborar",
+    "ctaSecondary": "Ver programas"
+  },
+  "programs": {
+    "headerEyebrow": "Qué hacemos",
+    "headerTitle": "Seis programas, una misma raíz",
+    "headerText": "Cada línea de trabajo nace de las necesidades de las comunidades y se fortalece con el intercambio entre América Latina y Guinea Ecuatorial.",
+    "breadcrumb": "Programas",
+    "goals": "Objetivos",
+    "relatedProjects": "Proyectos relacionados",
+    "moreProjects": "Ver más proyectos",
+    "ctaTitle": "¿Tu organización quiere sumar un programa?",
+    "ctaText": "Diseñamos iniciativas conjuntas con comunidades, instituciones y aliados. Hablemos de cómo colaborar.",
+    "ctaPrimary": "Proponer una alianza",
+    "ctaSecondary": "Ver proyectos"
+  },
+  "projects": {
+    "headerEyebrow": "En el territorio",
+    "headerTitle": "Proyectos que echan raíces",
+    "headerText": "Iniciativas reales, lideradas por comunidades de ambas regiones. Filtra por programa, región o estado para encontrar lo que te interesa.",
+    "breadcrumb": "Proyectos",
+    "filtersLabel": "Filtros de proyectos",
+    "program": "Programa",
+    "regionFilter": "Región",
+    "statusFilter": "Estado",
+    "sort": "Orden",
+    "all": "Todos",
+    "allF": "Todas",
+    "sortRecent": "Más recientes",
+    "sortOldest": "Más antiguos",
+    "clear": "Limpiar",
+    "countOne": "{count} proyecto",
+    "countOther": "{count} proyectos",
+    "emptyTitle": "No encontramos proyectos con estos filtros",
+    "emptyCta": "Ver todos los proyectos",
+    "viewProject": "Ver proyecto: {title}",
+    "coverAlt": "Portada del proyecto {title}",
+    "imageAlt": "Imagen del proyecto {title}",
+    "card": "Ficha del proyecto",
+    "country": "País",
+    "regionLabel": "Región",
+    "start": "Inicio",
+    "statusLabel": "Estado",
+    "impact": "Impacto",
+    "partners": "Aliados",
+    "moreIn": "Más en {program}",
+    "status": {
+      "activo": "Activo",
+      "en-curso": "En curso",
+      "finalizado": "Finalizado",
+      "proximamente": "Próximamente"
+    }
+  },
+  "news": {
+    "headerEyebrow": "Sala de prensa",
+    "headerTitle": "Noticias y voces de la red",
+    "headerText": "Lo que ocurre en nuestras comunidades: convocatorias, encuentros, aprendizajes y resultados.",
+    "breadcrumb": "Noticias",
+    "search": "Buscar noticias",
+    "searchPlaceholder": "Buscar noticias…",
+    "filterByCategory": "Filtrar por categoría",
+    "allCategories": "Todas",
+    "minutes": "{min} min",
+    "readingTime": "{min} min de lectura",
+    "countOne": "{count} artículo",
+    "countOther": "{count} artículos",
+    "emptyTitle": "Sin resultados",
+    "emptyText": "No encontramos noticias para «{query}». Prueba con otras palabras.",
+    "readNews": "Leer noticia: {title}",
+    "imageAlt": "Imagen de la noticia {title}",
+    "keepReading": "Sigue leyendo",
+    "allNews": "Todas las noticias",
+    "ctaTitle": "Recibe las novedades en tu correo",
+    "ctaText": "Suscríbete al boletín de raíces y entérate primero de convocatorias, eventos y resultados.",
+    "ctaPrimary": "Escríbenos",
+    "ctaSecondary": "Apóyanos",
+    "categories": {
+      "Institucional": "Institucional",
+      "Cultura": "Cultura",
+      "Educación": "Educación",
+      "Juventud": "Juventud",
+      "Medio Ambiente": "Medio Ambiente",
+      "Cooperación": "Cooperación"
+    }
+  },
+  "gallery": {
+    "headerEyebrow": "Memoria viva",
+    "headerTitle": "Galería de encuentros y raíces",
+    "headerText": "Imágenes que cuentan el trabajo cotidiano de nuestras comunidades a ambos lados del Atlántico.",
+    "breadcrumb": "Galería",
+    "filtersLabel": "Filtros de galería",
+    "program": "Programa",
+    "allPrograms": "Todos los programas",
+    "country": "País",
+    "allCountries": "Todos los países",
+    "year": "Año",
+    "allYears": "Todos los años",
+    "clear": "Limpiar filtros",
+    "countOne": "{count} imagen",
+    "countOther": "{count} imágenes",
+    "emptyTitle": "No hay imágenes con estos filtros",
+    "emptyText": "Prueba con otra combinación o limpia los filtros.",
+    "emptyCta": "Ver toda la galería",
+    "ctaTitle": "¿Quieres aparecer en esta historia?",
+    "ctaText": "Súmate como voluntario, aliado o donante y sé parte de los próximos encuentros.",
+    "ctaPrimary": "Dona ahora",
+    "ctaSecondary": "Ser voluntario"
+  },
+  "contact": {
+    "headerEyebrow": "Hablemos",
+    "headerTitle": "Contáctanos",
+    "headerText": "Cada gran proyecto empieza con una conversación. Cuéntanos cómo te gustaría sumar raíces.",
+    "breadcrumb": "Contacto",
+    "dataTitle": "Datos de contacto",
+    "dataText": "Atendemos consultas de comunidades, organizaciones, prensa y personas que quieren colaborar. Te responderemos lo antes posible.",
+    "hours": "Horario de atención",
+    "follow": "Síguenos",
+    "mapTitle": "Mapa de ubicación de Raíces sin Fronteras en Malabo",
+    "writeTitle": "Escríbenos",
+    "writeText": "Completa el formulario y nos pondremos en contacto contigo."
+  },
+  "donate": {
+    "headerEyebrow": "Tu apoyo cuenta",
+    "headerTitle": "Sembremos futuro, juntos",
+    "headerText": "Donar a Raíces sin Fronteras es invertir en comunidades que crecen con identidad, educación y esperanza a ambos lados del Atlántico.",
+    "breadcrumb": "Donar",
+    "whyTitle": "Por qué tu donación importa",
+    "whyText": "Trabajamos con recursos que se multiplican en el territorio: una pequeña aportación se convierte en libros, árboles, talleres y oportunidades para jóvenes. Tu apoyo sostiene programas que, de otra forma, no llegarían a quienes más los necesitan.",
+    "drives": "Tu aporte impulsa",
+    "transparencyTitle": "Transparencia y confianza",
+    "transparency": [
+      "Cada donación se destina a programas con resultados verificables.",
+      "Publicamos informes periódicos de uso de fondos.",
+      "Priorizamos compras y contrataciones locales en las comunidades.",
+      "Puedes elegir un aporte único o mensual y cancelarlo cuando quieras."
+    ],
+    "otherWaysTitle": "Otras formas de apoyar",
+    "otherWays": [
+      "Donaciones de empresas y patrocinios.",
+      "Voluntariado profesional y mentorías.",
+      "Alianzas institucionales y cooperación."
+    ],
+    "talkToTeam": "Habla con nuestro equipo →",
+    "widget": {
+      "title": "Elige tu aporte",
+      "text": "Cada contribución se traduce en programas concretos. Tú decides cómo y cuánto apoyar.",
+      "frequencyLabel": "Frecuencia de la donación",
+      "monthly": "Mensual",
+      "oneTime": "Única",
+      "amountLabel": "Importe de la donación en euros",
+      "otherAmount": "Otro importe",
+      "perMonth": "/mes",
+      "once": "única",
+      "monthlySuffix": "al mes",
+      "donateAmount": "Donar {amount}€",
+      "donateAmountMonthly": "Donar {amount}€ al mes",
+      "secureNote": "Pago seguro. La pasarela (Stripe, Redsys u otra) se configura mediante variables de entorno del servidor; ninguna clave se expone en el navegador.",
+      "impact": {
+        "high": "Apoya la formación mensual de un grupo de jóvenes embajadores.",
+        "mid": "Dota a una biblioteca comunitaria con nuevos libros interculturales.",
+        "low": "Siembra y cuida varios árboles nativos junto a familias anfitrionas.",
+        "base": "Contribuye a materiales educativos para estudiantes de la red.",
+        "perMonthPrefix": "{amount}€ al mes: ",
+        "oncePrefix": "{amount}€: "
+      }
+    }
+  },
+  "privacy": {
+    "headerEyebrow": "Tu confianza",
+    "headerTitle": "Política de privacidad",
+    "headerText": "Tratamos tus datos con respeto, transparencia y la mínima recolección posible.",
+    "breadcrumb": "Privacidad",
+    "disclaimer": "Este texto es una plantilla orientativa y debe revisarse con asesoría legal antes de su publicación definitiva, adaptándola a la normativa aplicable (p. ej. RGPD).",
+    "sections": [
+      {
+        "h": "Responsable del tratamiento",
+        "p": "Raíces sin Fronteras es responsable de los datos que nos facilitas a través de este sitio. Para cualquier consulta, escríbenos a hola@raicessinfronteras.org."
+      },
+      {
+        "h": "Qué datos recogemos",
+        "p": "Únicamente los datos que nos proporcionas voluntariamente en el formulario de contacto (nombre, correo, asunto y mensaje) y en la suscripción al boletín (correo electrónico)."
+      },
+      {
+        "h": "Con qué finalidad",
+        "p": "Usamos tus datos exclusivamente para responder a tu consulta, gestionar tu colaboración o enviarte el boletín si lo solicitas. No los usamos para perfilado ni decisiones automatizadas."
+      },
+      {
+        "h": "Base legal",
+        "p": "El tratamiento se basa en tu consentimiento explícito, que otorgas al marcar la casilla correspondiente y enviar el formulario."
+      },
+      {
+        "h": "Conservación",
+        "p": "Conservamos tus datos el tiempo necesario para atender tu solicitud o hasta que retires tu consentimiento o solicites la baja del boletín."
+      },
+      {
+        "h": "No compartimos tus datos",
+        "p": "No cedemos ni vendemos tus datos a terceros. Solo accederán a ellos los proveedores tecnológicos estrictamente necesarios para operar el sitio, bajo acuerdos de confidencialidad."
+      },
+      {
+        "h": "Tus derechos",
+        "p": "Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a hola@raicessinfronteras.org."
+      },
+      {
+        "h": "Seguridad",
+        "p": "Aplicamos medidas técnicas y organizativas (validación en servidor, cifrado en tránsito, cabeceras de seguridad y control de acceso) para proteger tu información."
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Esta raíz no encontró su camino",
+    "text": "La página que buscas no existe o ha cambiado de lugar. Volvamos a tierra firme.",
+    "home": "Ir al inicio",
+    "contact": "Contáctanos"
+  }
+}

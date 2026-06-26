@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
 import type { GalleryItem } from "@/lib/types";
 import { programs } from "@/lib/data/programs";
 import { CoverArt } from "@/components/ui/CoverArt";
@@ -15,6 +16,8 @@ export function GalleryGrid({
   countries: string[];
   years: number[];
 }) {
+  const t = useTranslations("gallery");
+  const tprog = useTranslations("programTitles");
   const [program, setProgram] = useState<string>("todos");
   const [country, setCountry] = useState<string>("todos");
   const [year, setYear] = useState<string>("todos");
@@ -41,21 +44,20 @@ export function GalleryGrid({
 
   return (
     <div>
-      {/* Filtros */}
-      <div className="flex flex-wrap items-end gap-3" role="group" aria-label="Filtros de galería">
-        <Field label="Programa">
+      <div className="flex flex-wrap items-end gap-3" role="group" aria-label={t("filtersLabel")}>
+        <Field label={t("program")}>
           <select value={program} onChange={(e) => setProgram(e.target.value)} className={selectClass}>
-            <option value="todos">Todos los programas</option>
+            <option value="todos">{t("allPrograms")}</option>
             {programs.map((p) => (
               <option key={p.slug} value={p.slug}>
-                {p.title}
+                {tprog(p.slug)}
               </option>
             ))}
           </select>
         </Field>
-        <Field label="País">
+        <Field label={t("country")}>
           <select value={country} onChange={(e) => setCountry(e.target.value)} className={selectClass}>
-            <option value="todos">Todos los países</option>
+            <option value="todos">{t("allCountries")}</option>
             {countries.map((c) => (
               <option key={c} value={c}>
                 {c}
@@ -63,9 +65,9 @@ export function GalleryGrid({
             ))}
           </select>
         </Field>
-        <Field label="Año">
+        <Field label={t("year")}>
           <select value={year} onChange={(e) => setYear(e.target.value)} className={selectClass}>
-            <option value="todos">Todos los años</option>
+            <option value="todos">{t("allYears")}</option>
             {years.map((y) => (
               <option key={y} value={String(y)}>
                 {y}
@@ -78,15 +80,14 @@ export function GalleryGrid({
           onClick={reset}
           className="rounded-full px-4 py-2 text-sm font-medium text-verde-700 underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
         >
-          Limpiar filtros
+          {t("clear")}
         </button>
       </div>
 
       <p className="mt-4 text-sm text-verde-900/60" aria-live="polite">
-        {filtered.length} {filtered.length === 1 ? "imagen" : "imágenes"}
+        {filtered.length === 1 ? t("countOne", { count: 1 }) : t("countOther", { count: filtered.length })}
       </p>
 
-      {/* Grid */}
       {filtered.length > 0 ? (
         <ul className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {filtered.map((item) => (
@@ -94,13 +95,7 @@ export function GalleryGrid({
               key={item.id}
               className="group overflow-hidden rounded-2xl border border-verde-profundo/10 bg-white/60 shadow-[var(--shadow-soft)]"
             >
-              <CoverArt
-                tone={item.tone}
-                src={programImage[item.program]}
-                label={item.alt}
-                icon={item.program}
-                ratio="aspect-square"
-              />
+              <CoverArt tone={item.tone} src={programImage[item.program]} label={item.alt} icon={item.program} ratio="aspect-square" />
               <div className="p-3">
                 <p className="text-sm font-semibold text-verde-profundo">{item.title}</p>
                 <p className="mt-0.5 text-xs text-verde-900/60">
@@ -112,16 +107,14 @@ export function GalleryGrid({
         </ul>
       ) : (
         <div className="mt-8 rounded-2xl border border-dashed border-verde-profundo/20 bg-white/50 p-10 text-center">
-          <p className="font-medium text-verde-profundo">No hay imágenes con estos filtros</p>
-          <p className="mt-1 text-sm text-verde-900/60">
-            Prueba con otra combinación o limpia los filtros.
-          </p>
+          <p className="font-medium text-verde-profundo">{t("emptyTitle")}</p>
+          <p className="mt-1 text-sm text-verde-900/60">{t("emptyText")}</p>
           <button
             type="button"
             onClick={reset}
             className="mt-4 rounded-full bg-verde-profundo px-5 py-2 text-sm font-semibold text-marfil hover:bg-verde-700 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
           >
-            Ver toda la galería
+            {t("emptyCta")}
           </button>
         </div>
       )}
