@@ -61,13 +61,13 @@ export function Header() {
       >
         <Logo withTagline />
 
-        <ul className="hidden items-center gap-1 xl:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex xl:gap-1">
           {mainNav.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`relative rounded-full px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
+                className={`relative rounded-full px-2.5 py-2 text-sm font-medium transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado xl:px-3.5 ${
                   isActive(item.href)
                     ? "text-verde-profundo"
                     : "text-verde-900/70 hover:text-verde-profundo"
@@ -75,14 +75,14 @@ export function Header() {
               >
                 {t(item.key)}
                 {isActive(item.href) && (
-                  <span className="absolute inset-x-3.5 -bottom-0.5 h-0.5 rounded-full bg-naranja" aria-hidden />
+                  <span className="absolute inset-x-2.5 -bottom-0.5 h-0.5 rounded-full bg-naranja xl:inset-x-3.5" aria-hidden />
                 )}
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 xl:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           <LanguageSelector />
           <ButtonLink href="/contacto" variant="primary" size="sm">
             {tc("contactUs")}
@@ -90,7 +90,7 @@ export function Header() {
           </ButtonLink>
         </div>
 
-        <div className="flex items-center gap-1.5 xl:hidden">
+        <div className="flex items-center gap-1.5 lg:hidden">
           <LanguageSelector compact />
           <button
             type="button"
@@ -106,7 +106,7 @@ export function Header() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="xl:hidden">
+        <div id="mobile-menu" className="lg:hidden">
           <div className="border-t border-verde-profundo/10 bg-marfil px-4 pb-6 pt-2 sm:px-6">
             <ul className="flex flex-col gap-1">
               {mainNav.map((item) => (
