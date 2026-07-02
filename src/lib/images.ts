@@ -20,22 +20,26 @@ export const textile = {
   gold: "/branding/cuts/textile-gold.png",
 } as const;
 
-/** Imagen asociada a cada programa (temática coherente con la viñeta). */
+/**
+ * Imagen propia de cada programa (public/programas, optimizadas ≤1400-1600px).
+ * medio-ambiente es fotografía real del parque de Malabo; el resto es material
+ * provisional aportado por la organización.
+ */
 export const programImage: Record<ProgramSlug, string> = {
-  cultura: cut.duo,
-  juventud: cut.guinea,
-  educacion: cut.latam,
-  "medio-ambiente": cut.ceiba,
-  cooperacion: cut.duo,
-  "turismo-de-raices": cut.guinea,
+  cultura: "/programas/cultura.jpg",
+  juventud: "/programas/juventud.jpg",
+  educacion: "/programas/educacion.jpg",
+  "medio-ambiente": "/programas/medio-ambiente.jpg",
+  cooperacion: "/programas/cooperacion.jpg",
+  "turismo-de-raices": "/programas/turismo-de-raices.jpg",
 };
 
-/** Imagen asociada a cada categoría de noticias. */
+/** Imagen asociada a cada categoría de noticias (reutiliza las de programas). */
 export const categoryImage: Record<NewsCategory, string> = {
   Institucional: cut.duo,
-  Cultura: cut.duo,
-  Educación: cut.latam,
-  Juventud: cut.guinea,
-  "Medio Ambiente": cut.ceiba,
-  Cooperación: cut.duo,
+  Cultura: programImage.cultura,
+  Educación: programImage.educacion,
+  Juventud: programImage.juventud,
+  "Medio Ambiente": programImage["medio-ambiente"],
+  Cooperación: programImage.cooperacion,
 };

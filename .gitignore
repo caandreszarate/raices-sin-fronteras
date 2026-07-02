@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Claude Code local
 .claude/
+
+# Originales de imágenes (sin optimizar)
+assets_originales/
