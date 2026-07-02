@@ -54,21 +54,12 @@ export function CoverArt({
           priority={priority}
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        {/* velo de color de marca para coherencia y legibilidad */}
-        <div
-          className="absolute inset-0 mix-blend-multiply"
-          style={{ background: `linear-gradient(150deg, rgba(${t.veil},0.15), rgba(${t.veil},0.62))` }}
-          aria-hidden
-        />
+        {/* degradado inferior sutil, solo para legibilidad del contenido superpuesto */}
         <div
           className="absolute inset-x-0 bottom-0 h-2/5"
-          style={{ background: `linear-gradient(to top, rgba(${t.veil},0.85), transparent)` }}
+          style={{ background: `linear-gradient(to top, rgba(${t.veil},0.72), transparent)` }}
           aria-hidden
         />
-        {/* arco dorado decorativo (referencia del emblema) */}
-        <svg className="absolute -right-8 -top-10 h-36 w-36 opacity-40" viewBox="0 0 100 100" fill="none" aria-hidden>
-          <circle cx="50" cy="50" r="40" stroke="var(--color-dorado)" strokeWidth="2.5" strokeDasharray="3 7" />
-        </svg>
         {icon && (
           <span className="absolute bottom-3 left-3 grid h-10 w-10 place-items-center rounded-xl bg-marfil/95 text-verde-profundo shadow-md backdrop-blur" aria-hidden>
             <ProgramIcon name={icon} className="h-5 w-5" />
@@ -86,10 +77,7 @@ export function CoverArt({
       className={`relative isolate overflow-hidden ${ratio} ${className}`}
       style={{ background: `linear-gradient(140deg, ${t.from}, ${t.to})` }}
     >
-      <div className="textile-pattern absolute inset-0 opacity-50" aria-hidden />
-      <svg className="absolute -right-10 -top-12 h-44 w-44 opacity-30" viewBox="0 0 100 100" fill="none" aria-hidden>
-        <circle cx="50" cy="50" r="40" stroke="var(--color-dorado)" strokeWidth="3" strokeDasharray="3 6" />
-      </svg>
+      <div className="textile-pattern absolute inset-0 opacity-40" aria-hidden />
       <div className="absolute inset-0 grid place-items-center text-white/85" aria-hidden>
         {icon ? <ProgramIcon name={icon} className="h-12 w-12" strokeWidth={1.2} /> : <CeibaIcon className="h-12 w-12" strokeWidth={1.2} />}
       </div>

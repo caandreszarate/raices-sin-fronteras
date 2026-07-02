@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { Hero } from "@/components/home/Hero";
@@ -6,14 +7,18 @@ import { Section, Container } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/ui/CTASection";
 import { ProgramCard } from "@/components/cards/ProgramCard";
-import { ProjectCard } from "@/components/cards/ProjectCard";
 import { NewsCard } from "@/components/cards/NewsCard";
 import { CoverArt } from "@/components/ui/CoverArt";
 import { ButtonLink } from "@/components/ui/Button";
-import { ArrowRightIcon } from "@/components/icons";
+import {
+  ArrowRightIcon,
+  HandshakeIcon,
+  PeopleIcon,
+  CompassIcon,
+} from "@/components/icons";
 import { RouteLine } from "@/components/decor";
 import { cut, programImage } from "@/lib/images";
-import { getPrograms, getFeaturedProjects, getNews, getGallery } from "@/lib/content";
+import { getPrograms, getNews, getGallery } from "@/lib/content";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
@@ -21,9 +26,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   const t = await getTranslations("home");
   const tc = await getTranslations("common");
 
-  const [programs, featuredProjects, news, gallery] = await Promise.all([
+  const [programs, news, gallery] = await Promise.all([
     getPrograms(locale),
-    getFeaturedProjects(locale),
     getNews(locale),
     getGallery(locale),
   ]);
@@ -100,25 +104,40 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         </Container>
       </Section>
 
-      {/* Proyectos destacados */}
-      <Section bg="soft" labelledby="proyectos-title">
+      {/* Colabora: la plataforma está tejiendo su red */}
+      <Section bg="soft" labelledby="colabora-title">
         <Container>
-          <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-            <SectionHeading
-              as="h2"
-              eyebrow={t("projectsEyebrow")}
-              title={<span id="proyectos-title">{t("projectsTitle")}</span>}
-              description={t("projectsText")}
+          <SectionHeading
+            as="h2"
+            eyebrow={t("collabEyebrow")}
+            title={<span id="colabora-title">{t("collabTitle")}</span>}
+            description={t("collabText")}
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <CollabCard
+              icon={<HandshakeIcon className="h-6 w-6" />}
+              title={t("collabOrgs")}
+              text={t("collabOrgsText")}
             />
-            <ButtonLink href="/proyectos" variant="ghost" className="shrink-0">
-              {t("allProjects")}
+            <CollabCard
+              icon={<PeopleIcon className="h-6 w-6" />}
+              title={t("collabVolunteers")}
+              text={t("collabVolunteersText")}
+            />
+            <CollabCard
+              icon={<CompassIcon className="h-6 w-6" />}
+              title={t("collabInstitutions")}
+              text={t("collabInstitutionsText")}
+            />
+          </div>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <ButtonLink href="/contacto?asunto=alianzas" variant="primary">
+              {t("collabCta")}
               <ArrowRightIcon className="h-4 w-4" />
             </ButtonLink>
-          </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((p) => (
-              <ProjectCard key={p.slug} project={p} />
-            ))}
+            <ButtonLink href="/programas" variant="outline">
+              {tc("ourPrograms")}
+            </ButtonLink>
           </div>
         </Container>
       </Section>
@@ -182,6 +201,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
 
       <CTASection />
     </>
+  );
+}
+
+/** Tarjeta de vía de colaboración (organizaciones, voluntariado, instituciones). */
+function CollabCard({ icon, title, text }: { icon: ReactNode; title: string; text: string }) {
+  return (
+    <div className="rounded-2xl border border-verde-profundo/10 bg-white/80 p-6 shadow-[var(--shadow-soft)]">
+      <span className="grid h-12 w-12 place-items-center rounded-xl bg-verde-claro text-verde-700" aria-hidden>
+        {icon}
+      </span>
+      <h3 className="mt-4 text-xl font-semibold text-verde-profundo">{title}</h3>
+      <p className="mt-2 text-pretty text-sm leading-relaxed text-verde-900/75">{text}</p>
+    </div>
   );
 }
 

@@ -32,11 +32,13 @@ export const siteConfig = {
 /** Elementos de navegación: `key` resuelve la etiqueta vía i18n (namespace nav). */
 export type NavItem = { key: string; href: string };
 
+// "Proyectos" y "Donar" quedan fuera de la navegación mientras la plataforma
+// está en fase de presentación institucional; las rutas siguen activas para
+// reactivarlas cuando haya proyectos reales y pasarela de donaciones.
 export const mainNav: NavItem[] = [
   { key: "home", href: "/" },
   { key: "about", href: "/nosotros" },
   { key: "programs", href: "/programas" },
-  { key: "projects", href: "/proyectos" },
   { key: "news", href: "/noticias" },
   { key: "gallery", href: "/galeria" },
   { key: "contact", href: "/contacto" },
@@ -48,17 +50,15 @@ export const footerNav: { titleKey: "colOrg" | "colParticipate"; items: NavItem[
     items: [
       { key: "about", href: "/nosotros" },
       { key: "programs", href: "/programas" },
-      { key: "projects", href: "/proyectos" },
       { key: "news", href: "/noticias" },
     ],
   },
   {
     titleKey: "colParticipate",
     items: [
-      { key: "donate", href: "/donar" },
+      { key: "volunteer", href: "/contacto?asunto=voluntariado" },
       { key: "gallery", href: "/galeria" },
       { key: "contact", href: "/contacto" },
-      { key: "volunteer", href: "/contacto?asunto=voluntariado" },
     ],
   },
 ];

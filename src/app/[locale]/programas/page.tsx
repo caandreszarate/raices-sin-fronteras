@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
-import { Link } from "@/i18n/navigation";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section, Container } from "@/components/ui/Section";
 import { CTASection } from "@/components/ui/CTASection";
+import { CoverArt } from "@/components/ui/CoverArt";
 import { ProgramIcon, ArrowRightIcon, CheckIcon } from "@/components/icons";
-import { ButtonLink } from "@/components/ui/Button";
-import { getPrograms, getProjects } from "@/lib/content";
+import { programImage } from "@/lib/images";
+import { getPrograms } from "@/lib/content";
 
 export async function generateMetadata({
   params,
@@ -40,7 +40,6 @@ export default async function ProgramasPage({
   setRequestLocale(locale);
   const t = await getTranslations("programs");
   const programs = await getPrograms(locale);
-  const projects = await getProjects(locale);
 
   return (
     <>
@@ -75,7 +74,6 @@ export default async function ProgramasPage({
 
       {/* Detalle de cada programa */}
       {programs.map((program, idx) => {
-        const related = projects.filter((p) => p.program === program.slug).slice(0, 2);
         return (
           <Section
             key={program.slug}
@@ -114,52 +112,15 @@ export default async function ProgramasPage({
                   </ul>
                 </div>
 
-                <div className="space-y-6">
-                  {/* Indicadores */}
-                  <dl className="grid grid-cols-3 gap-3 rounded-3xl border border-verde-profundo/10 bg-white/70 p-6 shadow-[var(--shadow-soft)]">
-                    {program.highlights.map((h) => (
-                      <div key={h.label}>
-                        <dt className="sr-only">{h.label}</dt>
-                        <dd>
-                          <span className="block font-serif text-2xl font-semibold text-verde-profundo">
-                            {h.value}
-                          </span>
-                          <span className="mt-1 block text-xs text-verde-900/60">{h.label}</span>
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-
-                  {/* Proyectos relacionados */}
-                  {related.length > 0 && (
-                    <div className="rounded-3xl border border-verde-profundo/10 bg-white/70 p-6 shadow-[var(--shadow-soft)]">
-                      <h3 className="text-sm font-semibold uppercase tracking-wider text-verde-700">
-                        {t("relatedProjects")}
-                      </h3>
-                      <ul className="mt-3 divide-y divide-verde-profundo/10">
-                        {related.map((p) => (
-                          <li key={p.slug}>
-                            <Link
-                              href={`/proyectos/${p.slug}`}
-                              className="flex items-center justify-between gap-3 py-3 text-sm transition-colors hover:text-verde-600 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
-                            >
-                              <span className="font-medium text-verde-profundo">{p.title}</span>
-                              <ArrowRightIcon className="h-4 w-4 shrink-0 text-verde-900/40" />
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                      <ButtonLink
-                        href={`/proyectos?programa=${program.slug}`}
-                        variant="ghost"
-                        size="sm"
-                        className="mt-2"
-                      >
-                        {t("moreProjects")}
-                        <ArrowRightIcon className="h-4 w-4" />
-                      </ButtonLink>
-                    </div>
-                  )}
+                {/* Ilustración del programa (material provisional del branding) */}
+                <div className="overflow-hidden rounded-3xl border border-verde-profundo/10 shadow-[var(--shadow-soft)] lg:self-start">
+                  <CoverArt
+                    tone={program.accent}
+                    src={programImage[program.slug]}
+                    icon={program.icon}
+                    label={program.title}
+                    ratio="aspect-[4/3]"
+                  />
                 </div>
               </div>
             </Container>
@@ -171,7 +132,7 @@ export default async function ProgramasPage({
         title={t("ctaTitle")}
         description={t("ctaText")}
         primary={{ href: "/contacto?asunto=alianzas", label: t("ctaPrimary") }}
-        secondary={{ href: "/proyectos", label: t("ctaSecondary") }}
+        secondary={{ href: "/nosotros", label: t("ctaSecondary") }}
       />
     </>
   );

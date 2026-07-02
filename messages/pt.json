@@ -79,11 +79,25 @@
     "galleryTitle": "Galeria",
     "galleryText": "Momentos de encontro, sementeira, aprendizagem e celebração.",
     "allGallery": "Ver galeria completa",
-    "stats": { "countries": "Países", "programs": "Programas", "reached": "Pessoas alcançadas" }
+    "stats": {
+      "countries": "Países",
+      "programs": "Programas",
+      "reached": "Pessoas alcançadas"
+    },
+    "collabEyebrow": "Junte-se à rede",
+    "collabTitle": "Estamos a tecer as primeiras alianças",
+    "collabText": "A Raíces sin Fronteras está em fase de conexão: construímos a rede de pessoas e organizações que tornará possíveis os primeiros projetos entre as duas margens. A sua voz pode fazer parte do começo.",
+    "collabOrgs": "Organizações sociais e culturais",
+    "collabOrgsText": "Entidades que trabalham cultura, educação, juventude ou meio ambiente em qualquer das duas regiões e querem desenhar iniciativas conjuntas.",
+    "collabVolunteers": "Pessoas voluntárias",
+    "collabVolunteersText": "Profissionais, docentes, artistas e estudantes dispostos a dedicar tempo e talento à rede transatlântica.",
+    "collabInstitutions": "Instituições e academia",
+    "collabInstitutionsText": "Governos locais, universidades e centros culturais interessados na cooperação afro-hispânica.",
+    "collabCta": "Propor uma aliança"
   },
   "cta": {
-    "title": "Juntemos raízes, multipliquemos futuros",
-    "description": "O seu apoio sustenta programas de cultura, educação, juventude e meio ambiente entre a América Latina e a Guiné Equatorial. Cada contributo transforma-se em oportunidades reais."
+    "title": "Juntemos raízes, teçamos alianças",
+    "description": "Procuramos organizações, instituições e pessoas que queiram construir pontes de cultura, educação e cooperação entre a América Latina e a Guiné Equatorial. Vamos conversar."
   },
   "footer": {
     "colOrg": "Organização",
@@ -169,7 +183,7 @@
     "teamTitle": "A nossa equipa",
     "teamText": "Profissionais de ambas as regiões que sustentam o trabalho diário da plataforma.",
     "ctaTitle": "Construamos juntos o próximo capítulo",
-    "ctaText": "Junte-se como aliado, voluntário ou doador. Cada vínculo fortalece a rede que une as nossas comunidades.",
+    "ctaText": "Junte-se como aliado ou voluntário. Cada vínculo fortalece a rede que une as nossas comunidades.",
     "ctaPrimary": "Quero colaborar",
     "ctaSecondary": "Ver programas"
   },
@@ -184,7 +198,7 @@
     "ctaTitle": "A sua organização quer somar um programa?",
     "ctaText": "Concebemos iniciativas conjuntas com comunidades, instituições e aliados. Falemos sobre como colaborar.",
     "ctaPrimary": "Propor uma aliança",
-    "ctaSecondary": "Ver projetos"
+    "ctaSecondary": "Quem somos"
   },
   "projects": {
     "headerEyebrow": "No território",
@@ -245,7 +259,7 @@
     "ctaTitle": "Receba as novidades no seu correio",
     "ctaText": "Subscreva o boletim de raízes e fique a saber primeiro das convocatórias, eventos e resultados.",
     "ctaPrimary": "Escreva-nos",
-    "ctaSecondary": "Apoie-nos",
+    "ctaSecondary": "Conheça os programas",
     "categories": {
       "Institucional": "Institucional",
       "Cultura": "Cultura",
@@ -274,8 +288,8 @@
     "emptyText": "Experimente outra combinação ou limpe os filtros.",
     "emptyCta": "Ver toda a galeria",
     "ctaTitle": "Quer fazer parte desta história?",
-    "ctaText": "Junte-se como voluntário, aliado ou doador e faça parte dos próximos encontros.",
-    "ctaPrimary": "Doe agora",
+    "ctaText": "Junte-se como voluntário ou aliado e faça parte dos próximos encontros.",
+    "ctaPrimary": "Propor uma aliança",
     "ctaSecondary": "Ser voluntário"
   },
   "contact": {

@@ -47,7 +47,7 @@ export default async function GaleriaPage({
       <CTASection
         title={t("ctaTitle")}
         description={t("ctaText")}
-        primary={{ href: "/donar", label: t("ctaPrimary") }}
+        primary={{ href: "/contacto?asunto=alianzas", label: t("ctaPrimary") }}
         secondary={{ href: "/contacto?asunto=voluntariado", label: t("ctaSecondary") }}
       />
     </>

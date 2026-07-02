@@ -79,11 +79,25 @@
     "galleryTitle": "Gallery",
     "galleryText": "Moments of encounter, planting, learning and celebration.",
     "allGallery": "View full gallery",
-    "stats": { "countries": "Countries", "programs": "Programs", "reached": "People reached" }
+    "stats": {
+      "countries": "Countries",
+      "programs": "Programs",
+      "reached": "People reached"
+    },
+    "collabEyebrow": "Join the network",
+    "collabTitle": "We are weaving the first alliances",
+    "collabText": "Raíces sin Fronteras is in its connection phase: we are building the network of people and organisations that will make the first projects between the two shores possible. Your voice can be part of the beginning.",
+    "collabOrgs": "Social and cultural organisations",
+    "collabOrgsText": "Entities working in culture, education, youth or the environment in either region that want to design joint initiatives.",
+    "collabVolunteers": "Volunteers",
+    "collabVolunteersText": "Professionals, teachers, artists and students willing to contribute time and talent to the transatlantic network.",
+    "collabInstitutions": "Institutions and academia",
+    "collabInstitutionsText": "Local governments, universities and cultural centres interested in Afro-Hispanic cooperation.",
+    "collabCta": "Propose a partnership"
   },
   "cta": {
-    "title": "Let's join roots and multiply futures",
-    "description": "Your support sustains culture, education, youth and environment programs between Latin America and Equatorial Guinea. Every contribution becomes a real opportunity."
+    "title": "Let's join roots and weave alliances",
+    "description": "We are looking for organisations, institutions and people who want to build bridges of culture, education and cooperation between Latin America and Equatorial Guinea. Let's talk."
   },
   "footer": {
     "colOrg": "Organization",
@@ -169,7 +183,7 @@
     "teamTitle": "Our team",
     "teamText": "Professionals from both regions who sustain the platform's daily work.",
     "ctaTitle": "Let's build the next chapter together",
-    "ctaText": "Join us as a partner, volunteer or donor. Every bond strengthens the network that unites our communities.",
+    "ctaText": "Join us as a partner or volunteer. Every bond strengthens the network that unites our communities.",
     "ctaPrimary": "I want to collaborate",
     "ctaSecondary": "View programs"
   },
@@ -184,7 +198,7 @@
     "ctaTitle": "Does your organization want to add a program?",
     "ctaText": "We design joint initiatives with communities, institutions and partners. Let's talk about how to collaborate.",
     "ctaPrimary": "Propose a partnership",
-    "ctaSecondary": "View projects"
+    "ctaSecondary": "About us"
   },
   "projects": {
     "headerEyebrow": "On the ground",
@@ -245,7 +259,7 @@
     "ctaTitle": "Get the latest news in your inbox",
     "ctaText": "Subscribe to the roots newsletter and be the first to hear about calls, events and results.",
     "ctaPrimary": "Write to us",
-    "ctaSecondary": "Support us",
+    "ctaSecondary": "Explore our programs",
     "categories": {
       "Institucional": "Institutional",
       "Cultura": "Culture",
@@ -274,8 +288,8 @@
     "emptyText": "Try another combination or clear the filters.",
     "emptyCta": "View the full gallery",
     "ctaTitle": "Would you like to be part of this story?",
-    "ctaText": "Join us as a volunteer, partner or donor and be part of the upcoming gatherings.",
-    "ctaPrimary": "Donate now",
+    "ctaText": "Join us as a volunteer or partner and be part of the upcoming gatherings.",
+    "ctaPrimary": "Propose a partnership",
     "ctaSecondary": "Become a volunteer"
   },
   "contact": {

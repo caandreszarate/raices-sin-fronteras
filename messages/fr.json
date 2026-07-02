@@ -79,11 +79,25 @@
     "galleryTitle": "Galerie",
     "galleryText": "Des moments de rencontre, de semailles, d'apprentissage et de célébration.",
     "allGallery": "Voir toute la galerie",
-    "stats": { "countries": "Pays", "programs": "Programmes", "reached": "Personnes touchées" }
+    "stats": {
+      "countries": "Pays",
+      "programs": "Programmes",
+      "reached": "Personnes touchées"
+    },
+    "collabEyebrow": "Rejoignez le réseau",
+    "collabTitle": "Nous tissons les premières alliances",
+    "collabText": "Raíces sin Fronteras est en phase de connexion : nous construisons le réseau de personnes et d'organisations qui rendra possibles les premiers projets entre les deux rives. Votre voix peut faire partie du commencement.",
+    "collabOrgs": "Organisations sociales et culturelles",
+    "collabOrgsText": "Entités œuvrant dans la culture, l'éducation, la jeunesse ou l'environnement dans l'une des deux régions et souhaitant concevoir des initiatives conjointes.",
+    "collabVolunteers": "Bénévoles",
+    "collabVolunteersText": "Professionnels, enseignants, artistes et étudiants prêts à offrir temps et talent au réseau transatlantique.",
+    "collabInstitutions": "Institutions et monde académique",
+    "collabInstitutionsText": "Gouvernements locaux, universités et centres culturels intéressés par la coopération afro-hispanique.",
+    "collabCta": "Proposer un partenariat"
   },
   "cta": {
-    "title": "Unissons nos racines, multiplions les avenirs",
-    "description": "Votre soutien fait vivre des programmes de culture, d'éducation, de jeunesse et d'environnement entre l'Amérique latine et la Guinée équatoriale. Chaque contribution devient une opportunité concrète."
+    "title": "Unissons nos racines, tissons des alliances",
+    "description": "Nous recherchons des organisations, des institutions et des personnes désireuses de bâtir des ponts de culture, d'éducation et de coopération entre l'Amérique latine et la Guinée équatoriale. Parlons-en."
   },
   "footer": {
     "colOrg": "Organisation",
@@ -169,7 +183,7 @@
     "teamTitle": "Notre équipe",
     "teamText": "Des professionnels des deux régions qui font vivre le travail quotidien de la plateforme.",
     "ctaTitle": "Construisons ensemble le prochain chapitre",
-    "ctaText": "Rejoignez-nous comme partenaire, bénévole ou donateur. Chaque lien renforce le réseau qui unit nos communautés.",
+    "ctaText": "Rejoignez-nous comme partenaire ou bénévole. Chaque lien renforce le réseau qui unit nos communautés.",
     "ctaPrimary": "Je veux collaborer",
     "ctaSecondary": "Voir les programmes"
   },
@@ -184,7 +198,7 @@
     "ctaTitle": "Votre organisation souhaite-t-elle porter un programme ?",
     "ctaText": "Nous concevons des initiatives conjointes avec les communautés, les institutions et les partenaires. Parlons de la manière de collaborer.",
     "ctaPrimary": "Proposer une alliance",
-    "ctaSecondary": "Voir les projets"
+    "ctaSecondary": "Qui sommes-nous"
   },
   "projects": {
     "headerEyebrow": "Sur le terrain",
@@ -245,7 +259,7 @@
     "ctaTitle": "Recevez les nouveautés dans votre boîte mail",
     "ctaText": "Abonnez-vous au bulletin des racines et soyez le premier informé des appels, événements et résultats.",
     "ctaPrimary": "Écrivez-nous",
-    "ctaSecondary": "Soutenez-nous",
+    "ctaSecondary": "Découvrir nos programmes",
     "categories": {
       "Institucional": "Institutionnel",
       "Cultura": "Culture",
@@ -274,8 +288,8 @@
     "emptyText": "Essayez une autre combinaison ou réinitialisez les filtres.",
     "emptyCta": "Voir toute la galerie",
     "ctaTitle": "Vous souhaitez figurer dans cette histoire ?",
-    "ctaText": "Rejoignez-nous comme bénévole, partenaire ou donateur et participez aux prochaines rencontres.",
-    "ctaPrimary": "Faire un don",
+    "ctaText": "Rejoignez-nous comme bénévole ou partenaire et participez aux prochaines rencontres.",
+    "ctaPrimary": "Proposer un partenariat",
     "ctaSecondary": "Devenir bénévole"
   },
   "contact": {

@@ -1,7 +1,10 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 
-/** Detección y enrutado por idioma (es sin prefijo; en/fr/pt con prefijo). */
+/**
+ * Detección y enrutado por idioma (es sin prefijo; en/fr/pt con prefijo).
+ * Convención `proxy` de Next 16 (sustituye al antiguo `middleware`).
+ */
 export default createMiddleware(routing);
 
 export const config = {

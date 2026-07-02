@@ -51,7 +51,7 @@ export default async function NoticiasPage({ params }: { params: Promise<{ local
         title={t("ctaTitle")}
         description={t("ctaText")}
         primary={{ href: "/contacto", label: t("ctaPrimary") }}
-        secondary={{ href: "/donar", label: t("ctaSecondary") }}
+        secondary={{ href: "/programas", label: t("ctaSecondary") }}
       />
     </>
   );

@@ -79,11 +79,25 @@
     "galleryTitle": "Galería",
     "galleryText": "Momentos de encuentro, siembra, aprendizaje y celebración.",
     "allGallery": "Ver galería completa",
-    "stats": { "countries": "Países", "programs": "Programas", "reached": "Personas alcanzadas" }
+    "stats": {
+      "countries": "Países",
+      "programs": "Programas",
+      "reached": "Personas alcanzadas"
+    },
+    "collabEyebrow": "Súmate a la red",
+    "collabTitle": "Estamos tejiendo las primeras alianzas",
+    "collabText": "Raíces sin Fronteras está en fase de conexión: construimos la red de personas y organizaciones que hará posibles los primeros proyectos entre las dos orillas. Tu voz puede ser parte del comienzo.",
+    "collabOrgs": "Organizaciones sociales y culturales",
+    "collabOrgsText": "Entidades que trabajan cultura, educación, juventud o medio ambiente en cualquiera de las dos regiones y quieren diseñar iniciativas conjuntas.",
+    "collabVolunteers": "Personas voluntarias",
+    "collabVolunteersText": "Profesionales, docentes, artistas y estudiantes con ganas de aportar tiempo y talento a la red transatlántica.",
+    "collabInstitutions": "Instituciones y academia",
+    "collabInstitutionsText": "Gobiernos locales, universidades y centros culturales interesados en la cooperación afro-hispana.",
+    "collabCta": "Proponer una alianza"
   },
   "cta": {
-    "title": "Sumemos raíces, multipliquemos futuros",
-    "description": "Tu apoyo sostiene programas de cultura, educación, juventud y medio ambiente entre América Latina y Guinea Ecuatorial. Cada aporte se convierte en oportunidades reales."
+    "title": "Sumemos raíces, tejamos alianzas",
+    "description": "Buscamos organizaciones, instituciones y personas que quieran construir puentes de cultura, educación y cooperación entre América Latina y Guinea Ecuatorial. Hablemos."
   },
   "footer": {
     "colOrg": "Organización",
@@ -169,7 +183,7 @@
     "teamTitle": "Nuestro equipo",
     "teamText": "Profesionales de ambas regiones que sostienen el trabajo cotidiano de la plataforma.",
     "ctaTitle": "Construyamos juntos el siguiente capítulo",
-    "ctaText": "Súmate como aliado, voluntario o donante. Cada vínculo fortalece la red que une a nuestras comunidades.",
+    "ctaText": "Súmate como aliado o voluntario. Cada vínculo fortalece la red que une a nuestras comunidades.",
     "ctaPrimary": "Quiero colaborar",
     "ctaSecondary": "Ver programas"
   },
@@ -184,7 +198,7 @@
     "ctaTitle": "¿Tu organización quiere sumar un programa?",
     "ctaText": "Diseñamos iniciativas conjuntas con comunidades, instituciones y aliados. Hablemos de cómo colaborar.",
     "ctaPrimary": "Proponer una alianza",
-    "ctaSecondary": "Ver proyectos"
+    "ctaSecondary": "Conócenos"
   },
   "projects": {
     "headerEyebrow": "En el territorio",
@@ -245,7 +259,7 @@
     "ctaTitle": "Recibe las novedades en tu correo",
     "ctaText": "Suscríbete al boletín de raíces y entérate primero de convocatorias, eventos y resultados.",
     "ctaPrimary": "Escríbenos",
-    "ctaSecondary": "Apóyanos",
+    "ctaSecondary": "Conoce los programas",
     "categories": {
       "Institucional": "Institucional",
       "Cultura": "Cultura",
@@ -274,8 +288,8 @@
     "emptyText": "Prueba con otra combinación o limpia los filtros.",
     "emptyCta": "Ver toda la galería",
     "ctaTitle": "¿Quieres aparecer en esta historia?",
-    "ctaText": "Súmate como voluntario, aliado o donante y sé parte de los próximos encuentros.",
-    "ctaPrimary": "Dona ahora",
+    "ctaText": "Súmate como voluntario o aliado y sé parte de los próximos encuentros.",
+    "ctaPrimary": "Proponer una alianza",
     "ctaSecondary": "Ser voluntario"
   },
   "contact": {

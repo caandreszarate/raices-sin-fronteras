@@ -204,44 +204,6 @@
       linear-gradient(0deg, rgba(10, 44, 32, 0.55) 0%, transparent 45%);
   }
 
-  /* Cinta kente (textil real del branding) */
-  .kente-ribbon-v {
-    background-image: url("/branding/cuts/textile-kente.png");
-    background-size: auto 56px;
-    background-repeat: repeat-y;
-  }
-  .kente-ribbon-h {
-    background-image: url("/branding/cuts/textile-kente.png");
-    background-size: 56px auto;
-    background-repeat: repeat-x;
-  }
-
-  /* Ruta transatlántica animada (líneas punteadas que "viajan") */
-  @keyframes route-travel {
-    to {
-      stroke-dashoffset: -120;
-    }
-  }
-  .route-animate {
-    animation: route-travel 5s linear infinite;
-  }
-
-  /* Halo dorado pulsante muy sutil para el medallón */
-  @keyframes halo-pulse {
-    0%,
-    100% {
-      opacity: 0.5;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.85;
-      transform: scale(1.04);
-    }
-  }
-  .halo-pulse {
-    animation: halo-pulse 4.5s ease-in-out infinite;
-  }
-
   /* Animación de entrada respetando reduced-motion (gestionado arriba) */
   .animate-fade-up {
     animation: var(--animate-fade-up);

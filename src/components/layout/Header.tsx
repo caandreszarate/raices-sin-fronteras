@@ -7,7 +7,7 @@ import { mainNav } from "@/lib/site";
 import { Logo } from "@/components/ui/Logo";
 import { ButtonLink } from "@/components/ui/Button";
 import { LanguageSelector } from "@/components/layout/LanguageSelector";
-import { MenuIcon, CloseIcon, HeartIcon } from "@/components/icons";
+import { MenuIcon, CloseIcon, ArrowRightIcon } from "@/components/icons";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -84,9 +84,9 @@ export function Header() {
 
         <div className="hidden items-center gap-2 xl:flex">
           <LanguageSelector />
-          <ButtonLink href="/donar" variant="primary" size="sm">
-            <HeartIcon className="h-4 w-4" />
-            {tc("donateNow")}
+          <ButtonLink href="/contacto" variant="primary" size="sm">
+            {tc("contactUs")}
+            <ArrowRightIcon className="h-4 w-4" />
           </ButtonLink>
         </div>
 
@@ -125,9 +125,9 @@ export function Header() {
                 </li>
               ))}
             </ul>
-            <ButtonLink href="/donar" variant="primary" size="lg" className="mt-4 w-full">
-              <HeartIcon className="h-5 w-5" />
-              {tc("donateNow")}
+            <ButtonLink href="/contacto" variant="primary" size="lg" className="mt-4 w-full">
+              {tc("contactUs")}
+              <ArrowRightIcon className="h-5 w-5" />
             </ButtonLink>
           </div>
         </div>
