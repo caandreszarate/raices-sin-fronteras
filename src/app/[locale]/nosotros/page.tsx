@@ -43,6 +43,8 @@ export default async function NosotrosPage({
         title={t("headerTitle")}
         description={t("headerText")}
         breadcrumbs={[{ label: t("breadcrumb") }]}
+        image="/pages/nosotros.jpg"
+        imagePosition="50% 38%"
       />
 
       {/* Misión / Visión */}

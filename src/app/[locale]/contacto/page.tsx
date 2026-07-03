@@ -46,6 +46,8 @@ export default async function ContactoPage({
         title={t("headerTitle")}
         description={t("headerText")}
         breadcrumbs={[{ label: t("breadcrumb") }]}
+        image="/pages/contacto.jpg"
+        imagePosition="62% 65%"
       />
 
       <Section>

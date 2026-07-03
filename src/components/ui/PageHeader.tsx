@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Section";
@@ -6,23 +7,55 @@ import { RouteLine, RootsDivider } from "@/components/decor";
 
 type Crumb = { label: string; href?: string };
 
-/** Cabecera de página interior con migas de pan y fondo verde texturizado. */
+/**
+ * Cabecera de página interior. Con `image`, la fotografía ocupa todo el fondo
+ * y un velo verde profundo se disuelve hacia la derecha para dejarla respirar
+ * (la imagen es ambiental: decorativa para lectores de pantalla). Sin imagen,
+ * conserva el fondo verde texturizado de siempre.
+ */
 export function PageHeader({
   eyebrow,
   title,
   description,
   breadcrumbs = [],
+  image,
+  imagePosition = "50% 45%",
 }: {
   eyebrow?: string;
   title: ReactNode;
   description?: ReactNode;
   breadcrumbs?: Crumb[];
+  image?: string;
+  imagePosition?: string;
 }) {
   const t = useTranslations("nav");
   return (
     <section className="relative isolate overflow-hidden gradient-orillas">
-      <div className="textile-pattern absolute inset-0 opacity-25" aria-hidden />
-      <div className="route-line absolute inset-0 opacity-[0.06]" aria-hidden />
+      {image ? (
+        <>
+          <Image
+            src={image}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: imagePosition }}
+            aria-hidden
+          />
+          {/* velo de marca: legibilidad a la izquierda, fotografía a la derecha */}
+          <div className="absolute inset-0 bg-verde-900/35" aria-hidden />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-verde-900 from-15% via-verde-900/80 via-55% to-transparent"
+            aria-hidden
+          />
+        </>
+      ) : (
+        <>
+          <div className="textile-pattern absolute inset-0 opacity-25" aria-hidden />
+          <div className="route-line absolute inset-0 opacity-[0.06]" aria-hidden />
+        </>
+      )}
       <Container className="relative py-14 sm:py-20">
         {breadcrumbs.length > 0 && (
           <nav aria-label="Migas de pan" className="mb-5">
@@ -71,7 +104,7 @@ export function PageHeader({
           </p>
         )}
       </Container>
-      <RootsDivider className="text-marfil" color="var(--color-marfil)" flip />
+      <RootsDivider className="relative text-marfil" color="var(--color-marfil)" flip />
     </section>
   );
 }

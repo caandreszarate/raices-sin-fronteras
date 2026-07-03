@@ -48,6 +48,7 @@ export default async function ProgramasPage({
         title={t("headerTitle")}
         description={t("headerText")}
         breadcrumbs={[{ label: t("breadcrumb") }]}
+        image="/pages/programas.jpg"
       />
 
       {/* Índice de programas */}

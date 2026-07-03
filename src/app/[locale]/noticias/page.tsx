@@ -33,6 +33,8 @@ export default async function NoticiasPage({ params }: { params: Promise<{ local
         title={t("headerTitle")}
         description={t("headerText")}
         breadcrumbs={[{ label: t("breadcrumb") }]}
+        image="/pages/noticias.jpg"
+        imagePosition="12% 45%"
       />
 
       <Section>
