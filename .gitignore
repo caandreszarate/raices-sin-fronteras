@@ -48,3 +48,7 @@ next-env.d.ts
 
 # Originales de imágenes (sin optimizar)
 assets_originales/
+
+# Artefactos de auditoría de seguridad
+static_analysis_semgrep_*/
+.supply-chain-risk-auditor/
