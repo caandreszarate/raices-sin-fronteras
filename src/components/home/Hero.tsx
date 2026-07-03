@@ -2,27 +2,45 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ButtonLink } from "@/components/ui/Button";
 import { ArrowRightIcon } from "@/components/icons";
-import { cut } from "@/lib/images";
 
 /**
- * Hero institucional de dos paneles: texto sobre fondo verde profundo e
- * ilustración del branding a la derecha. Composición sobria — un solo acento
- * tipográfico (cursiva serif en naranja) y la línea "dos orillas" como cierre.
+ * Hero "El árbol de las raíces": ilustración a ancho completo (copa de
+ * textiles de ambas orillas, raíces que se vuelven personas unidas) con el
+ * texto en oscuro sobre una veladura marfil. En móvil, imagen y texto se
+ * apilan para no recortar la composición centrada del árbol.
  */
 export function Hero() {
   const t = useTranslations("hero");
   const tc = useTranslations("common");
+  const treeAlt = t("treeAlt");
   return (
-    <section className="relative isolate grid overflow-hidden lg:grid-cols-[1.05fr_0.95fr] lg:min-h-[clamp(560px,80vh,780px)]">
-      {/* ───────── Panel de texto (oscuro) ───────── */}
-      <div className="hero-panel relative order-2 flex items-center px-6 py-16 sm:px-10 lg:order-1 lg:py-20 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-16">
-        <div className="relative z-10 mx-auto w-full max-w-xl animate-fade-up lg:mx-0">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-dorado">
+    <section className="relative isolate overflow-hidden">
+      {/* Imagen: bloque propio en móvil, fondo completo en escritorio */}
+      <div className="relative h-[44vh] min-h-[300px] lg:absolute lg:inset-0 lg:h-auto lg:min-h-0">
+        <Image
+          src="/branding/hero-arbol.jpg"
+          alt={treeAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_30%] lg:object-[68%_center]"
+        />
+        {/* veladura para la legibilidad del texto (solo escritorio) */}
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 hidden w-2/3 bg-gradient-to-r from-marfil from-25% via-marfil/85 to-transparent lg:block"
+          aria-hidden
+        />
+      </div>
+
+      {/* Texto */}
+      <div className="relative mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:flex lg:min-h-[clamp(540px,76vh,740px)] lg:items-center lg:px-8 lg:py-0">
+        <div className="max-w-xl animate-fade-up">
+          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-naranja">
             <span className="h-px w-6 bg-current opacity-60" aria-hidden />
             {t("eyebrow")}
           </p>
 
-          <h1 className="mt-5 font-serif text-marfil">
+          <h1 className="mt-5 font-serif text-verde-profundo">
             <span className="block text-5xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
               {t("title1")} {t("title2")}
             </span>
@@ -31,7 +49,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="mt-7 max-w-md text-pretty text-lg leading-relaxed text-verde-claro/90">
+          <p className="mt-7 max-w-md text-pretty text-lg leading-relaxed text-verde-900/75">
             {t("subtitle")}
           </p>
 
@@ -40,43 +58,24 @@ export function Hero() {
               {tc("knowUs")}
               <ArrowRightIcon className="h-5 w-5" />
             </ButtonLink>
-            <ButtonLink
-              href="/contacto"
-              variant="outline"
-              size="lg"
-              className="border-marfil/50 text-marfil hover:border-marfil hover:bg-marfil/10"
-            >
+            <ButtonLink href="/contacto" variant="outline" size="lg">
               {tc("contactUs")}
             </ButtonLink>
           </div>
 
           {/* Las dos orillas, como firma discreta */}
-          <div className="mt-10 flex items-center gap-3 border-t border-marfil/15 pt-6 text-xs font-semibold uppercase tracking-wider text-verde-claro/80">
+          <div className="mt-10 flex items-center gap-3 border-t border-verde-profundo/15 pt-6 text-xs font-semibold uppercase tracking-wider text-verde-900/70">
             <span className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-naranja" aria-hidden />
               {t("shoreLatam")}
             </span>
-            <span className="h-px w-14 bg-dorado/50" aria-hidden />
+            <span className="h-px w-14 bg-dorado/60" aria-hidden />
             <span className="flex items-center gap-2">
               {t("shoreGuinea")}
               <span className="h-2 w-2 rounded-full bg-verde-500" aria-hidden />
             </span>
           </div>
         </div>
-      </div>
-
-      {/* ───────── Panel de imagen ───────── */}
-      <div className="relative order-1 h-[46vh] min-h-[320px] overflow-hidden lg:order-2 lg:h-auto lg:min-h-0">
-        <Image
-          src={cut.guinea}
-          alt="Mujer ecuatoguineana con turbante de textil kente frente a una costa tropical con palmeras al atardecer, parte del emblema de Raíces sin Fronteras."
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 48vw"
-          className="object-cover object-top"
-        />
-        {/* velo para fundir con el panel oscuro */}
-        <div className="hero-image-veil absolute inset-0" aria-hidden />
       </div>
     </section>
   );

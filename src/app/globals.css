@@ -189,21 +189,6 @@
     background: linear-gradient(160deg, var(--color-marfil) 0%, var(--color-verde-claro) 100%);
   }
 
-  /* Panel oscuro del hero: verde profundo → océano, con halo cálido */
-  .hero-panel {
-    background:
-      radial-gradient(130% 120% at 8% 0%, rgba(31, 133, 80, 0.45), transparent 52%),
-      radial-gradient(120% 120% at 100% 100%, rgba(11, 29, 58, 0.85), transparent 55%),
-      linear-gradient(150deg, var(--color-verde-900) 0%, var(--color-verde-profundo) 48%, var(--color-azul-profundo) 100%);
-  }
-
-  /* Velo sobre la imagen del hero para fundir con el panel y dar profundidad */
-  .hero-image-veil {
-    background:
-      linear-gradient(90deg, rgba(10, 44, 32, 0.92) 0%, rgba(10, 44, 32, 0.25) 26%, transparent 55%),
-      linear-gradient(0deg, rgba(10, 44, 32, 0.55) 0%, transparent 45%);
-  }
-
   /* Animación de entrada respetando reduced-motion (gestionado arriba) */
   .animate-fade-up {
     animation: var(--animate-fade-up);
