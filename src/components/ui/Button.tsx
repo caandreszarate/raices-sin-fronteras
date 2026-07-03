@@ -5,9 +5,10 @@ type Variant = "primary" | "secondary" | "outline" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  // CTA naranja del branding
+  // CTA naranja del branding. Texto verde profundo: contraste AA (5.3:1)
+  // frente al blanco original (2.9:1). brightness conserva la proporción.
   primary:
-    "bg-naranja text-white shadow-[0_8px_24px_-10px_rgba(230,126,34,0.7)] hover:bg-naranja-600 active:bg-naranja-700",
+    "bg-naranja text-verde-900 shadow-[0_8px_24px_-10px_rgba(230,126,34,0.7)] hover:brightness-[0.96] active:brightness-[0.93]",
   secondary: "bg-verde-profundo text-marfil hover:bg-verde-700 active:bg-verde-900",
   outline:
     "border-2 border-verde-profundo/30 text-verde-profundo hover:border-verde-profundo hover:bg-verde-claro/50",

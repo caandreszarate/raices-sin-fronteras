@@ -67,7 +67,7 @@ export default async function NoticiaDetallePage({
 
       <Section>
         <Container className="max-w-3xl">
-          <div className="flex flex-wrap items-center gap-3 text-sm text-verde-900/60">
+          <div className="flex flex-wrap items-center gap-3 text-sm text-verde-900/70">
             <Badge tone="verde">{t(`categories.${article.category}`)}</Badge>
             <span>{article.author}</span>
             <span aria-hidden>·</span>

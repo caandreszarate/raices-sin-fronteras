@@ -86,7 +86,7 @@ export function DonationWidget() {
         <label className="mt-3 block">
           <span className="sr-only">{t("otherAmount")}</span>
           <div className="flex items-center gap-2 rounded-xl border border-verde-profundo/15 bg-white px-4 py-2.5 focus-within:border-verde/50">
-            <span className="text-verde-900/60">€</span>
+            <span className="text-verde-900/70">€</span>
             <input
               type="number"
               min={1}
@@ -123,7 +123,7 @@ export function DonationWidget() {
             : t("donateAmount", { amount: effectiveAmount })}
         </button>
       </form>
-      <p className="mt-3 text-center text-xs text-verde-900/55">{t("secureNote")}</p>
+      <p className="mt-3 text-center text-xs text-verde-900/70">{t("secureNote")}</p>
     </div>
   );
 }

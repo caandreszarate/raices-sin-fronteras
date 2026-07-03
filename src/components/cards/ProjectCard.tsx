@@ -37,7 +37,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </Link>
         </h3>
         <p className="mt-2 flex-1 text-pretty text-sm leading-relaxed text-verde-900/70">{project.summary}</p>
-        <dl className="mt-4 flex items-center justify-between border-t border-verde-profundo/10 pt-3 text-xs text-verde-900/60">
+        <dl className="mt-4 flex items-center justify-between border-t border-verde-profundo/10 pt-3 text-xs text-verde-900/70">
           <div>
             <dt className="sr-only">{t("projects.program")}</dt>
             <dd className="font-semibold text-verde-700">{t(`programTitles.${project.program}`)}</dd>

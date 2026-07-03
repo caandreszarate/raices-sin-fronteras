@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useId } from "react";
+import { useActionState, useEffect, useId, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { useTranslations } from "next-intl";
 import { submitContact, type ContactState } from "@/app/actions/contact";
@@ -9,7 +9,8 @@ import { CheckIcon, AlertIcon } from "@/components/icons";
 
 const initial: ContactState = { status: "idle" };
 
-const SUBJECTS: ContactInput["asunto"][] = ["general", "voluntariado", "alianzas", "prensa", "donaciones"];
+// "Alianzas" primero: es el objetivo principal de la plataforma en esta fase.
+const SUBJECTS: ContactInput["asunto"][] = ["alianzas", "voluntariado", "general", "prensa"];
 
 function fieldClasses(hasError?: boolean) {
   return `w-full rounded-xl border bg-white/80 px-4 py-3 text-sm text-verde-900 placeholder:text-verde-900/40 transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado ${
@@ -24,10 +25,10 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="inline-flex items-center justify-center gap-2 rounded-full bg-naranja px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-naranja-600 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-dorado disabled:cursor-not-allowed disabled:opacity-60"
+      className="inline-flex items-center justify-center gap-2 rounded-full bg-naranja px-7 py-3.5 text-base font-semibold text-verde-900 transition-all hover:brightness-[0.96] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-dorado disabled:cursor-not-allowed disabled:opacity-60"
     >
       {pending && (
-        <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden />
+        <span className="h-4 w-4 animate-spin rounded-full border-2 border-verde-900/40 border-t-verde-900" aria-hidden />
       )}
       {pending ? t("sending") : t("submit")}
     </button>
@@ -37,6 +38,15 @@ function SubmitButton() {
 export function ContactForm({ defaultAsunto }: { defaultAsunto?: ContactInput["asunto"] }) {
   const t = useTranslations("contactForm");
   const [state, formAction] = useActionState(submitContact, initial);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Tras un error de envío, lleva el foco al primer campo inválido (WCAG).
+  useEffect(() => {
+    if (state.status === "error") {
+      formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus();
+    }
+  }, [state]);
+
   const ids = {
     nombre: useId(),
     email: useId(),
@@ -64,7 +74,7 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: ContactInput["a
   const fieldError = () => t("checkField");
 
   return (
-    <form action={formAction} className="space-y-5" noValidate>
+    <form ref={formRef} action={formAction} className="space-y-5" noValidate>
       {state.status === "error" && (
         <div
           role="alert"
@@ -203,7 +213,7 @@ export function ContactForm({ defaultAsunto }: { defaultAsunto?: ContactInput["a
       </div>
 
       <SubmitButton />
-      <p className="text-xs text-verde-900/55">{t("requiredNote")}</p>
+      <p className="text-xs text-verde-900/70">{t("requiredNote")}</p>
     </form>
   );
 }

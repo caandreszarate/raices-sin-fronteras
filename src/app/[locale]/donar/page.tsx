@@ -99,7 +99,7 @@ export default async function DonarPage({
                   ))}
                 </ul>
                 <Link
-                  href="/contacto?asunto=donaciones"
+                  href="/contacto?asunto=general"
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-naranja hover:gap-2.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
                 >
                   {t("talkToTeam")}

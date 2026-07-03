@@ -68,7 +68,7 @@ export default async function ContactoPage({
                   >
                     {siteConfig.contact.email}
                   </a>
-                  <p className="text-sm text-verde-900/60">
+                  <p className="text-sm text-verde-900/70">
                     {tf("press")}:{" "}
                     <a
                       href={`mailto:${siteConfig.contact.pressEmail}`}
@@ -163,7 +163,7 @@ function ContactRow({
         {icon}
       </span>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-wider text-verde-900/55">{label}</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-verde-900/70">{label}</p>
         <div className="mt-1">{children}</div>
       </div>
     </li>

@@ -9,7 +9,7 @@ export default function Loading() {
           className="h-10 w-10 animate-spin rounded-full border-3 border-verde-claro border-t-verde-600"
           aria-hidden
         />
-        <p className="text-sm text-verde-900/60">{t("loading")}</p>
+        <p className="text-sm text-verde-900/70">{t("loading")}</p>
       </div>
     </div>
   );

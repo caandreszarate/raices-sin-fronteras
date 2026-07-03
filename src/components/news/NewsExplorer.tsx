@@ -55,7 +55,7 @@ export function NewsExplorer({ articles }: { articles: NewsArticle[] }) {
         </div>
       </div>
 
-      <p className="mt-5 text-sm text-verde-900/60" aria-live="polite">
+      <p className="mt-5 text-sm text-verde-900/70" aria-live="polite">
         {filtered.length === 1 ? t("countOne", { count: 1 }) : t("countOther", { count: filtered.length })}
       </p>
 
@@ -68,7 +68,7 @@ export function NewsExplorer({ articles }: { articles: NewsArticle[] }) {
       ) : (
         <div className="mt-6 rounded-2xl border border-dashed border-verde-profundo/20 bg-white/50 p-10 text-center">
           <p className="font-medium text-verde-profundo">{t("emptyTitle")}</p>
-          <p className="mt-1 text-sm text-verde-900/60">{t("emptyText", { query })}</p>
+          <p className="mt-1 text-sm text-verde-900/70">{t("emptyText", { query })}</p>
         </div>
       )}
     </div>

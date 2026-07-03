@@ -15,11 +15,11 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-naranja text-white transition-colors hover:bg-naranja-600 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado disabled:opacity-60"
+      className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-naranja text-verde-900 transition-all hover:brightness-[0.96] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado disabled:opacity-60"
       aria-label={t("submit")}
     >
       {pending ? (
-        <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden />
+        <span className="h-4 w-4 animate-spin rounded-full border-2 border-verde-900/40 border-t-verde-900" aria-hidden />
       ) : (
         <ArrowRightIcon className="h-5 w-5" />
       )}

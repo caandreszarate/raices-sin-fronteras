@@ -38,7 +38,7 @@ export function NewsCard({
         />
       </Link>
       <div className={`flex flex-1 flex-col p-5 ${featured ? "sm:justify-center sm:p-7" : ""}`}>
-        <div className="mb-3 flex items-center gap-3 text-xs text-verde-900/60">
+        <div className="mb-3 flex items-center gap-3 text-xs text-verde-900/70">
           <Badge tone="verde">{t(`categories.${article.category}`)}</Badge>
           <span className="inline-flex items-center gap-1">
             <ClockIcon className="h-3.5 w-3.5" />
@@ -54,7 +54,7 @@ export function NewsCard({
           </Link>
         </h3>
         <p className="mt-2 flex-1 text-pretty text-sm leading-relaxed text-verde-900/70">{article.excerpt}</p>
-        <p className="mt-4 text-xs text-verde-900/55">
+        <p className="mt-4 text-xs text-verde-900/70">
           {article.author} · <time dateTime={article.publishedAt}>{formatDate(article.publishedAt, locale)}</time>
         </p>
       </div>

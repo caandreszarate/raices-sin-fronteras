@@ -44,7 +44,7 @@ export default async function PrivacidadPage({
                 <p className="mt-2 text-pretty leading-relaxed text-verde-900/80">{s.p}</p>
               </section>
             ))}
-            <p className="border-t border-verde-profundo/10 pt-6 text-sm text-verde-900/55">
+            <p className="border-t border-verde-profundo/10 pt-6 text-sm text-verde-900/70">
               {t("disclaimer")}
             </p>
           </div>

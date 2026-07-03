@@ -104,7 +104,7 @@ export function ProjectsExplorer({
         </button>
       </div>
 
-      <p className="mt-5 text-sm text-verde-900/60" aria-live="polite">
+      <p className="mt-5 text-sm text-verde-900/70" aria-live="polite">
         {filtered.length === 1 ? t("countOne", { count: 1 }) : t("countOther", { count: filtered.length })}
       </p>
 
@@ -132,7 +132,7 @@ export function ProjectsExplorer({
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <label className="flex flex-col gap-1 text-xs font-semibold uppercase tracking-wider text-verde-900/55">
+    <label className="flex flex-col gap-1 text-xs font-semibold uppercase tracking-wider text-verde-900/70">
       {label}
       {children}
     </label>

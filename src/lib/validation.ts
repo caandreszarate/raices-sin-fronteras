@@ -24,7 +24,7 @@ export const contactSchema = z.object({
   website: z.string().max(0, { message: "Envío rechazado." }).optional().default(""),
   nombre: safeText(2, 80),
   email: z.string().trim().toLowerCase().email({ message: "Introduce un correo válido." }).max(120),
-  asunto: z.enum(["general", "voluntariado", "alianzas", "prensa", "donaciones"], {
+  asunto: z.enum(["general", "voluntariado", "alianzas", "prensa"], {
     message: "Selecciona un asunto válido.",
   }),
   mensaje: safeText(10, 2000),
@@ -50,5 +50,4 @@ export const asuntoLabels: Record<ContactInput["asunto"], string> = {
   voluntariado: "Voluntariado",
   alianzas: "Alianzas y cooperación",
   prensa: "Prensa y medios",
-  donaciones: "Donaciones",
 };

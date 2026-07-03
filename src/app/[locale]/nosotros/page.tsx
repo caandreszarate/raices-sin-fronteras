@@ -52,14 +52,14 @@ export default async function NosotrosPage({
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
             <article className="rounded-3xl border border-verde-profundo/10 bg-white/70 p-8 shadow-[var(--shadow-soft)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-naranja">{t("mission")}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rojo-tierra">{t("mission")}</p>
               <h2 className="mt-3 text-2xl">{t("missionTitle")}</h2>
               <p className="mt-3 text-pretty leading-relaxed text-verde-900/75">
                 {t("missionText")}
               </p>
             </article>
             <article className="rounded-3xl border border-verde-profundo/10 bg-white/70 p-8 shadow-[var(--shadow-soft)]">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-naranja">{t("vision")}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-rojo-tierra">{t("vision")}</p>
               <h2 className="mt-3 text-2xl">{t("visionTitle")}</h2>
               <p className="mt-3 text-pretty leading-relaxed text-verde-900/75">
                 {t("visionText")}
@@ -179,8 +179,8 @@ export default async function NosotrosPage({
                 </span>
                 <div>
                   <h3 className="text-lg leading-tight">{member.name}</h3>
-                  <p className="text-sm font-medium text-naranja">{member.role}</p>
-                  <p className="mt-0.5 text-xs text-verde-900/55">{tc(`region.${member.region}`)}</p>
+                  <p className="text-sm font-medium text-rojo-tierra">{member.role}</p>
+                  <p className="mt-0.5 text-xs text-verde-900/70">{tc(`region.${member.region}`)}</p>
                   <p className="mt-2 text-sm leading-relaxed text-verde-900/70">{member.bio}</p>
                 </div>
               </li>

@@ -95,23 +95,23 @@ export default async function ProyectoDetallePage({
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-verde-700">{t("card")}</h2>
                 <dl className="mt-4 space-y-3 text-sm">
                   <div className="flex justify-between gap-4">
-                    <dt className="text-verde-900/60">{t("country")}</dt>
+                    <dt className="text-verde-900/70">{t("country")}</dt>
                     <dd className="text-right font-medium text-verde-profundo">{project.country}</dd>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <dt className="text-verde-900/60">{t("regionLabel")}</dt>
+                    <dt className="text-verde-900/70">{t("regionLabel")}</dt>
                     <dd className="text-right font-medium text-verde-profundo">
                       {treg(project.region)}
                     </dd>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <dt className="text-verde-900/60">{t("start")}</dt>
+                    <dt className="text-verde-900/70">{t("start")}</dt>
                     <dd className="text-right font-medium text-verde-profundo">
                       <time dateTime={project.startDate}>{formatDate(project.startDate, locale)}</time>
                     </dd>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <dt className="text-verde-900/60">{t("statusLabel")}</dt>
+                    <dt className="text-verde-900/70">{t("statusLabel")}</dt>
                     <dd className="text-right font-medium text-verde-profundo">{t(`status.${project.status}`)}</dd>
                   </div>
                 </dl>
@@ -125,7 +125,7 @@ export default async function ProyectoDetallePage({
                       <dt className="sr-only">{m.label}</dt>
                       <dd>
                         <span className="block font-serif text-xl font-semibold text-verde-profundo">{m.value}</span>
-                        <span className="mt-1 block text-xs text-verde-900/60">{m.label}</span>
+                        <span className="mt-1 block text-xs text-verde-900/70">{m.label}</span>
                       </dd>
                     </div>
                   ))}

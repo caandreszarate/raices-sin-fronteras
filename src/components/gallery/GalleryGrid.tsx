@@ -88,7 +88,7 @@ export function GalleryGrid({
         </button>
       </div>
 
-      <p className="mt-4 text-sm text-verde-900/60" aria-live="polite">
+      <p className="mt-4 text-sm text-verde-900/70" aria-live="polite">
         {filtered.length === 1 ? t("countOne", { count: 1 }) : t("countOther", { count: filtered.length })}
       </p>
 
@@ -102,7 +102,7 @@ export function GalleryGrid({
               <CoverArt tone={item.tone} src={programImage[item.program]} label={item.alt} icon={item.program} ratio="aspect-square" />
               <div className="p-3">
                 <p className="text-sm font-semibold text-verde-profundo">{item.title}</p>
-                <p className="mt-0.5 text-xs text-verde-900/60">
+                <p className="mt-0.5 text-xs text-verde-900/70">
                   {item.country} · {item.year}
                 </p>
               </div>
@@ -112,7 +112,7 @@ export function GalleryGrid({
       ) : (
         <div className="mt-8 rounded-2xl border border-dashed border-verde-profundo/20 bg-white/50 p-10 text-center">
           <p className="font-medium text-verde-profundo">{t("emptyTitle")}</p>
-          <p className="mt-1 text-sm text-verde-900/60">{t("emptyText")}</p>
+          <p className="mt-1 text-sm text-verde-900/70">{t("emptyText")}</p>
           <button
             type="button"
             onClick={reset}
@@ -128,7 +128,7 @@ export function GalleryGrid({
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <label className="flex flex-col gap-1 text-xs font-semibold uppercase tracking-wider text-verde-900/55">
+    <label className="flex flex-col gap-1 text-xs font-semibold uppercase tracking-wider text-verde-900/70">
       {label}
       {children}
     </label>

@@ -35,7 +35,7 @@ export function Hero() {
       {/* Texto */}
       <div className="relative mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:flex lg:min-h-[clamp(540px,76vh,740px)] lg:items-center lg:px-8 lg:py-0">
         <div className="max-w-xl animate-fade-up">
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-naranja">
+          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-rojo-tierra">
             <span className="h-px w-6 bg-current opacity-60" aria-hidden />
             {t("eyebrow")}
           </p>
@@ -44,7 +44,7 @@ export function Hero() {
             <span className="block text-5xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
               {t("title1")} {t("title2")}
             </span>
-            <span className="mt-2 block text-4xl font-medium italic leading-tight text-naranja sm:text-5xl lg:text-6xl">
+            <span className="mt-2 block text-4xl font-medium italic leading-tight text-rojo-tierra sm:text-5xl lg:text-6xl">
               {t("titleScript")}
             </span>
           </h1>

@@ -24,8 +24,8 @@ export async function generateMetadata({
 
 const accentText: Record<string, string> = {
   "rojo-tierra": "text-rojo-tierra",
-  naranja: "text-naranja",
-  dorado: "text-dorado-600",
+  naranja: "text-naranja-700",
+  dorado: "text-marron",
   verde: "text-verde-600",
   "verde-600": "text-verde-600",
   "azul-profundo": "text-azul-profundo",
