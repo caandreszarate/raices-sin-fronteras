@@ -703,29 +703,17 @@
       }
     },
     "team": {
-      "AN": {
-        "role": "Direção Geral",
-        "bio": "Gestora cultural com 15 anos de trajetória em cooperação internacional e património."
-      },
-      "MQ": {
-        "role": "Coordenação de Programas",
-        "bio": "Especialista em desenvolvimento comunitário e educação intercultural no Pacífico colombiano."
-      },
-      "SO": {
-        "role": "Cultura e Património",
-        "bio": "Etnomusicóloga dedicada à documentação de tradições orais e musicais."
-      },
-      "DA": {
-        "role": "Juventude e Liderança",
-        "bio": "Educadora popular e mentora de redes juvenis transatlânticas."
-      },
-      "IE": {
-        "role": "Meio Ambiente",
-        "bio": "Engenheiro florestal focado na restauração com espécies nativas e agrofloresta."
+      "NE": {
+        "role": "Direção-Geral",
+        "bio": "Gestor geral do projeto Raíces sin Fronteras."
       },
       "CM": {
-        "role": "Cooperação e Alianças",
-        "bio": "Profissional em relações institucionais e cooperação Sul-Sul."
+        "role": "Coordenação de Programa · Colômbia",
+        "bio": "Especialista em coordenação de projetos e educação intercultural."
+      },
+      "GP": {
+        "role": "Coordenação de Programa · Venezuela",
+        "bio": "Especialista em coordenação de projetos e educação intercultural."
       }
     },
     "values": [
@@ -756,20 +744,20 @@
     ],
     "milestones": [
       {
-        "title": "Uma ideia com raízes",
-        "description": "Um grupo de gestoras culturais e educadoras de ambas as margens imagina uma plataforma de encontro afro-hispânico."
+        "title": "Uma história partilhada",
+        "description": "A herança que une a América Latina e a Guiné Equatorial inspira a ideia de uma plataforma de encontro afro-hispânico."
+      },
+      {
+        "title": "Seis linhas de trabalho",
+        "description": "Cultura, educação, juventude, meio ambiente, cooperação e turismo de raízes: os caminhos para traduzir a história comum em futuro."
+      },
+      {
+        "title": "Hoje: tecendo a rede",
+        "description": "Fase de conexão. Apresentamos a plataforma e construímos a rede de pessoas e organizações fundadoras nas duas margens."
       },
       {
         "title": "Primeiros projetos",
-        "description": "Arrancam as iniciativas piloto de cultura e educação na Guiné Equatorial, Colômbia e Equador."
-      },
-      {
-        "title": "Rede transatlântica",
-        "description": "Consolida-se a rede de organizações aliadas e nasce o programa de Jovens Embaixadores."
-      },
-      {
-        "title": "Seis programas ativos",
-        "description": "A plataforma opera as suas seis linhas em nove países, com milhares de pessoas beneficiadas."
+        "description": "Desenhar e lançar as iniciativas-piloto junto com os aliados que se somem à rede."
       }
     ]
   }

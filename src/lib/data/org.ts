@@ -40,76 +40,58 @@ export const values: Value[] = [
   },
 ];
 
-/** Equipo mock. En producción: tabla `team` o CMS. */
+/** Equipo fundador de la plataforma. */
 export const team: TeamMember[] = [
   {
-    name: "Adaeze Nkili",
+    name: "Nzo Edu Nfono",
     role: "Dirección General",
     region: "Guinea Ecuatorial",
-    bio: "Gestora cultural con 15 años de trayectoria en cooperación internacional y patrimonio.",
-    initials: "AN",
+    bio: "Gestor general del proyecto Raíces sin Fronteras.",
+    initials: "NE",
   },
   {
-    name: "Mateo Quiñones",
-    role: "Coordinación de Programas",
+    name: "Carlos Andrés Martínez",
+    role: "Coordinación de Programa · Colombia",
     region: "America Latina",
-    bio: "Especialista en desarrollo comunitario y educación intercultural en el Pacífico colombiano.",
-    initials: "MQ",
-  },
-  {
-    name: "Sara Obono",
-    role: "Cultura y Patrimonio",
-    region: "Guinea Ecuatorial",
-    bio: "Etnomusicóloga dedicada a la documentación de tradiciones orales y musicales.",
-    initials: "SO",
-  },
-  {
-    name: "Daniela Arboleda",
-    role: "Juventud y Liderazgo",
-    region: "America Latina",
-    bio: "Educadora popular y mentora de redes juveniles transatlánticas.",
-    initials: "DA",
-  },
-  {
-    name: "Ismael Eyenga",
-    role: "Medio Ambiente",
-    region: "Guinea Ecuatorial",
-    bio: "Ingeniero forestal enfocado en restauración con especies nativas y agroforestería.",
-    initials: "IE",
-  },
-  {
-    name: "Carolina Mosquera",
-    role: "Cooperación y Alianzas",
-    region: "America Latina",
-    bio: "Profesional en relaciones institucionales y cooperación Sur-Sur.",
+    bio: "Especialista en coordinación de proyectos y educación intercultural.",
     initials: "CM",
+  },
+  {
+    name: "Gabriel Peñaranda",
+    role: "Coordinación de Programa · Venezuela",
+    region: "America Latina",
+    bio: "Especialista en coordinación de proyectos y educación intercultural.",
+    initials: "GP",
   },
 ];
 
-/** Hitos de la historia institucional (línea de tiempo en Nosotros). */
+/**
+ * Hoja de ruta de la plataforma (línea de tiempo en Nosotros).
+ * Fases numeradas, sin fechas: reflejan honestamente el momento del proyecto.
+ */
 export const milestones: { year: string; title: string; description: string }[] = [
   {
-    year: "2019",
-    title: "Una idea con raíces",
+    year: "01",
+    title: "Una historia compartida",
     description:
-      "Un grupo de gestoras culturales y educadoras de ambas orillas imagina una plataforma de encuentro afro-hispano.",
+      "La herencia que une a América Latina y Guinea Ecuatorial inspira la idea de una plataforma de encuentro afro-hispano.",
   },
   {
-    year: "2021",
+    year: "02",
+    title: "Seis líneas de trabajo",
+    description:
+      "Cultura, educación, juventud, medio ambiente, cooperación y turismo de raíces: los caminos para traducir la historia común en futuro.",
+  },
+  {
+    year: "03",
+    title: "Hoy: tejiendo la red",
+    description:
+      "Fase de conexión. Presentamos la plataforma y construimos la red de personas y organizaciones fundadoras en ambas orillas.",
+  },
+  {
+    year: "04",
     title: "Primeros proyectos",
     description:
-      "Arrancan las iniciativas piloto de cultura y educación en Guinea Ecuatorial, Colombia y Ecuador.",
-  },
-  {
-    year: "2023",
-    title: "Red transatlántica",
-    description:
-      "Se consolida la red de organizaciones aliadas y nace el programa de Jóvenes Embajadores.",
-  },
-  {
-    year: "2025",
-    title: "Seis programas activos",
-    description:
-      "La plataforma opera sus seis líneas en nueve países, con miles de personas beneficiadas.",
+      "Diseñar y poner en marcha las iniciativas piloto junto a los aliados que se sumen a la red.",
   },
 ];

@@ -703,29 +703,17 @@
       }
     },
     "team": {
-      "AN": {
-        "role": "General Director",
-        "bio": "Cultural manager with 15 years of experience in international cooperation and heritage."
-      },
-      "MQ": {
-        "role": "Programs Coordinator",
-        "bio": "Specialist in community development and intercultural education in the Colombian Pacific."
-      },
-      "SO": {
-        "role": "Culture and Heritage",
-        "bio": "Ethnomusicologist dedicated to documenting oral and musical traditions."
-      },
-      "DA": {
-        "role": "Youth and Leadership",
-        "bio": "Popular educator and mentor of transatlantic youth networks."
-      },
-      "IE": {
-        "role": "Environment",
-        "bio": "Forestry engineer focused on restoration with native species and agroforestry."
+      "NE": {
+        "role": "General Management",
+        "bio": "General manager of the Raíces sin Fronteras project."
       },
       "CM": {
-        "role": "Cooperation and Partnerships",
-        "bio": "Professional in institutional relations and South-South cooperation."
+        "role": "Program Coordination · Colombia",
+        "bio": "Specialist in project coordination and intercultural education."
+      },
+      "GP": {
+        "role": "Program Coordination · Venezuela",
+        "bio": "Specialist in project coordination and intercultural education."
       }
     },
     "values": [
@@ -756,20 +744,20 @@
     ],
     "milestones": [
       {
-        "title": "An idea with roots",
-        "description": "A group of cultural managers and educators from both shores imagine a platform for Afro-Hispanic encounter."
+        "title": "A shared history",
+        "description": "The heritage that unites Latin America and Equatorial Guinea inspires the idea of an Afro-Hispanic meeting platform."
+      },
+      {
+        "title": "Six lines of work",
+        "description": "Culture, education, youth, environment, cooperation and roots tourism: the paths to turn a common history into a future."
+      },
+      {
+        "title": "Today: weaving the network",
+        "description": "Connection phase. We present the platform and build the network of founding people and organisations on both shores."
       },
       {
         "title": "First projects",
-        "description": "The pilot culture and education initiatives begin in Equatorial Guinea, Colombia and Ecuador."
-      },
-      {
-        "title": "Transatlantic network",
-        "description": "The network of partner organizations consolidates and the Young Ambassadors program is born."
-      },
-      {
-        "title": "Six active programs",
-        "description": "The platform runs its six lines of work in nine countries, with thousands of people benefited."
+        "description": "Design and launch the pilot initiatives together with the partners who join the network."
       }
     ]
   }

@@ -14,10 +14,10 @@ export const siteConfig = {
   locale: "es_ES",
   regions: "América Latina y Guinea Ecuatorial",
   contact: {
-    email: "hola@raicessinfronteras.org",
-    pressEmail: "prensa@raicessinfronteras.org",
-    phone: "+240 333 000 000",
-    phoneHref: "+240333000000",
+    email: "contacto@raicessinfronteras.org",
+    pressEmail: "contacto@raicessinfronteras.org",
+    phone: "+57 315 057 0742",
+    phoneHref: "+573150570742",
     addressLines: ["Malabo, Guinea Ecuatorial", "Bogotá, Colombia"],
     hours: "Lunes a viernes, 9:00–17:00 (WAT / COT)",
   },
@@ -32,15 +32,14 @@ export const siteConfig = {
 /** Elementos de navegación: `key` resuelve la etiqueta vía i18n (namespace nav). */
 export type NavItem = { key: string; href: string };
 
-// "Proyectos" y "Donar" quedan fuera de la navegación mientras la plataforma
-// está en fase de presentación institucional; las rutas siguen activas para
-// reactivarlas cuando haya proyectos reales y pasarela de donaciones.
+// "Proyectos", "Galería" y "Donar" quedan fuera de la navegación mientras la
+// plataforma está en fase de presentación institucional; las rutas siguen
+// activas para reactivarlas cuando haya material y proyectos reales.
 export const mainNav: NavItem[] = [
   { key: "home", href: "/" },
   { key: "about", href: "/nosotros" },
   { key: "programs", href: "/programas" },
   { key: "news", href: "/noticias" },
-  { key: "gallery", href: "/galeria" },
   { key: "contact", href: "/contacto" },
 ];
 
@@ -57,7 +56,6 @@ export const footerNav: { titleKey: "colOrg" | "colParticipate"; items: NavItem[
     titleKey: "colParticipate",
     items: [
       { key: "volunteer", href: "/contacto?asunto=voluntariado" },
-      { key: "gallery", href: "/galeria" },
       { key: "contact", href: "/contacto" },
     ],
   },

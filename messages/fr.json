@@ -703,29 +703,17 @@
       }
     },
     "team": {
-      "AN": {
+      "NE": {
         "role": "Direction générale",
-        "bio": "Gestionnaire culturelle forte de 15 ans d'expérience en coopération internationale et patrimoine."
-      },
-      "MQ": {
-        "role": "Coordination des programmes",
-        "bio": "Spécialiste du développement communautaire et de l'éducation interculturelle dans le Pacifique colombien."
-      },
-      "SO": {
-        "role": "Culture et patrimoine",
-        "bio": "Ethnomusicologue dédiée à la documentation des traditions orales et musicales."
-      },
-      "DA": {
-        "role": "Jeunesse et leadership",
-        "bio": "Éducatrice populaire et mentore de réseaux de jeunes transatlantiques."
-      },
-      "IE": {
-        "role": "Environnement",
-        "bio": "Ingénieur forestier spécialisé dans la restauration avec des espèces natives et l'agroforesterie."
+        "bio": "Gestionnaire général du projet Raíces sin Fronteras."
       },
       "CM": {
-        "role": "Coopération et alliances",
-        "bio": "Professionnelle des relations institutionnelles et de la coopération Sud-Sud."
+        "role": "Coordination de programme · Colombie",
+        "bio": "Spécialiste en coordination de projets et en éducation interculturelle."
+      },
+      "GP": {
+        "role": "Coordination de programme · Venezuela",
+        "bio": "Spécialiste en coordination de projets et en éducation interculturelle."
       }
     },
     "values": [
@@ -756,20 +744,20 @@
     ],
     "milestones": [
       {
-        "title": "Une idée enracinée",
-        "description": "Un groupe de gestionnaires culturelles et d'éducatrices des deux rives imagine une plateforme de rencontre afro-hispanique."
+        "title": "Une histoire partagée",
+        "description": "L'héritage qui unit l'Amérique latine et la Guinée équatoriale inspire l'idée d'une plateforme de rencontre afro-hispanique."
+      },
+      {
+        "title": "Six axes de travail",
+        "description": "Culture, éducation, jeunesse, environnement, coopération et tourisme des racines : les chemins pour traduire l'histoire commune en avenir."
+      },
+      {
+        "title": "Aujourd'hui : tisser le réseau",
+        "description": "Phase de connexion. Nous présentons la plateforme et construisons le réseau de personnes et d'organisations fondatrices sur les deux rives."
       },
       {
         "title": "Premiers projets",
-        "description": "Les initiatives pilotes de culture et d'éducation démarrent en Guinée équatoriale, en Colombie et en Équateur."
-      },
-      {
-        "title": "Réseau transatlantique",
-        "description": "Le réseau d'organisations partenaires se consolide et le programme Jeunes Ambassadeurs voit le jour."
-      },
-      {
-        "title": "Six programmes actifs",
-        "description": "La plateforme déploie ses six axes dans neuf pays, avec des milliers de personnes bénéficiaires."
+        "description": "Concevoir et lancer les initiatives pilotes avec les partenaires qui rejoignent le réseau."
       }
     ]
   }
