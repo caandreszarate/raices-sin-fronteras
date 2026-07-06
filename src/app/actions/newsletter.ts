@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 import { newsletterSchema } from "@/lib/validation";
 import { rateLimit, clientIpFromHeaders } from "@/lib/rate-limit";
+import { subscribeNewsletterEmail } from "@/lib/email";
 
 export interface NewsletterState {
   status: "idle" | "success" | "error";
@@ -35,9 +36,9 @@ export async function subscribeNewsletter(
   }
 
   try {
-    // Integración real (deshabilitada): añadir a lista de correo / tabla `subscribers`.
-    if (process.env.NODE_ENV !== "production") {
-      console.info("[newsletter] alta válida:", parsed.data.email);
+    const ok = await subscribeNewsletterEmail(parsed.data.email);
+    if (!ok) {
+      return { status: "error", message: "No pudimos completar la suscripción. Inténtalo más tarde." };
     }
     return { status: "success", message: "¡Listo! Te avisaremos de cada novedad." };
   } catch {

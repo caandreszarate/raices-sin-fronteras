@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 import { contactSchema } from "@/lib/validation";
 import { rateLimit, clientIpFromHeaders } from "@/lib/rate-limit";
+import { sendContactEmail } from "@/lib/email";
 
 export interface ContactState {
   status: "idle" | "success" | "error";
@@ -57,18 +58,16 @@ export async function submitContact(
 
   const data = parsed.data;
 
-  // 3) Persistencia / notificación.
-  //    Aquí se conectaría el envío de correo (Resend/SMTP), guardado en BD
-  //    (Supabase/PostgreSQL) o ticket en CRM. Mantenemos la integración fuera
-  //    del cliente: ninguna clave llega al navegador.
+  // 3) Notificación por correo (Resend). La integración vive en el servidor:
+  //    ninguna clave llega al navegador.
   try {
-    // Ejemplo (deshabilitado): const resend = new Resend(process.env.RESEND_API_KEY)
-    if (process.env.NODE_ENV !== "production") {
-      // Log seguro en desarrollo (sin exponer datos sensibles en cliente).
-      console.info("[contacto] mensaje válido recibido de", data.email, "·", data.asunto);
+    const sent = await sendContactEmail(data);
+    if (!sent) {
+      return {
+        status: "error",
+        message: "No pudimos procesar tu mensaje en este momento. Inténtalo más tarde.",
+      };
     }
-    // await saveContactMessage(data)
-
     return {
       status: "success",
       message: "¡Gracias por escribirnos! Te responderemos lo antes posible.",
