@@ -36,7 +36,7 @@ export const programImage: Record<ProgramSlug, string> = {
 
 /** Imagen asociada a cada categoría de noticias (reutiliza las de programas). */
 export const categoryImage: Record<NewsCategory, string> = {
-  Institucional: cut.duo,
+  Institucional: "/noticias/institucional.jpg",
   Cultura: programImage.cultura,
   Educación: programImage.educacion,
   Juventud: programImage.juventud,
