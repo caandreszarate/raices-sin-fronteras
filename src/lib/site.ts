@@ -23,7 +23,7 @@ export const siteConfig = {
     ],
     // Número que recibe los mensajes del botón flotante de WhatsApp (formato wa.me: solo dígitos).
     whatsapp: "573105550703",
-    addressLines: ["Malabo, Guinea Ecuatorial", "Bogotá, Colombia"],
+    addressLines: ["Guinea Ecuatorial", "Colombia", "Venezuela"],
     hours: "Lunes a viernes, 9:00–17:00 (WAT / COT)",
   },
   social: [
