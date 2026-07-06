@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 // Titulares editoriales (serif patrimonial, como en el branding).
 const cormorant = Cormorant_Garamond({
@@ -109,6 +110,7 @@ export default async function LocaleLayout({
           <Header />
           <main id="contenido">{children}</main>
           <Footer />
+          <WhatsAppButton />
         </NextIntlClientProvider>
       </body>
     </html>

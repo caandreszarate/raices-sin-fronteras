@@ -17,7 +17,9 @@
       "America Latina": "América Latina",
       "Guinea Ecuatorial": "Guinea Ecuatorial",
       "Transatlantico": "Transatlántico"
-    }
+    },
+    "whatsappLabel": "Escríbenos por WhatsApp",
+    "whatsappMessage": "Hola, Raíces sin Fronteras. Me gustaría recibir más información."
   },
   "programTitles": {
     "cultura": "Cultura",

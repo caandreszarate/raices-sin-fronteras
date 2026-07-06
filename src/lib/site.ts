@@ -21,6 +21,8 @@ export const siteConfig = {
       { label: "Guinea Ecuatorial", phone: "+240 222 268 283", phoneHref: "+240222268283" },
       { label: "Venezuela", phone: "+58 242 568 9212", phoneHref: "+582425689212" },
     ],
+    // Número que recibe los mensajes del botón flotante de WhatsApp (formato wa.me: solo dígitos).
+    whatsapp: "573105550703",
     addressLines: ["Malabo, Guinea Ecuatorial", "Bogotá, Colombia"],
     hours: "Lunes a viernes, 9:00–17:00 (WAT / COT)",
   },
