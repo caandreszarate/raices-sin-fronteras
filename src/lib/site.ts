@@ -16,8 +16,11 @@ export const siteConfig = {
   contact: {
     email: "contacto@raicessinfronteras.org",
     pressEmail: "contacto@raicessinfronteras.org",
-    phone: "+57 315 057 0742",
-    phoneHref: "+573150570742",
+    phones: [
+      { label: "Colombia", phone: "+57 315 057 0742", phoneHref: "+573150570742" },
+      { label: "Guinea Ecuatorial", phone: "+240 222 268 283", phoneHref: "+240222268283" },
+      { label: "Venezuela", phone: "+58 242 568 9212", phoneHref: "+582425689212" },
+    ],
     addressLines: ["Malabo, Guinea Ecuatorial", "Bogotá, Colombia"],
     hours: "Lunes a viernes, 9:00–17:00 (WAT / COT)",
   },

@@ -79,12 +79,16 @@ export default async function ContactoPage({
                   </p>
                 </ContactRow>
                 <ContactRow icon={<PhoneIcon className="h-5 w-5" />} label={tf("phone")}>
-                  <a
-                    href={`tel:${siteConfig.contact.phoneHref}`}
-                    className="font-medium text-verde-profundo hover:text-verde-600 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
-                  >
-                    {siteConfig.contact.phone}
-                  </a>
+                  {siteConfig.contact.phones.map((p) => (
+                    <p key={p.phoneHref}>
+                      <a
+                        href={`tel:${p.phoneHref}`}
+                        className="font-medium text-verde-profundo hover:text-verde-600 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                      >
+                        {p.label}: {p.phone}
+                      </a>
+                    </p>
+                  ))}
                 </ContactRow>
                 <ContactRow icon={<MapPinIcon className="h-5 w-5" />} label={tf("where")}>
                   {siteConfig.contact.addressLines.map((line) => (
@@ -97,27 +101,6 @@ export default async function ContactoPage({
                   <p className="text-verde-900/80">{siteConfig.contact.hours}</p>
                 </ContactRow>
               </ul>
-
-              {/* Redes */}
-              <div className="mt-8">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-verde-700">
-                  {t("follow")}
-                </h3>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {siteConfig.social.map((s) => (
-                    <li key={s.name}>
-                      <a
-                        href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center rounded-full border border-verde-profundo/15 bg-white/70 px-4 py-2 text-sm font-medium text-verde-profundo transition-colors hover:border-verde/40 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
-                      >
-                        {s.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
 
               {/* Mapa (OpenStreetMap, permitido en CSP) */}
               <div className="mt-8 overflow-hidden rounded-2xl border border-verde-profundo/10 shadow-[var(--shadow-soft)]">

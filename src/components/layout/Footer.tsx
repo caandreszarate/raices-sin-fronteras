@@ -25,20 +25,6 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-pretty text-sm leading-relaxed text-verde-claro/85">
               {siteConfig.description}
             </p>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {siteConfig.social.map((s) => (
-                <li key={s.name}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-full border border-marfil/20 px-3 py-1.5 text-xs font-medium text-marfil/85 transition-colors hover:border-dorado hover:text-dorado focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
-                  >
-                    {s.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {footerNav.map((col) => (
@@ -71,15 +57,17 @@ export function Footer() {
                   {siteConfig.contact.email}
                 </a>
               </li>
-              <li className="flex items-start gap-2.5">
-                <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-dorado" />
-                <a
-                  href={`tel:${siteConfig.contact.phoneHref}`}
-                  className="inline-block py-1 hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
-                >
-                  {siteConfig.contact.phone}
-                </a>
-              </li>
+              {siteConfig.contact.phones.map((p) => (
+                <li key={p.phoneHref} className="flex items-start gap-2.5">
+                  <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-dorado" />
+                  <a
+                    href={`tel:${p.phoneHref}`}
+                    className="inline-block py-1 hover:text-marfil focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-dorado"
+                  >
+                    {p.label}: {p.phone}
+                  </a>
+                </li>
+              ))}
               <li className="flex items-start gap-2.5">
                 <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-dorado" />
                 <span>{siteConfig.contact.addressLines.join(" · ")}</span>
